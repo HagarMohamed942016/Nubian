@@ -1,0 +1,1727 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="ae" class="ie6 no-js" dir="rtl"> <![endif]-->
+<!--[if IE 7 ]> <html lang="ae" class="ie7 no-js" dir="rtl"> <![endif]-->
+<!--[if IE 8 ]> <html lang="ae" class="ie8 no-js" dir="rtl"> <![endif]-->
+<!--[if IE 9 ]> <html lang="ae" class="ie ie9 no-js" dir="rtl"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="ae" class=" no-js" dir="rtl">
+
+<!-- rendered at UTC: Saturday, March 7, 2020 9:22 AM -->
+<!--<![endif]-->
+    
+        <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#  place: http://ogp.me/ns/place#">
+    
+
+
+
+<script>
+    window.feMsgConfig =  {"Environment":"production","Cluster":"4H","DC":"AM","PageTypeId":7,"Disable":false};
+</script>
+
+
+<script type="text/javascript" id="messagingClientLite">
+!function(n,t){var i,r;if("object"==typeof exports&&"object"==typeof module)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{i=t();for(r in i)("object"==typeof exports?exports:n)[r]=i[r]}}("undefined"!=typeof self?self:this,function(){return function(n){function t(r){if(i[r])return i[r].exports;var u=i[r]={i:r,l:!1,exports:{}};return n[r].call(u.exports,u,u.exports,t),u.l=!0,u.exports}var i={};return t.m=n,t.c=i,t.d=function(n,i,r){t.o(n,i)||Object.defineProperty(n,i,{enumerable:!0,get:r})},t.r=function(n){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(n,Symbol.toStringTag,{value:"Module"});Object.defineProperty(n,"__esModule",{value:!0})},t.t=function(n,i){var r,u;if((1&i&&(n=t(n)),8&i)||4&i&&"object"==typeof n&&n&&n.__esModule)return n;if(r=Object.create(null),t.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:n}),2&i&&"string"!=typeof n)for(u in n)t.d(r,u,function(t){return n[t]}.bind(null,u));return r},t.n=function(n){var i=n&&n.__esModule?function(){return n.default}:function(){return n};return t.d(i,"a",i),i},t.o=function(n,t){return Object.prototype.hasOwnProperty.call(n,t)},t.p="",t(t.s=150)}({12:function(n,t,i){"use strict";function r(n,t,i){for(var r,f,e=i.length,u=0;u<e;u++)if(r=i[u],r)for(f in r)r.hasOwnProperty(f)&&n(f,r[f])}i.d(t,"a",function(){return r})},150:function(n,t,i){"use strict";var r;i.r(t);var u=i(29),f=i(17),e=function(){function n(){this.buffer={items:[]};this.contextData={}}return n.prototype.send=function(t){var r=this.buffer.items,i=n.MaxBufferSize-r.length;i>0&&(t instanceof Array?(i<t.length&&(t=t.slice(0,i)),this.buffer.items=t.concat(r)):this.buffer.items.push(t))},n.prototype.dispose=function(n){this.buffer.items.length=0;n&&n()},n.prototype.environment=function(){},n.prototype.context=function(n){var t=this.contextData;t.sessionId=n.sessionId||t.sessionId;t.userId=n.userId||t.userId},n.MaxBufferSize=15e3,n}(),o=i(42);i.d(t,"MessagingClient",function(){return r});r=function(){function n(n){this._test=n}return n.create=function(t){return n.instantiate(t)},n.instantiate=function(t){return(new n).instantiate(t)},n.environment=function(t){return new n(t)},n.prototype.instantiate=function(n){var t=f.a.get(),i,r;return(t.environment=t.environment||n,t.test=t.test||this._test,t.messagingClient)?t.messagingClient:(i=new e,r=new o.a(i,new u.a),t.buffer=i.buffer,t.context=i.contextData,t.messagingClient=r,r)},n}()},17:function(n,t,i){"use strict";i.d(t,"a",function(){return f});var u=i(4),r="MessagingClient-LiteData",f=function(){function n(){}return n.get=function(){var n=u.a.current();return n[r]||(n[r]={})},n.clear=function(){delete u.a.current()[r]},n}()},18:function(n){var t=function(){return this}();try{t=t||new Function("return this")()}catch(n){"object"==typeof window&&(t=window)}n.exports=t},20:function(n,t,i){"use strict";i.d(t,"a",function(){return r});var r=function(){function n(){}return n.current=function(){return window&&window.__MCJS_EXTENSION_DATA__||{}},n}()},29:function(n,t,i){"use strict";i.d(t,"a",function(){return r});var r=function(){function n(){}return n.prototype.now=function(){return+new Date},n}()},4:function(n,t,i){"use strict";(function(n){i.d(t,"a",function(){return r});var r=function(){function t(){}return t.current=function(){var t="undefined"!=typeof window?window:"undefined"!=typeof self?self:void 0!==n?n:null;if(!t)throw new Error("Unsupported environment.");return t},t}()}).call(this,i(18))},42:function(n,t,i){"use strict";var u=i(20),f=i(12),r;i.d(t,"a",function(){return r});r=function(){function n(n,t){this.sender=n;this._time=t}return n.prototype.create=function(n,t){var i={_meta:{type:n}};return t&&function(n){for(var i=[],t=1;t<arguments.length;t++)i[t-1]=arguments[t];n||(n={});Object(f.a)(function(t,i){void 0===n[t]&&(n[t]=i)},n,i)}(i,t),i},n.prototype.send=function(n,t){if(!n||!n._meta)throw new Error("Message or message type is undefined");(n=JSON.parse(JSON.stringify(n)))._meta.timestamp=this._time.now();n._meta.tabId=u.a.current().tabId;this.sender.send(n,t)},n.prototype.debug=function(n){this.sender.environment({debug:n})},n.prototype.context=function(n){this.sender.context(n)},n}()}})})
+</script>
+
+
+
+
+
+
+        <script>
+            var startTime = new Date();
+            var messagingClient = MessagingClient.instantiate();
+            var getDataCounter = 0;
+
+            var onError = function (url, error) {
+                var message = messagingClient.create('log',
+                    {
+                        level: 'error',
+                        message: '[PropertyPageParams]:' + url + ':' + error,
+                        applicationName: 'www.agoda.com'
+                    });
+                messagingClient.send(message);
+            };
+        </script>
+            <link id="propertyApiPreload" rel="preload" href="/api/ar-ae/pageparams/propertycriticalasync?cid=1844104&hotel_id=272148&all=false">
+
+
+
+    <script type="text/javascript" id="propertyPageParams">
+        window.addEventListener("error",function(n){var t;n.message&&n.message.indexOf&&n.message.indexOf("Unexpected token")>-1&&(t=["[UNEXPECTED_TOKEN]:","Message: "+n.message,"Filename: "+n.filename,"Line: "+n.lineno,"Column: "+n.colno,"Error object: "+JSON.stringify(n.error)].join(" - "),t=messagingClient.create("log",{level:"info",message:t,applicationName:"www.agoda.com"}),messagingClient.send(t))});var getData=function(n){return window.apiUrl="/api/ar-ae/pageparams/property?cid=1844104&hotel_id=272148&all=false",new Promise(function(t,i){var r=new XMLHttpRequest;r.onreadystatechange=function(){var f,e,o,u;r.readyState==XMLHttpRequest.DONE&&(r.status===200?(f=(new Date).getTime()-startTime.getTime(),u=messagingClient.create("measurement",{name:"FE.PROPERTY.CRITICALSECTION.AJAX.LOADED",measurement:f,count:1}),messagingClient.send(u),e=JSON.parse(r.responseText),t(e)):getDataCounter<2?(o="[CriticalSectionParamsRetry]: ",u=messagingClient.create("log",{level:"info",message:o+n+", response error:"+r.status+":"+r.statusText+":retry counter:"+ +getDataCounter,applicationName:"www.agoda.com"}),messagingClient.send(u),getDataCounter++,getData(n).then(t).catch(i)):(onError(n,"response error:"+r.status+":"+r.statusText+":"+ +getDataCounter),i()))};r.onerror=function(){onError(n,"unnable send request:"+getDataCounter);getDataCounter<2?(getDataCounter++,getData(n).then(t).catch(i)):i()};r.open("GET",n,!0);r.setRequestHeader("x-raw-url",location.pathname+location.search);r.setRequestHeader("x-referer",document.referrer);r.send(null)})},promisedData=[];promisedData.push(getData("/api/ar-ae/pageparams/propertycriticalasync?cid=1844104&hotel_id=272148&all=false"));propertyPageParamsPromise=new Promise(function(n){n(Promise.all(promisedData))}).then(function(n){return n[0]}).then(function(n){window.criticalSectionParams=n}).catch(function(n){var t=messagingClient.create("log",{level:"error",message:"[clientside_error][hotel] error on hotelindex.cshtml",exceptionMessage:n&&n.message||n,stackTrace:n&&n.stack||""});messagingClient.send(t);window.location.href="/ar-ae/pagenotfound.html"})
+    </script>
+
+
+
+    <link rel="preload" href="https://cdn6.agoda.net/js/assets/DYNA/commons-flightsdetails-flightsresults-home-property-search-umrah.home-7db7025dd2cc.js" as="script"><link rel="preload" href="https://cdn6.agoda.net/js/assets/DYNA/default-flightsdetails-flightsresults-home-property-search-umrah.home-43d134cfd334.js" as="script"><link rel="preload" href="https://cdn6.agoda.net/js/assets/DYNA/vendors-flightsdetails-flightsresults-home-property-search-umrah.home-e2e1953caae4.js" as="script"><link rel="preload" href="https://cdn6.agoda.net/js/assets/DYNA/vendors-flightsresults-home-property-search-1f586c8f8a2e.js" as="script"><link rel="preload" href="https://cdn6.agoda.net/js/assets/DYNA/default-home-property-search-9e78f97ce42a.js" as="script"><link rel="preload" href="https://cdn6.agoda.net/js/assets/DYNA/default-property-search-f517adcb132c.js" as="script"><link rel="preload" href="https://cdn6.agoda.net/js/assets/DYNA/vendors-property-search-8ee494b33376.js" as="script"><link rel="preload" href="https://cdn6.agoda.net/js/assets/DYNA/vendors-property-99cecb90081e.js" as="script"><link rel="preload" href="https://cdn6.agoda.net/js/assets/DYNA/property-1fb3add3d9c6.js" as="script">
+
+
+    <script>
+        agoda = {};
+            
+                (function() {
+                    var method;
+                    var noop = function() { };
+                    var methods = [
+                        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+                        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+                        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+                        'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
+                    ];
+                    var length = methods.length;
+                    var console = (window.console = window.console || { });
+
+                    while (length--)
+                    {
+                        method = methods[length];
+                        // Only stub undefined methods.
+                        if (!console[method])
+                        {
+                            console[method] = noop;
+                        }
+                    }
+
+                }());
+            
+
+    </script>
+<script>
+    var agoda = window.agoda || {};
+    agoda.userInfo = {"isNah":false};
+</script>
+
+
+
+
+<script type="text/javascript" id="RUMAgoda">
+    agoda = agoda || {};
+    agoda.rumpagetype = 'newhotel';
+</script>
+ 
+<script>
+    var agoda = agoda || {};
+
+    
+    agoda.pageConfig = {
+        pageTypeId: 7,
+        origin: 'EG',
+        cid: 1844104,
+        tag: '',
+        gclid: '',
+        aid: 130589,
+        userId: '91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+        realLanguageId: 40,
+        loginLvl: 0,
+        languageId: 40,
+        languageFlag: 'ae',
+        sessionId: 'aq34y4hodxekncbimmshoypq',
+        storefrontId: '3',
+        currencyId: 7,
+        currencyCode: 'USD',
+        htmlLanguage: 'ar-ae',
+        cttp: 4,
+        machineName: 'AM-AGWEB-4H02',
+        cultureInfoName: 'ar-AE',
+        trafficGroupId: 1,
+        prid: 0,
+        whitelabelid: 1,
+
+        
+            trafficSubGroupId: 84,
+            isLive: true,
+            isRealUser: true
+        
+
+    };
+
+    agoda.userDevice = {
+        mobileDeviceType: 'NOTMOBILE',
+        devicePlatformId: 1,
+        deviceType: 'desktop'
+    };
+
+    agoda.userAgentInfo = {
+        isPrerender:'False'
+    }
+
+    agoda.hotCityRequestConfig = {
+        endpoint:
+        '/api/ar-ae/HotCity/GetHotCities',
+    numberOfItems: 6
+    };
+
+    agoda.topDestinations = {
+        endPoint: '/api/ar-ae/Recommended/GetTopDestinations',
+    numberOfItems: 8,
+    suggestionMaxItemNumber: 6,
+    headerText: 'ما يحبه المسافرون'
+    };
+
+    
+    
+    agoda.zenithClientConfig = {
+        endpoint:
+            '/api/ar-ae/Recommended/_action_',
+        requestData: {
+            searchObjectId: 0,
+            searchType: 0,
+            searchObjectIds: [0]
+        },
+        numberOfItems: 6
+    };
+
+    agoda.menu = {
+        language: {
+            get: '/api/ar-ae/Culture/GetLanguages',
+            set: '/api/ar-ae/Main/SetSelectedLanguage'
+        },
+        currency: {
+            get: '/api/ar-ae/Main/GetCurrencyList',
+            set: '/api/ar-ae/Main/SetSelectedCurency',
+            suggestedCurrencyLabel: 'العملات المقترحة',
+            topCurrencyLabel: 'العملات الرائجة',
+            allCurrencyLabel: 'جميع العملات'
+        },
+    };
+
+    agoda.isImprovedStagedLoading = false
+    agoda.isHollowImprovedStagedLoading = false
+    agoda.isStagedPreloading = false
+    agoda.isStagedFontLoading =  false
+    agoda.disableTti = false
+    agoda.disableStagePrerender = false
+    agoda.isDictatorStageVisibility = false    
+    agoda.isRUMUntilVisuallyComplete = true;
+    agoda.isRUMEverywhere = false;
+    agoda.isVisuallyCompleteWithVariety = false;
+
+    
+
+
+        
+        agoda.reactHeader = {"menuViewModel":{"cms":{"signInText":"سجّل دخولك","signUpText":"انضم إلى أجودا","signOutText":"خروج","loginHeader":"تسجيل الدخول","settingsHeader":"الإعدادات","myBookingsText":"حجوزاتي","listYourPlaceText":"أدرج مكان إقامتك","listingYourPlaceTitleText":"أدرج مكان إقامتك على أجودا","listingYourPlaceDetailText":"اربح أموالاً لتنفقها على سفرياتك!","listingYourPlaceLinkText":"أدرج مكان إقامتك اليوم","listingYourPlaceTooltipText":" خلال الـ 24 ساعة الماضية، اطلع {0} من المسافرين على أماكن إقامة مثل إقامتك، أدرج منزلك الآن.","listingYourPlaceTooltipDismissText":"لا تُظهر هذه الرسالة مرة أخرى","myBookingsPopUpIntentHeader":"Booked before 1 Jan 2020?","myBookingsPopUpIntentText":"Please visit {0} from JTB to confirm or make changes of your booking.","myBookingsPopUpHeader":"Booked on or after December 9, 2019?","myBookingsPopUpText":"Please check your booking confirmation email. You can easily access your booking from the link inside that email.","myBookingsPopUpIntentLinkLabel":"My Page","myBookingsPopUpIntentButtonLabel":"Retrieve Booking","myBookingsPopUpButtonDividerText":"أو","myBoookigsPopUpCloseButtonLabel":"إغلاق"},"links":null,"userMenuViewModel":null,"languageMenuViewModel":{"cms":{"suggestedLanguagesText":"اللغات المقترحة","allLanguagesText":"جميع اللغات"},"languageFlag":"ae","languageTranslation":"العربية"},"currencyMenuViewModel":{"cms":{"priceViewText":"عرض السعر","perNightBasePriceText":"السعر الأساسي لليلة الواحدة","perNightWithTaxesAndFeesText":"لليلة الواحدة شامل الرسوم والضرائب","suggestedCurrenciesText":"العملات المقترحة","topCurrenciesText":"العملات الرائجة","allCurrenciesText":"جميع العملات"},"finalPriceView":1,"currency":{"id":7,"code":"USD","text":"دولار أمريكي","isTopCurrency":false,"isSuggested":false,"noDecimal":2,"display":"$"}},"downloadWechatApp":null,"followWechat":null,"cegInfo":null,"wysiwyp":{"page":"property-desktop","currentPriceView":1,"linkText":""},"todaysDealsPopup":null,"isApplyGiftcard":false,"applyGiftcardMenuText":null},"culture":"ar-ae","logoAndLinksMenu":null,"experiments":null};
+        agoda.reactHeader.culture = 'ar-ae';
+        agoda.reactHeader.menuViewModel.links = {"agodaHostnameWithLocale":"//www.agoda.com/ar-ae","myAgodaHostNameWithLocale":"https://my.agoda.com/ar-ae","customerSupportLink":"/ar-ae/info/agoda_faq.html","contactLink":"/ar-ae/info/contact.html","openSearchLink":"//www.agoda.com/ar-ae/opensearch.xml","forgetPasswordUrl":"/account/signin.html?option=reset-password","signupUrl":"/account/signin.html?option=signup","myProfileLink":"/ar-ae/account/profile.html?asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D","manageBookingsUrl":"/ar-ae/account/bookings.html?asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D","inboxUrl":"/ar-ae/account/inbox.html?asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D","myReviewsUrl":"/ar-ae/account/reviews.html?asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D","myBookingPage":"/ar-ae/account/bookings.html","myFlightsBookingPage":"/ar-ae/flights/account/bookings","myCreditCardPage":"/account/profile.html#mmb-profile-payment-section","giftCardUrl":"/ar-ae/account/giftcards.html?cid=1844104\u0026ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc","giftCardMigrationUrl":"https://my.agoda.com/ar-ae/mybookings.html?cid=1844104\u0026migration=2\u0026ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc","referAFriendUrl":"//www.agoda.com/ar-ae/account/refer-a-friend.html","aboutusAgodaLink":"/ar-ae/info/about-agoda.html","aboutusAgodaChinaLicense":"","aboutusAgodaInNewsLink":"/ar-ae/info/agoda-news.html","aboutusAgodaPrivacyLink":"/ar-ae/info/privacy.html","aboutusAgodaTermOfUseLink":"/ar-ae/info/termsofuse.html","aboutusTravelBlogLink":"//travelblog.agoda.com","aboutusMediaRoomLink":"//mediaroom.agoda.com","aboutusPressLink":"/press","aboutusWorldLink":"//www.agoda.com/ar-ae/world.html","aboutusBlogLink":"/ar-ae/blog","forYouPropertyPartnersLink":"//ycs.agoda.com/ar-ae","forYouAffiliatePartnersLink":"//partners.agoda.com/ar-ae/index.html","forYouCareersLink":"//careersatagoda.com","forYouHelpLink":"/ar-ae/info/agoda-faq.html","forYouPriusLink":"//www.agoda.com/ar-ae/pointsmax.html","copyRightVeriSignLink":"//verisign.com/","mobileAppDownloadLink":"http://agoda.onelink.me/1640755593?pid=direct\u0026c=hotel_page_menu\u0026af_dp=agoda%3A%2F%2Fhome\u0026site_id=1716632\u0026af_siteid=1716632\u0026af_sub1=mobile_web","mobileAppsAppleLink":"//app.appsflyer.com/id440676901?pid=direct\u0026c=hotel_page_footer\u0026af_siteid=1716632\u0026site_id=1716632\u0026af_sub1=desktop","mobileAppsAndroidLink":"//app.appsflyer.com/com.agoda.mobile.consumer?pid=direct\u0026c=hotel_page_footer\u0026af_siteid=1716632\u0026site_id=1716632\u0026af_sub1=desktop","mobileAppsWindowsPhoneLink":"//www.windowsphone.com/en-us/store/app/agoda/2ddd154d-1b1a-4e50-bf12-481f0c2109a8","recommendedDestinationLink":"//www.agoda.com/ar-ae/cities.html","favoriteLink":"/ar-ae/favorite.html","listYourPlaceLink":"/homes/ar-ae?cid=1828703","listYourPlaceBtnLink":"/homes/ar-ae?cid=1828701","listYourPlaceOldLink":"/homes/ar-ae?cid=1828702","agodaVipUrl":"/ar-ae/account/vip.html","faqsLink":"/ar-ae/content/faq","siteMaintenanceLink":"/ar-ae/content/maintenance","aboutusTermOfUseLink":"/ar-ae/content/terms-of-use/","aboutusPrivacyLink":"/ar-ae/content/privacy-policy/","japanicanCorporateLink":"//www.jtbcorp.jp/en/","japanicanFacebookLink":"//facebook.com/JAPANiCAN","japanicanWeiboLink":"//www.weibo.com/japanican","japanicanTwitterLink":"//twitter.com/jtbjapanican","japanicanYoutubeLink":"//youtube.com/user/JTBJAPANiCAN","travelAgencyClausesLink":"/content/yakkan","travelRequirementsLink":"/content/jyoken","rurubuCorporateLink":"//www.jtbcorp.jp/jp/","rurubuNewsReleaseLink":"//www.jtbcorp.jp/jp/press_release/index.asp?cmd=\u0026page=\u0026method_check=2\u0026keyword=%82%E9%82%E9%82%D4%83g%83%89%83x%83%8B\u0026company_kanji=\u0026=%83j%83%85%81%5B%83X%83%8A%83%8A%81%5B%83X%82%F0%8C%9F%8D%F5%82%B7%82%E9","rurubuRegisterYourPropertyLink":"//info.rurubu.travel/n_question/entry/mailform.asp","rurubuFacebookLink":"//facebook.com/rurubu.travel/","rurubuTwitterLink":"//twitter.com/RurubuTravel","ccpaLink":"/ar-ae/ccpa.html"};
+        agoda.reactHeader.verificationToken = "ZOGJy6NK2pRZfM6Q3a6ZgOJUtCcPGAsKHn43vGfuOzulLzVnw9_UblIWBGWatGZmBtAH_0uHyvV786ZUFa3NSk7Uz7k1:GvCrdaHx9OZpWqF0-xnhsSgLEHTm4L0qbzqeXEJlpWFaekHn06eHzfAWcTBBpMke4FWculuJJTApexAQvj9NbgJEiT81";
+
+        agoda.reactHeader.experiments = {
+            isOWL177: true,
+            isShouldUpdateGCBalance: false,
+            updateTitleNameWhenHover: true,
+            isReactHeaderDeals: true,
+            isFlightHomeBannerShown: false,
+            showPriceDisplay: true,
+            whitelabelThemeHOC: true,
+            isStickyHeaderForGL: false,
+            isStickyHeaderForCn: false,
+            isNewVipBranding: false,
+        };
+        agoda.featureList = {"RegulationShowExclusivePriceSetting":{}};
+        
+        
+        agoda.reactHeader.logoAndLinksMenu = {
+            homeUrl: '/ar-ae/?cid=1844104',
+            agodaLogo: 'https://cdn6.agoda.net/images/MVC/default/agoda-logo-v2.png',
+            agodaSecondaryLogoPath: 'https://cdn6.agoda.net/images/MVC/default/logo-{}.svg',
+            todaysDealsPopup: agoda.reactHeader.menuViewModel.todaysDealsPopup,
+            isThemed: true,
+            logoText: 'Agoda',
+
+            links:   [{"link":"/ar-ae/?cid=1844104","target":null,"dataSelenium":"header-hotels","dataElementName":"header-hotels-links","selected":true,"linkItems":{"text":"أماكن إقامة","icon":""},"className":"","showTag":false,"tagText":"","tagType":0},{"link":"https://flights.agoda.com/in?lc=ar\u0026cc=ae\u0026url=%2fflights\u0026mc=%7bcurrency%7d\u0026p=header","target":"_blank","dataSelenium":"header-flights","dataElementName":"header-flights-links","selected":false,"linkItems":{"text":"تذاكر سفر","icon":""},"className":"","showTag":false,"tagText":"!الجديد!","tagType":0},{"link":"/ar-ae/groundtransport","target":"_blank","dataSelenium":"header-ground-transport","dataElementName":"header-ground-transport-links","selected":false,"linkItems":{"text":"الحافلة والعبّارة والقطار","icon":""},"className":"","showTag":true,"tagText":"!الجديد!","tagType":0},{"link":"/ar-ae/?cid=1844104#homes","target":"_blank","dataSelenium":"header-homes","dataElementName":"header-homes-links","selected":false,"linkItems":{"text":"أجودا هومز","icon":"ficon ficon-18 ficon-agoda-homes"},"className":"","showTag":false,"tagText":"","tagType":0}] ,
+            
+            
+            ellipsisLinks:   [{"link":"/ar-ae/deals?cid=1844104","target":null,"dataSelenium":"header-deals","dataElementName":"header-deals-links","selected":false,"linkItems":{"text":"صفقة اليوم","icon":""},"className":"","showTag":false,"tagText":"","tagType":0},{"link":"https://www.rentalcars.com/?affiliateCode=agoda633\u0026prefcurrency={currency}\u0026preflang=ar\u0026adplat=web\u0026adcamp=1802440\u0026popularLoc=true\u0026utm_source=web\u0026utm_medium=whitelabel-linkout\u0026utm_campaign=home-header-cars-links","target":"_blank","dataSelenium":"header-rental-cars","dataElementName":"header-cars-links","selected":false,"linkItems":{"text":"استئجار السيارات","icon":""},"className":"","showTag":false,"tagText":"","tagType":0},{"link":"https://thingstodo-agoda.viator.com/?utm_source=web\u0026utm_medium=whitelabel-linkout\u0026utm_campaign=home-header-thingstodo-links\u0026SUBPUID=web\u0026PARTNERPARAM=home-header","target":"_blank","dataSelenium":"header-thingstodo","dataElementName":"header-thingstodo-links","selected":false,"linkItems":{"text":"الأنشطة المقترحة","icon":""},"className":"","showTag":false,"tagText":"","tagType":0}]         }
+        
+        
+                    
+            window.gatewayApiUrl = "//gw.agoda.com";
+            window.bookingFormUrl = "//secure.agoda.com";
+            
+
+        agoda.features = {"agodaHomes":{},"flights":{},"pointsMax":{},"accommodation":{},"agodaCash":{},"comparePrices":{},"reviews":{"isOverheardHomeEnabled":true,"propertyRatingScale":10,"propertyDefaultProvider":-1},"agodaVip":{},"currency":{"isCurrencySwitchRequired":true,"priceDisplay":true},"language":{"isLanguageSwitchRequired":true},"footerAncillaryLinks":{},"trendingDataContents":{},"branding":{"brands":["agoda","priceline","kayak","rental-cars","booking-com","open-table"]},"userManageBooking":{"isHotelEnabled":true,"isFlightEnabled":true},"userMessaging":{},"userProfile":{"isSocialEnabled":true,"isPaymentEnabled":true,"isEmailSubscriptionEnabled":true},"favorites":{},"facebookLogin":{},"stacklaWidget":{},"bestPriceGuarantee":{},"accountProviders":{"mobileNumber":true},"manageMyBookings":{"showContactProperty":true,"showQuickAnswers":true,"showAirportTransfer":true,"showExternalBookingId":false},"chinaMarket":{},"login":{"showBenefits":true},"privateSale":{},"googleMaps":{"parameters":{"channel":"agoda","client":"gme-booking"}},"groundTransport":{},"flightHotelPackages":{},"myBookingsButton":{"buttonBehavior":"link"},"showPeopleLookingForAPlaceInCity":{}};
+        agoda.isBrazeEnabled = true;
+        agoda.feSessionId = 'aq34y4hodxekncbimmshoypq';
+</script>
+    <script>
+        var whitelabel = whitelabel || {};
+            whitelabel.theme = 'theme-agoda';
+    </script>
+
+
+
+<script type="text/javascript" id="iePolyFill" >
+    !function (e, n) { "object" == typeof exports && "undefined" != typeof module ? n() : "function" == typeof define && define.amd ? define(n) : n() }(0, function () { "use strict"; function e() { } function n(e) { if (!(this instanceof n)) throw new TypeError("Promises must be constructed via new"); if ("function" != typeof e) throw new TypeError("not a function"); this._state = 0, this._handled = !1, this._value = undefined, this._deferreds = [], f(e, this) } function t(e, t) { for (; 3 === e._state;)e = e._value; 0 !== e._state ? (e._handled = !0, n._immediateFn(function () { var n = 1 === e._state ? t.onFulfilled : t.onRejected; if (null !== n) { var i; try { i = n(e._value) } catch (f) { return void r(t.promise, f) } o(t.promise, i) } else (1 === e._state ? o : r)(t.promise, e._value) })) : e._deferreds.push(t) } function o(e, t) { try { if (t === e) throw new TypeError("A promise cannot be resolved with itself."); if (t && ("object" == typeof t || "function" == typeof t)) { var o = t.then; if (t instanceof n) return e._state = 3, e._value = t, void i(e); if ("function" == typeof o) return void f(function (e, n) { return function () { e.apply(n, arguments) } }(o, t), e) } e._state = 1, e._value = t, i(e) } catch (u) { r(e, u) } } function r(e, n) { e._state = 2, e._value = n, i(e) } function i(e) { 2 === e._state && 0 === e._deferreds.length && n._immediateFn(function () { e._handled || n._unhandledRejectionFn(e._value) }); for (var o = 0, r = e._deferreds.length; r > o; o++)t(e, e._deferreds[o]); e._deferreds = null } function f(e, n) { var t = !1; try { e(function (e) { t || (t = !0, o(n, e)) }, function (e) { t || (t = !0, r(n, e)) }) } catch (i) { if (t) return; t = !0, r(n, i) } } var u = function (e) { var n = this.constructor; return this.then(function (t) { return n.resolve(e()).then(function () { return t }) }, function (t) { return n.resolve(e()).then(function () { return n.reject(t) }) }) }, c = setTimeout; n.prototype["catch"] = function (e) { return this.then(null, e) }, n.prototype.then = function (n, o) { var r = new this.constructor(e); return t(this, new function (e, n, t) { this.onFulfilled = "function" == typeof e ? e : null, this.onRejected = "function" == typeof n ? n : null, this.promise = t }(n, o, r)), r }, n.prototype["finally"] = u, n.all = function (e) { return new n(function (n, t) { function o(e, f) { try { if (f && ("object" == typeof f || "function" == typeof f)) { var u = f.then; if ("function" == typeof u) return void u.call(f, function (n) { o(e, n) }, t) } r[e] = f, 0 == --i && n(r) } catch (c) { t(c) } } if (!e || "undefined" == typeof e.length) throw new TypeError("Promise.all accepts an array"); var r = Array.prototype.slice.call(e); if (0 === r.length) return n([]); for (var i = r.length, f = 0; r.length > f; f++)o(f, r[f]) }) }, n.resolve = function (e) { return e && "object" == typeof e && e.constructor === n ? e : new n(function (n) { n(e) }) }, n.reject = function (e) { return new n(function (n, t) { t(e) }) }, n.race = function (e) { return new n(function (n, t) { for (var o = 0, r = e.length; r > o; o++)e[o].then(n, t) }) }, n._immediateFn = "function" == typeof setImmediate && function (e) { setImmediate(e) } || function (e) { c(e, 0) }, n._unhandledRejectionFn = function (e) { void 0 !== console && console && console.warn("Possible Unhandled Promise Rejection:", e) }; var l = function () { if ("undefined" != typeof self) return self; if ("undefined" != typeof window) return window; if ("undefined" != typeof global) return global; throw Error("unable to locate global object") }(); l.Promise ? l.Promise.prototype["finally"] || (l.Promise.prototype["finally"] = u) : l.Promise = n });
+</script>
+
+
+
+
+<script>
+
+</script>
+
+
+
+    <style data-selenium="critical-css">
+        article,header,section{display:block}*,:after,:before{box-sizing:border-box}html{font-size:62.5%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-font-smoothing:antialiased}body{height:100%;padding:0;margin:0;font-size:13px;font-family:mallory,"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.42857;letter-spacing:0;color:#333}ul{-webkit-padding-start:0;-webkit-margin-before:0;-moz-padding-start:0;padding:0;list-style:none;outline:0}dl,ul{margin-top:0}hr{margin-top:18px;margin-bottom:18px;border-top:1px solid #eee;box-sizing:content-box;height:0}hr,img{border:0}.ficon,img{vertical-align:middle}.hidden{display:none!important;visibility:hidden!important}.ficon{font-family:"icons";display:inline-block;line-height:1;font-weight:400;font-style:normal;speak:none;text-decoration:inherit;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-bottom:3px}.flag{background-image:url(https://cdn6.agoda.net/images/desktop/bg-sprite-flags.png);background-repeat-x:no-repeat;background-repeat-y:no-repeat;display:inline-block;line-height:0;font-size:0;speak:none}.flag-18-us{background-position:-240px -460px}.flag-18{width:24px;height:18px;margin-right:6px;vertical-align:text-top}.ficon-20{font-size:20px}.ficon,button,select{text-transform:none}.ficon,img{vertical-align:middle}.c-btn{height:40px;padding:0 40px;border:1px solid transparent;border-radius:3px;font-size:14px;font-weight:700;line-height:38px;vertical-align:middle;outline:0;white-space:nowrap;user-select:none;text-align:center;text-decoration:none}.c-btn,.c-checkbox,.c-icon{display:inline-block}button,input{letter-spacing:inherit}button,input,select{font-family:inherit;font-size:inherit;line-height:inherit}button,html input[type=button],input[type=submit]{-webkit-appearance:button}button{overflow:visible}button,input,select{color:inherit;font:inherit;margin:0}.ficon,button,select{text-transform:none}.c-btn--outline-primary{border-color:#5392f9;background-color:#fff;color:#5392f9}.modal{display:none}html[dir=ltr] [class*="l-col-"]{float:left}html[dir=rtl] [class*="l-col-"]{float:right}h1,h2,h3,h4,h5,h6{margin-bottom:9px}
+        i[class*=bg-user-icon-]{position:relative;display:block;font-style:normal;color:#fff;border-radius:50px;background-size:auto;background-position:0 0}i[class*=bg-user-icon-] .ficon,i[class*=bg-user-icon-] span{display:block;text-transform:uppercase;text-align:center}.bg-user-icon-0{background-color:#8c69ca}.bg-user-icon{background-image:none}.bg-user-icon-1{background-color:#ffa726}.bg-user-icon-2{background-color:#e44746}.bg-user-icon-3{background-color:#488bf8}.bg-user-icon-4{background-color:#85c150}.bg-user-icon-5{background-color:#c2c2c1}.ficon-ribbon-card:before{content:""}.ficon-desktop-ic-black-down:before{content:""}.ficon-gift-souvenir-shop:before{content:""}.ficon-hamburger-menu:before{content:""}.ficon-topic-user{padding-top:6px}.header-menu{margin:0}.header-menu::before{content:'';display:inline-block;width:1px;height:100%}.header-menu--master{height:60px;overflow:hidden}.header-menu--master.header-menu--ascending-order{min-width:100px}html[dir=ltr] .header-menu--master.header-menu--ascending-order{text-align:right}html[dir=rtl] .header-menu--master.header-menu--ascending-order{text-align:left}.header-menu--master .header-menu__group{vertical-align:top}.header-menu--master .header-menu__item{padding:0 10px;line-height:60px}.header-menu__group,.header-menu__item,.header-menu__slave{display:inline-block}.header-menu__slave{vertical-align:top;-webkit-box-flex:0;-webkit-flex:none;-ms-flex:none;flex:none;cursor:pointer}.header-menu__slave>*{display:inline-block}.header-menu--slave{width:auto;max-width:350px;position:absolute;min-width:300px;box-shadow:0 4px 10px 0 rgba(0,0,0,.12);padding:0;background:#fff;border:1px solid #ccc;top:64px;z-index:1000}html[dir=ltr] .header-menu--slave{right:5px}html[dir=rtl] .header-menu--slave{left:5px}.header-menu__slave:before{content:"";display:inline-block;border-left:1px solid #eee;height:40px;vertical-align:top;margin:10px}.header-menu__slave--hide-separator:before{border-color:transparent}.language-trigger{display:inline-block}.header-menu--master .language-trigger__icon.flag-18{margin:0}.header-menu--master .language-trigger__text,.header-menu--master .header-menu__subgroup-container--lc-group>.header-menu__group-header,.header-menu--master .currency-trigger__secondary-text,.header-menu--master .header-menu__subgroup-container--login-group .header-menu__group-header{display:none}.currency-trigger{display:inline-block}.header-menu--master .header-menu__subgroup-container--login-group .signup-button{padding:0 7px}.header-menu--master .header-menu__subgroup-container--login-group .signin-button{padding:0}.LogoAndLinksMenu__LogoContainer{display:inline-block;position:relative;line-height:60px}.LogoAndLinksMenu__AgodaLink{display:inline-block}.LogoAndLinksMenu__AgodaLogo{width:89px;height:37px}.LogoAndLinksMenu__AgodaSecondaryLogo{display:none}.theme-japanican .LogoAndLinksMenu__Logo,.theme-japanican .LogoAndLinksMenu__AgodaLogo{width:210px;height:23px}html[lang=cn] .theme-japanican .LogoAndLinksMenu__Logo,html[lang=cn] .theme-japanican .LogoAndLinksMenu__AgodaLogo{width:89px;height:36px}html[lang=tw] .theme-japanican .LogoAndLinksMenu__Logo,html[lang=tw] .theme-japanican .LogoAndLinksMenu__AgodaLogo{width:107px;height:36px}html[lang=kr] .theme-japanican .LogoAndLinksMenu__Logo,html[lang=kr] .theme-japanican .LogoAndLinksMenu__AgodaLogo{width:111px;height:36px}.theme-rurubu .LogoAndLinksMenu__Logo,.theme-rurubu .LogoAndLinksMenu__AgodaLogo{width:190px;height:36px}.LinkContainer{display:inline-block;position:relative;margin-bottom:0}html[dir=ltr] .LinkContainer{margin-left:30px}html[dir=rtl] .LinkContainer{margin-right:30px}.LinkContainer::before{position:absolute;bottom:10px;top:10px;border-right:1px solid #eee;content:" "}html[dir=ltr] .LinkContainer::before{left:-10px}html[dir=rtl] .LinkContainer::before{right:-10px}.LinkContainer__LinkWrapper{display:inline-block;cursor:pointer}.LinkContainer__Link{display:inline-block;padding:0 10px;font-weight:700;line-height:60px;min-width:44px}.LinkContainer__Link:link,.LinkContainer__Link:visited,.LinkContainer__Link:focus{color:rgba(0,0,0,.75);text-decoration:none}.LinkContainer__Link:hover{color:#488bf8;text-decoration:none}.LinkContainer__Highlight{position:absolute;margin:0;bottom:0;border-bottom:4px solid #488bf8;z-index:-1}.signin-button,.signup-button,.signout-button,.my-bookings-button{text-transform:uppercase;vertical-align:unset}.signin-button.c-btn--outline-primary:hover,.signout-button.c-btn--outline-primary:hover{color:#fff}.signin-button.c-btn--transparent,.signup-button.c-btn--transparent,.signout-button.c-btn--transparent,.my-bookings-button.c-btn--transparent{border:none;background:transparent;color:#488bf8}.header-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:0 16px}.header-container__item--left{-webkit-box-flex:0;-webkit-flex:none;-ms-flex:none;flex:none;display:inline-block}.header-container__item--right{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;position:relative}.header-container__space{-webkit-box-flex:0;-webkit-flex:none;-ms-flex:none;flex:none;width:130px}.header-menu--master.header-menu--reverse-order>li:not(:first-child):after{content:"";display:inline-block;border-left:1px solid #eee;height:40px;vertical-align:top;margin:10px}.header-menu--master.header-menu--reverse-order>li:not(:first-child)>.header-menu__subgroup-container{display:inline-block}html[dir=ltr] .header-menu--master.header-menu--reverse-order:before,html[dir=ltr] .header-menu--master.header-menu--reverse-order>.header-menu__group,html[dir=ltr] .header-menu--master.header-menu--reverse-order>.header-menu__item{float:right}html[dir=rtl] .header-menu--master.header-menu--reverse-order:before,html[dir=rtl] .header-menu--master.header-menu--reverse-order>.header-menu__group,html[dir=rtl] .header-menu--master.header-menu--reverse-order>.header-menu__item{float:left}.InsiderDeal{position:relative;font-size:11px;color:#fff}.InsiderDeal__Content{border-radius:2px;background-color:#4b4f56;padding:4px 8px;height:24px;line-height:14px}.InsiderDeal__Content--animation{position:absolute;top:-4px;white-space:nowrap;overflow:hidden}html[dir=ltr] .InsiderDeal__Content--animation{right:0}html[dir=rtl] .InsiderDeal__Content--animation{left:0}.InsiderDeal__Header{font-weight:700;text-transform:uppercase;vertical-align:middle}html[dir=ltr] .InsiderDeal__Icon{margin-right:4px}html[dir=rtl] .InsiderDeal__Icon{margin-left:4px}.InsiderDeal__Description{display:inline-block;vertical-align:middle;width:0;opacity:0}html[dir=ltr] .InsiderDeal__Description{padding-left:2px}html[dir=rtl] .InsiderDeal__Description{padding-right:2px}html[dir=ltr] .InsiderDeal:after{right:-5px}html[dir=ltr] .InsiderDeal:after,html[dir=rtl] .InsiderDeal:after{content:"";display:block;position:absolute;width:10px;height:10px;background-color:#4b4f56;border:1px solid #4b4f56;-webkit-transform:rotate(45deg);transform:rotate(45deg);-ms-transform:rotate(45deg);top:3px}html[dir=rtl] .InsiderDeal:after{left:-5px}html[dir=ltr] .header-menu--slave .InsiderDeal__Container.header-menu__group:before{right:10px}html[dir=ltr] .header-menu--slave .InsiderDeal__Container.header-menu__group:before,html[dir=rtl] .header-menu--slave .InsiderDeal__Container.header-menu__group:before{content:"";width:10px;height:10px;background-color:#4b4f56;border-left:1px solid #4b4f56;border-top:1px solid #4b4f56;display:block;-webkit-transform:rotate(45deg);transform:rotate(45deg);position:absolute;top:-6px}html[dir=rtl] .header-menu--slave .InsiderDeal__Container.header-menu__group:before{left:10px}.header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .header-menu__item{padding:0 16px}.header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .header-menu__item:first-child{padding:0 0 10px}.header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .header-menu__item:last-child{padding-bottom:12px}.header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .InsiderDeal{top:-1px}html[dir=ltr] .header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .InsiderDeal{left:-1px}html[dir=rtl] .header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .InsiderDeal{right:-1px}.header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .InsiderDeal__Content{border-radius:0}.header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .InsiderDeal__Content--basement{display:none}.header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .InsiderDeal__Content--animation{cursor:default;width:calc(100% + 2px);position:static;display:block;white-space:normal;height:auto;padding:12px}.header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .InsiderDeal__Description{width:auto;opacity:1}.header-menu--slave .header-menu__subgroup-container--login-group.InsiderDeal__Container .InsiderDeal:after{content:none}.LinkContainer__AgodaHomesBadge{margin:0 10px;font-family:Arial Rounded MT,Arial;text-transform:lowercase;font-weight:700}.LinkContainer__AgodaHomesBadge:before{content:"";font-family:"icons";display:inline-block}html[dir=ltr] .LinkContainer__AgodaHomesBadge:before{padding-right:5px}html[dir=rtl] .LinkContainer__AgodaHomesBadge:before{padding-left:5px}.LinkContainer__AgodaHomesBadge:focus,.LinkContainer__AgodaHomesBadge:link,.LinkContainer__AgodaHomesBadge:visited{color:rgba(0,0,0,.75);text-decoration:none}.LinkContainer__AgodaHomesBadge:hover{color:#488bf8}.header-dropdown>*{display:inline-block;vertical-align:middle;margin:0 4px;line-height:60px}.header-dropdown__user-icon-container{position:relative}.header-container__item--logged-in .header-dropdown__user-icon-container{min-width:50px}.header-dropdown__user-icon-container .AgodaVIPBadge--header{position:absolute}.header-dropdown__fb-image{width:40px;height:40px;border-radius:20px}.header-dropdown__user-icon{font-size:1.7rem;font-weight:700;font-style:normal;width:30px;height:30px;line-height:30px}[class*=bg-user-icon-].header-dropdown__user-icon{display:inline-block}html[dir=ltr] .header-dropdown__user-icon--noti{right:-5px}html[dir=rtl] .header-dropdown__user-icon--noti{left:-5px}i.header-dropdown__user-icon--noti{float:none;line-height:30px;margin:initial}i.header-dropdown__user-icon--noti span{padding:initial}.MIN-12866 i.header-dropdown__user-icon--noti{float:none;margin:0}.MIN-12866 i.header-dropdown__user-icon--noti span{padding:0}.header-dropdown__user-icon--fb{position:relative;width:40px;height:40px;display:inline-block}.header-dropdown__icon{width:14px}.header-dropdown__notification-badge{display:inline-block;min-width:15px;padding:1px 3px;position:relative;top:-15px;color:#fff;text-align:center;border:1px solid #fff;line-height:11px;font-size:10px;background-color:#e44746;border-radius:10px}html[dir=ltr] .header-dropdown__notification-badge{right:5px}html[dir=rtl] .header-dropdown__notification-badge{left:5px}.header-dropdown__giftcard{color:#704dff}.header-dropdown__giftcard i{margin:0 4px}.header-dropdown__hamburger{font-weight:700;padding:0 10px;line-height:60px;margin-bottom:0}
+        .Placeholder .SearchBoxContainer--compact .IconBox{display:inline-block;vertical-align:top;position:relative;margin:0 5px 0 0;background-color:#fff;cursor:pointer;padding:10px 5px;box-shadow:0 4px 10px 0 rgba(0,0,0,.07);border-radius:6px}.Placeholder .SearchBoxContainer--compact .IconBox__child{display:inline-block;vertical-align:middle;width:calc(100% - 60px)}.Placeholder .SearchBoxContainer--compact .IconBox__icon{display:inline-block;vertical-align:middle;padding:13px;margin-bottom:0}.Placeholder .SearchBoxContainer--compact .IconBox__wrapper{position:relative}.Placeholder .SearchBoxContainer--compact .IconBox--checkIn{margin-right:0;border-radius:6px 0 0 6px}.Placeholder .SearchBoxContainer--compact .IconBox--checkOut{border-radius:0 6px 6px 0}.Placeholder .SearchBoxContainer--compact .Searchbox{padding:13px 0;background-color:rgba(255,255,255,.8);width:100%;max-height:92px}.Placeholder .SearchBoxContainer--compact .Searchbox .IconBox--autocomplete .IconBox__child,.Searchbox .IconBox--checkIn .IconBox__child,.Searchbox .IconBox--checkOut .IconBox__child,.Searchbox .IconBox--occupancy .IconBox__child{vertical-align:middle}.Placeholder .SearchBoxContainer--compact .Searchbox__searchButton{position:relative;overflow:hidden;width:130px;height:66px;border-radius:3px;background-color:#488bf8;font-size:14px;color:#fff;text-transform:uppercase;box-shadow:0 4px 10px 3px rgba(0,0,0,.2);border:none;cursor:pointer;padding:10px 0}@media screen and (max-width:1100px){.Placeholder .SearchBoxContainer--compact .Searchbox__searchButton{width:100px;padding:10px 0}}.Placeholder .SearchBoxContainer--compact .Searchbox__searchButton__text{position:relative;font-weight:400}.Placeholder .SearchBoxContainer--compact .Searchbox__wrapper{position:relative}.Placeholder .SearchBoxContainer--compact .Searchbox--horizontal .IconBox--autocomplete{width:361px}@media screen and (max-width:1100px){.Placeholder .SearchBoxContainer--compact .Searchbox--horizontal .IconBox--autocomplete{width:270px}}.Placeholder .SearchBoxContainer--compact .Searchbox--horizontal .IconBox--checkIn,.Searchbox--horizontal .IconBox--checkOut{width:177px}.Placeholder .SearchBoxContainer--compact .Searchbox--horizontal .IconBox--occupancy{width:240px}@media screen and (max-width:1100px){.Placeholder .SearchBoxContainer--compact .Searchbox--horizontal .IconBox--occupancy{width:200px}}.Placeholder .SearchBoxContainer--compact{min-height:70px}.Placeholder .SearchBoxContainer--compact:not(.SearchBoxContainer--sticky){width:100%}html[dir=ltr] .Placeholder .SearchBoxContainer--compact .IconBox--autocomplete{margin-left:0}html[dir=rtl] .Placeholder .SearchBoxContainer--compact .IconBox--autocomplete{margin:0 0 0 5px}.Placeholder .SearchBoxContainer--compact .IconBox--autocomplete,.Placeholder .SearchBoxContainer--compact .IconBox--checkIn,.Placeholder .SearchBoxContainer--compact .IconBox--checkOut,.Placeholder .SearchBoxContainer--compact .IconBox--occupancy{height:48px;padding:0 5px}html[dir=rtl] .Placeholder .SearchBoxContainer--compact .IconBox--occupancy{margin-left:5px}.Placeholder .SearchBoxContainer--compact .IconBox--checkIn,.Placeholder .SearchBoxContainer--compact .IconBox--checkOut{width:177px}.Placeholder .SearchBoxContainer--compact .IconBox--checkIn{border-right:1px solid #999}html[dir=rtl] .Placeholder .SearchBoxContainer--compact .IconBox--checkOut{margin:0;border-right:1px solid #999;border-radius:6px 0 0 6px}html[dir=rtl] .Placeholder .SearchBoxContainer--compact .IconBox--checkIn{border-radius:0 6px 6px 0}.Placeholder .SearchBoxContainer--compact .SearchBoxTextDescription--checkIn,.Placeholder .SearchBoxContainer--compact .SearchBoxTextDescription--checkOut{width:115px}.Placeholder .SearchBoxContainer--compact .Searchbox{max-height:70px;padding:11px 0;top:0;left:0;background-color:#20274d}.Placeholder .SearchBoxContainer--compact .Searchbox__searchButton{height:48px}.Placeholder .SearchBoxContainer--compact .Searchbox__wrapper{margin:0 auto;width:1100px}@media screen and (max-width:1100px){.Placeholder .SearchBoxContainer--compact .Searchbox__wrapper{width:940px}}
+    </style>
+
+
+
+<style type="text/css">
+    body{overflow-y:scroll}.NavBar--sticky.NavBar--hide{display:none}@media screen and (min-width:1100px){.container-agoda{width:1100px;padding:0;margin:0 auto}}@media(max-width:1024px){.container-agoda{width:940px;padding:0;margin:0 auto}}.Breadcrumb-placeholder{height:40px;font-size:12px}.BreadCrumb-hotel_item{display:inline-block}.breadcrumbRegionName__h1{font-size:12px;font-weight:400}.Breadcrumb-PlaceHolder{border-bottom:1px solid #eee}.MosaicReloaded__PlaceHolder .MosaicReloaded{height:360px;position:relative;margin-top:16px}.MosaicReloaded__PlaceHolder .MosaicReloaded__SqOne{position:absolute;height:360px;width:calc(772px - 8px);top:0}html[dir=ltr] .MosaicReloaded__PlaceHolder .MosaicReloaded__SqOne{left:0;border-top-left-radius:4px;border-bottom-left-radius:4px}html[dir=rtl] .MosaicReloaded__PlaceHolder .MosaicReloaded__SqOne{right:0;border-top-right-radius:4px;border-bottom-right-radius:4px}.MosaicReloaded__PlaceHolder .MosaicReloaded__SqTwo{position:absolute;height:226px;width:332px;top:0}html[dir=ltr] .MosaicReloaded__PlaceHolder .MosaicReloaded__SqTwo{right:0;border-top-right-radius:4px}html[dir=rtl] .MosaicReloaded__PlaceHolder .MosaicReloaded__SqTwo{left:0;border-top-left-radius:4px}.MosaicReloaded__PlaceHolder .MosaicReloaded__SqThree{position:absolute;height:130px;width:164px;bottom:0}html[dir=ltr] .MosaicReloaded__PlaceHolder .MosaicReloaded__SqThree{right:168px}html[dir=rtl] .MosaicReloaded__PlaceHolder .MosaicReloaded__SqThree{left:168px}.MosaicReloaded__PlaceHolder .MosaicReloaded__SqFour{position:absolute;height:130px;width:164px;bottom:0}html[dir=ltr] .MosaicReloaded__PlaceHolder .MosaicReloaded__SqFour{right:0;border-bottom-right-radius:4px}html[dir=rtl] .MosaicReloaded__PlaceHolder .MosaicReloaded__SqFour{left:0;border-bottom-left-radius:4px}.MosaicReloaded__PlaceHolder .MosaicReloaded__SqOne,.MosaicReloaded__PlaceHolder .MosaicReloaded__SqTwo,.MosaicReloaded__PlaceHolder .MosaicReloaded__SqThree,.MosaicReloaded__PlaceHolder .MosaicReloaded__SqFour,.MosaicReloaded__PlaceHolder .ReviewPlate,.MosaicReloaded__PlaceHolder .HeaderPlate,.MosaicReloaded__PlaceHolder .ReviewsCombo,.MosaicReloaded__PlaceHolder .ReviewsSnippet{-webkit-animation:mosaic-loading 2.2s cubic-bezier(.85,.15,.15,.85) infinite;-moz-animation:mosaic-loading 2.2s cubic-bezier(.85,.15,.15,.85) infinite;-o-animation:mosaic-loading 2.2s cubic-bezier(.85,.15,.15,.85) infinite;animation:mosaic-loading 2.2s cubic-bezier(.85,.15,.15,.85) infinite;border:none;background-color:#f6f6f6}.MosaicReloaded__PlaceHolder .MosaicReloaded__SqTwo{-webkit-animation-delay:.6s;-moz-animation-delay:.6s;-o-animation-delay:.6s;animation-delay:.6s}.MosaicReloaded__PlaceHolder .MosaicReloaded__SqThree{-webkit-animation-delay:1.2s;-moz-animation-delay:1.2s;-o-animation-delay:1.2s;animation-delay:1.2s}.MosaicReloaded__PlaceHolder .MosaicReloaded__SqFour{-webkit-animation-delay:.4s;-moz-animation-delay:.4s;-o-animation-delay:.4s;animation-delay:.4s}.MosaicReloaded__PlaceHolder .Miscellaneous__Container{display:table;margin-top:16px;width:100%}.MosaicReloaded__PlaceHolder .NorthstarSideContent{width:324px}html[dir=ltr] .MosaicReloaded__PlaceHolder .NorthstarSideContent{float:left;padding-right:16px}html[dir=rtl] .MosaicReloaded__PlaceHolder .NorthstarSideContent{float:right;padding-left:16px}.MosaicReloaded__PlaceHolder .NorthstarMainContent{width:776px}html[dir=ltr] .MosaicReloaded__PlaceHolder .NorthstarMainContent{float:right}html[dir=rtl] .MosaicReloaded__PlaceHolder .NorthstarMainContent{float:left}.MosaicReloaded__PlaceHolder .NorthstarCard{border-radius:4px}.MosaicReloaded__PlaceHolder .ReviewPlate{height:404px;-webkit-animation-delay:1.2s;-moz-animation-delay:1.2s;-o-animation-delay:1.2s;animation-delay:1.2s}.MosaicReloaded__PlaceHolder .HeaderPlate{height:98px;-webkit-animation-delay:1.2s;-moz-animation-delay:1.2s;-o-animation-delay:1.2s;animation-delay:1.2s}.MosaicReloaded__PlaceHolder .ReviewsCombo{margin-top:10px;height:195px;-webkit-animation-delay:.2s;-moz-animation-delay:.2s;-o-animation-delay:.2s;animation-delay:.2s}.MosaicReloaded__PlaceHolder .ReviewsSnippet{margin-top:10px;height:90px;-webkit-animation-delay:1.72s;-moz-animation-delay:1.72s;-o-animation-delay:1.72s;animation-delay:1.72s}@media(max-width:1024px){.MosaicReloaded__PlaceHolder .MosaicReloaded{width:940px}.MosaicReloaded__PlaceHolder .MosaicReloaded__SqOne{width:calc(612px - 8px)}.MosaicReloaded__PlaceHolder .NorthstarMainContent{width:calc(100% - 324px)}}@-webkit-keyframes mosaic-loading{0%{background-color:#f6f6f6}50%{background-color:#eee}100%{background-color:#f6f6f6}}@-moz-keyframes mosaic-loading{0%{background-color:#f6f6f6}50%{background-color:#eee}100%{background-color:#f6f6f6}}@-o-keyframes mosaic-loading{0%{background-color:#f6f6f6;}50%{background-color:#eee;}100%{background-color:#f6f6f6;}}@keyframes mosaic-loading{0%{background-color:#f6f6f6}50%{background-color:#eee}100%{background-color:#f6f6f6}}
+</style>
+
+
+
+
+
+
+<script type="text/javascript">
+    (function(n){"use strict";var t=function(t,i,r){function l(n){if(f.body)return n();setTimeout(function(){l(n)})}function c(){u.addEventListener&&u.removeEventListener("load",c);u.media=r||"all"}var f=n.document,u=f.createElement("link"),e,s,h,o;return i?e=i:(s=(f.body||f.getElementsByTagName("head")[0]).childNodes,e=s[s.length-1]),h=f.styleSheets,u.rel="stylesheet",u.href=t,u.media="only x",l(function(){e.parentNode.insertBefore(u,i?e:e.nextSibling)}),o=function(n){for(var i=u.href,t=h.length;t--;)if(h[t].href===i)return n();setTimeout(function(){o(n)})},u.addEventListener&&u.addEventListener("load",c),u.onloadcssdefined=o,o(c),u};typeof exports!="undefined"?exports.loadCSS=t:n.loadCSS=t})(typeof global!="undefined"?global:this),function(n){var t,i;n.loadCSS&&(t=loadCSS.relpreload={},t.support=function(){try{return n.document.createElement("link").relList.supports("preload")}catch(t){return!1}},t.poly=function(){for(var r=n.document.getElementsByTagName("link"),t,i=0;i<r.length;i++)t=r[i],t.rel==="preload"&&t.getAttribute("as")==="style"&&(n.loadCSS(t.href,t),t.rel=null)},t.support()||(t.poly(),i=n.setInterval(t.poly,300),n.addEventListener&&n.addEventListener("load",function(){t.poly();n.clearInterval(i)}),n.attachEvent&&n.attachEvent("onload",function(){n.clearInterval(i)})))}(this)
+</script>
+
+<script></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+
+
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+<link rel="manifest" href="/manifest.json" />
+
+
+
+<link rel="preconnect" href="https://cdn6.agoda.net" crossorigin><link rel="preconnect" href="https://pix6.agoda.net" crossorigin><link rel="preconnect" href="https://secure.agoda.com" >
+
+
+    <title>&lrm;</title>
+        <meta name="description" content="Agoda.com: Smarter Hotel Booking" data-react-helmet=true />
+
+
+    <link rel="search" type="application/opensearchdescription+xml" href="//www.agoda.com/ar-ae/opensearch.xml" title="Agoda.com: حجز فنادق أذكى" />
+
+
+<script type="text/javascript" id="messageLogging">
+
+    (function(n){"use strict";var t="exports";typeof define=="function"&&define["amd"]?define(function(){return n()}):typeof module=="function"&&module[t]?module[t]=n():n()})(function(){"use strict";function c(n){if(this===null||this===undefined)throw new u("Array is null or undefined");if(typeof n!="function")throw new u(n+" is not a function");return{}.valueOf.call(this)}function f(n){for(var i={}.valueOf.call(n),r=i.length>>>0,t=r-1,u=0,f=new Array(r);t>-1;)t in i&&(f[u]=i[t]),t-=1,u+=1;return f}function t(i,e,o){var l,a,y,h,v;if(i=i||s,y=c.call(this,i),a=y.length>>>0,l=0,o===n.FILTER&&(h=[]),o===n.INDEXOF){if(h=-1,e.fromIndex>a)return h;l=Math.max(e.fromIndex>=0?e.fromIndex:a-Math.abs(e.fromIndex),0)}if(o===n.LASTINDEXOF){if(e.fromIndex!==0)if(e.fromIndex>0)e.fromIndex<a&&(a=e.fromIndex);else if(a-=Math.abs(e.fromIndex),a<1)return-1;return e.fromIndex>0?t.call(this.slice(0,a),null,{fromIndex:0,search:e.search},n.LASTINDEXOF):(h=t.call(f(this.slice(0,a)),null,e,n.INDEXOF),h!==-1&&(h=a-1-h),h)}if(o===n.MAP&&(h=new Array(a)),o===n.REDUCE||o===n.REDUCERIGHT){if(a===0&&!r.call(e,"initialValue"))throw new u("Reduce of empty array with no initial value");if(o===n.REDUCERIGHT)return t.call(f(this.slice(0,a)),i,{initialValue:e.initialValue},n.REDUCE);h=e.initialValue}while(l<a){if(l in y){if(v=y[l],o===n.EVERY&&!i.call(e,v,l,y))return!1;if(o===n.FILTER&&i.call(e,v,l,y)&&h.push(v),o===n.FOREACH&&i.call(e,v,l,y),o===n.INDEXOF&&e.search===v)return l;if(o===n.MAP&&(h[l]=i.call(e,v,l,y)),o===n.REDUCE&&(h=h===undefined&&v!==undefined?v:i(h,v,l,y)),o===n.SOME&&i.call(e,v,l,y))return!0}l+=1}return h!==undefined?h:o!==n.SOME}function l(i,r){return t.call(this,i,r,n.EVERY)}function a(i,r){return t.call(this,i,r,n.FILTER)}function e(i,r){t.call(this,i,r,n.FOREACH)}function v(i,r){return t.call(this,null,{fromIndex:r|0,search:i},n.INDEXOF)}function y(i,r){return t.call(this,null,{fromIndex:r|0,search:i},n.LASTINDEXOF)}function p(i,r){return t.call(this,i,r,n.MAP)}function w(i,r){return t.call(this,i,r!==undefined?{initialValue:r}:{},n.REDUCE)}function b(i,r){return t.call(this,i,r!==undefined?{initialValue:r}:{},n.REDUCERIGHT)}function k(i,r){return t.call(this,i,r,n.SOME)}function d(n){return h.call(n)==="[object Array]"}function g(n){r.call(this,n)||(this[n]=i[n])}var i,n={EVERY:"every",FILTER:"filter",FOREACH:"forEach",INDEXOF:"indexOf",LASTINDEXOF:"lastIndexOf",MAP:"map",REDUCE:"reduce",REDUCERIGHT:"reduceRight",SOME:"some"},r=Object.prototype.hasOwnProperty,o=Object.keys||function(n){var i=[],t;for(t in n)r.call(n,t)&&i.push(t);return i},s=function(){return!0},h=Object.prototype.toString,u=TypeError;i={every:l,filter:a,forEach:e,indexOf:v,lastIndexOf:y,map:p,reduce:w,reduceRight:b,some:k};e.call(o(i),g,Array.prototype);Array.isArray===undefined&&(Array.isArray=d)});
+
+
+    (function (f) { if (typeof exports === "object" && typeof module !== "undefined") { module.exports = f() } else if (typeof define === "function" && define.amd) { define([], f) } else { var g; if (typeof window !== "undefined") { g = window } else if (typeof global !== "undefined") { g = global } else if (typeof self !== "undefined") { g = self } else { g = this } g.store = f() } })(function () { var define, module, exports; return (function e(t, n, r) { function s(o, u) { if (!n[o]) { if (!t[o]) { var a = typeof require == "function" && require; if (!u && a) return a(o, !0); if (i) return i(o, !0); var f = new Error("Cannot find module '" + o + "'"); throw f.code = "MODULE_NOT_FOUND", f } var l = n[o] = { exports: {} }; t[o][0].call(l.exports, function (e) { var n = t[o][1][e]; return s(n ? n : e) }, l, l.exports, e, t, n, r) } return n[o].exports } var i = typeof require == "function" && require; for (var o = 0; o < r.length; o++) s(r[o]); return s })({1: [function (require, module, exports) {(function (global) {"use strict"; module.exports = function () { function e() { try { return o in n && n[o] } catch (e) { return !1 } } var t, r = {}, n = "undefined" != typeof window ? window : global, i = n.document, o = "localStorage", a = "script"; if (r.disabled = !1, r.version = "1.3.20", r.set = function (e, t) { }, r.get = function (e, t) { }, r.has = function (e) { return void 0 !== r.get(e) }, r.remove = function (e) { }, r.clear = function () { }, r.transact = function (e, t, n) { null == n && (n = t, t = null), null == t && (t = {}); var i = r.get(e, t); n(i), r.set(e, i) }, r.getAll = function () { }, r.forEach = function () { }, r.serialize = function (e) { return JSON.stringify(e) }, r.deserialize = function (e) { if ("string" == typeof e) try { return JSON.parse(e) } catch (t) { return e || void 0 } }, e()) t = n[o], r.set = function (e, n) { return void 0 === n ? r.remove(e) : (t.setItem(e, r.serialize(n)), n) }, r.get = function (e, n) { var i = r.deserialize(t.getItem(e)); return void 0 === i ? n : i }, r.remove = function (e) { t.removeItem(e) }, r.clear = function () { t.clear() }, r.getAll = function () { var e = {}; return r.forEach(function (t, r) { e[t] = r }), e }, r.forEach = function (e) { for (var n = 0; n < t.length; n++) { var i = t.key(n); e(i, r.get(i)) } }; else if (i && i.documentElement.addBehavior) { var c, u; try { u = new ActiveXObject("htmlfile"), u.open(), u.write("<" + a + ">document.w=window</" + a + '><iframe src="/favicon.ico"></iframe>'), u.close(), c = u.w.frames[0].document, t = c.createElement("div") } catch (l) { t = i.createElement("div"), c = i.body } var f = function (e) { return function () { var n = Array.prototype.slice.call(arguments, 0); n.unshift(t), c.appendChild(t), t.addBehavior("#default#userData"), t.load(o); var i = e.apply(r, n); return c.removeChild(t), i } }, d = new RegExp("[!\"#$%&'()*+,/\\\\:;<=>?@[\\]^`{|}~]", "g"), s = function (e) { return e.replace(/^d/, "___$&").replace(d, "___") }; r.set = f(function (e, t, n) { return t = s(t), void 0 === n ? r.remove(t) : (e.setAttribute(t, r.serialize(n)), e.save(o), n) }), r.get = f(function (e, t, n) { t = s(t); var i = r.deserialize(e.getAttribute(t)); return void 0 === i ? n : i }), r.remove = f(function (e, t) { t = s(t), e.removeAttribute(t), e.save(o) }), r.clear = f(function (e) { var t = e.XMLDocument.documentElement.attributes; e.load(o); for (var r = t.length - 1; r >= 0; r--) e.removeAttribute(t[r].name); e.save(o) }), r.getAll = function (e) { var t = {}; return r.forEach(function (e, r) { t[e] = r }), t }, r.forEach = f(function (e, t) { for (var n, i = e.XMLDocument.documentElement.attributes, o = 0; n = i[o]; ++o) t(n.name, r.deserialize(e.getAttribute(n.name))) }) } try { var v = "__storejs__"; r.set(v, v), r.get(v) != v && (r.disabled = !0), r.remove(v) } catch (l) { r.disabled = !0 } return r.enabled = !r.disabled, r }();}).call(this, typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})}, {}]}, {}, [1])(1)});
+
+    var messageLog={errorQFirstWait:4e3,errorQTimeout:3e3,errorQTries:15,errorQUrl:"/api/rum/message",queue:[],errorQIsActive:!1,errorQCount:0,init:function(){if(!store.disabled&&Object.keys(this.getQueue()).length>0){var n=this;setTimeout(function(){n.record()},this.errorQFirstWait)}},enqueue:function(n){if(!store.disabled&&n.url!=this.errorQUrl){n.page||(n.page="newhotel");this.errorQCount=0;try{store.get("errorQueue")?store.transact("errorQueue",function(t){t.push(n)}):store.set("errorQueue",[n])}catch(i){return}if(!this.errorQIsActive){this.errorQIsActive=!0;var t=this;setTimeout(function(){t.record()},this.errorQFirstWait)}}},push:function(n,t,i){if(n&&typeof t!="undefined"){var r={key:n,value:t};i&&(r.type=i);messageLog.queue.push(r);messageLog.enqueue(r)}},getQueue:function(){return store.get("errorQueue")||{}},stop:function(){this.errorQCount=0;this.errorQIsActive=!1},clean:function(){store.remove("errorQueue")},record:function(){var n,i,t;if((!agoda||!agoda.userInfo||!agoda.userInfo.isNah)&&(n=this,i=this.getQueue(),i!=="undefined"&&Object.keys(i).length!=0)){if(this.errorQCount>=this.errorQTries){this.stop();return}this.errorQCount++;t=new XMLHttpRequest;t.addEventListener("load",function(){t.status>=200&&t.status<300||t.status===1223?(n.stop(),n.clean()):(n.errorQIsActive=!0,setTimeout(function(){n.record()},n.errorQTimeout))});t.addEventListener("error",function(){n.errorQIsActive=!0;setTimeout(function(){n.record()},n.errorQTimeout)});t.open("POST",n.errorQUrl);t.setRequestHeader("Content-type","application/x-www-form-urlencoded");t.send("message="+encodeURIComponent(JSON.stringify(n.getQueue())))}}};messageLog.init();
+</script>  
+
+
+<script src="/Scripts/jquery-1.8.3.js" crossorigin="anonymous"></script>
+
+
+
+    <!-- THIS IS NOT COMMENT, IT USE FOR PICKUP CSS AND JS IN IE -->
+    <!--[if lt IE 9]>
+        
+    <![endif]-->
+    <!--[if IE 9]>
+        
+    <![endif]-->
+    <!--[if IE 8]>
+        
+    <![endif]-->
+    <!--[if IE 7]>
+        
+        
+    <![endif]-->
+
+
+
+
+
+        <script id="serviceWorker" type="text/javascript">
+            'serviceWorker' in navigator &&
+                navigator.serviceWorker.getRegistration('/').then(function (a) { a && a.unregister() });
+        </script>
+
+
+
+    <link rel="preload" href="https://cdn6.agoda.net/js/assets/LEGACY-BROWSERS/property-8e5ae4a46a66.css" as="style" onload="this.onload=null;this.rel = 'stylesheet';"><noscript><link rel="stylesheet" href="https://cdn6.agoda.net/js/assets/LEGACY-BROWSERS/property-8e5ae4a46a66.css"></noscript><link rel="preload" href="https://cdn6.agoda.net/js/assets/LEGACY-BROWSERS/theme-agoda-bae0c945ede0.css" as="style" onload="this.onload=null;this.rel = 'stylesheet';"><noscript><link rel="stylesheet" href="https://cdn6.agoda.net/js/assets/LEGACY-BROWSERS/theme-agoda-bae0c945ede0.css"></noscript>
+
+
+
+<link rel="icon" href="/favicon.ico" />
+</head>
+
+
+
+<body class=' NewHotel desktop BAY-8563-B CEGHZ-509 FAM-5956 FUSION-1368 FUSION-2492-KILL-SWITCH LOY-5004 MIN-17851 MIN-18176 MIN-18178 MIN-18390 MIN-18399 NHAWEB-1038 PACKAGES-168 PACKAGES-323 REACT-HEADER-DEALS TEXT-9109 TEXT-9127 TEXT-9388 rtl themed theme-agoda'>
+
+
+<style>
+    .CookieWarning {
+        position: fixed;
+        top: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 2000;
+    }
+    
+    .CookieWarning__center {
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .CookieWarning__container {
+        width: 400px;
+        background: white;
+        display: inline-block;
+        border-radius: 8px;
+        padding: 20px;
+    }
+    
+    .CookieWarning__title {
+        font-size: 30px;
+        margin: 10px 0;
+    }
+</style>
+
+
+
+<script type="text/javascript">
+    function areCookiesEnabled() {
+        try {
+            document.cookie = 'test_cookie_enabled=1';
+            var ret = document.cookie.indexOf('test_cookie_enabled=') !== -1;
+            document.cookie = 'test_cookie_enabled=1; expires=Thu, 01-Jan-1970 00:00:01 GMT';
+            return ret;
+        }
+        catch (e) {
+            return false;
+        }
+    }
+
+    if (!areCookiesEnabled()) {
+        document.body.insertAdjacentHTML('beforeend', "\u003cdiv class=\"CookieWarning\"\u003e \u003cdiv class=\"CookieWarning__center\"\u003e \u003cdiv class=\"CookieWarning__container\"\u003e \u003cp class=\"CookieWarning__title\"\u003eيجب تفعيل ملفات تعريف الارتباط (Cookies)\u003c/p\u003e \u003cp\u003eيرجى تفعيل ملفات تعريف الارتباط في متصفحك كي تتمكن من المتابعة.\u003c/p\u003e \u003c/div\u003e \u003c/div\u003e \u003c/div\u003e");
+    }
+</script>
+
+    <div id="css-dummy"></div>
+
+<script>
+    window.agoda = window.agoda || {};
+    
+    window.agoda.bVariantsConfig = {
+        expids: [],
+        unseenExpids: {},
+        endpoint: '/api/ar-ae/UnseenExperiments/Send',
+        expiry: 0
+    };
+
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("TEXT-9109") === -1)
+                    window.agoda.bVariantsConfig.expids.push("TEXT-9109");
+            
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("FEDATA-MCJS-SWITCH") === -1)
+                    window.agoda.bVariantsConfig.expids.push("FEDATA-MCJS-SWITCH");
+            
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("FEDATA-AF-SWITCH") === -1)
+                    window.agoda.bVariantsConfig.expids.push("FEDATA-AF-SWITCH");
+            
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("WLSI-211") === -1)
+                    window.agoda.bVariantsConfig.expids.push("WLSI-211");
+            
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("MIN-17851") === -1)
+                    window.agoda.bVariantsConfig.expids.push("MIN-17851");
+            
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("BAY-8425") === -1)
+                    window.agoda.bVariantsConfig.expids.push("BAY-8425");
+            
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("OWL-808") === -1)
+                    window.agoda.bVariantsConfig.expids.push("OWL-808");
+            
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("PACKAGES-320") === -1)
+                    window.agoda.bVariantsConfig.expids.push("PACKAGES-320");
+            
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("PACKAGES-306") === -1)
+                    window.agoda.bVariantsConfig.expids.push("PACKAGES-306");
+            
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("PACKAGES-81") === -1)
+                    window.agoda.bVariantsConfig.expids.push("PACKAGES-81");
+            
+            
+                if (window.agoda.bVariantsConfig.expids.indexOf("PACKAGES-413") === -1)
+                    window.agoda.bVariantsConfig.expids.push("PACKAGES-413");
+            
+                
+                if (typeof(window.agoda.bVariantsConfig.unseenExpids["review-2787"]) === 'undefined')
+                    window.agoda.bVariantsConfig.unseenExpids["review-2787"] = false;
+            
+            
+                if (typeof(window.agoda.bVariantsConfig.unseenExpids["login-4217"]) === 'undefined')
+                    window.agoda.bVariantsConfig.unseenExpids["login-4217"] = false;
+            
+            
+                if (typeof(window.agoda.bVariantsConfig.unseenExpids["text-3995"]) === 'undefined')
+                    window.agoda.bVariantsConfig.unseenExpids["text-3995"] = false;
+            
+            
+                if (typeof(window.agoda.bVariantsConfig.unseenExpids["text-3741"]) === 'undefined')
+                    window.agoda.bVariantsConfig.unseenExpids["text-3741"] = false;
+            
+            
+                if (typeof(window.agoda.bVariantsConfig.unseenExpids["text-5822"]) === 'undefined')
+                    window.agoda.bVariantsConfig.unseenExpids["text-5822"] = false;
+            
+            
+                if (typeof(window.agoda.bVariantsConfig.unseenExpids["text-6352"]) === 'undefined')
+                    window.agoda.bVariantsConfig.unseenExpids["text-6352"] = false;
+            
+            
+                if (typeof(window.agoda.bVariantsConfig.unseenExpids["aff-2203"]) === 'undefined')
+                    window.agoda.bVariantsConfig.unseenExpids["aff-2203"] = false;
+            
+            
+                if (typeof(window.agoda.bVariantsConfig.unseenExpids["wfapi-1339"]) === 'undefined')
+                    window.agoda.bVariantsConfig.unseenExpids["wfapi-1339"] = false;
+            
+            
+                if (typeof(window.agoda.bVariantsConfig.unseenExpids["phone-356"]) === 'undefined')
+                    window.agoda.bVariantsConfig.unseenExpids["phone-356"] = false;
+            
+            
+                if (typeof(window.agoda.bVariantsConfig.unseenExpids["ch-1049"]) === 'undefined')
+                    window.agoda.bVariantsConfig.unseenExpids["ch-1049"] = false;
+            
+</script>
+
+    <input type="hidden" name="mockDataEnabled" id="mockDataEnabled" value="False" />
+    <div class="hide" id="page-identification"
+         data-page="NewHotel"
+         data-device="desktop"></div>
+    <div id="hidden-routeinfo" class="hide"
+         data-language-id="40"
+         data-real-language-id="40"
+         data-origin="EG"
+         data-culture="ar-ae"
+         data-store-front-id="3"
+         data-page-type-id="7"
+         data-language-domain=""
+         data-url-version=""></div>
+
+    
+    
+
+
+
+<input id="requestVerificationToken" name="requestVerificationToken" type="hidden" value="mhOqJt0plc6dgwfYdEPF7zi2CCUpayoQjabbZsFmfRpMkPbQDd1mXFjujjodlOZhfqCpWR8Dfv0lZ307G7cm_QSWo-g1:-6ExLZRT41pI1w0UCKzA5jaW6Pr22EBJbLUJQw6jx_V9MApzCiHVQAMEvKjPwQ1YrD41zLeZcoTBGMLxdK6FK3PHjTQ1" />    <header id="page-header" data-selenium="page-header" class="navbar-agoda main-header main-header-ie9 scrollTo    ">
+        <section class="header-container ">
+            <nav class="header-container__item header-container__item--left LogoAndLinksMenu">
+                <div class="LogoAndLinksMenu__LogoContainer">
+                    <a class="LogoAndLinksMenu__AgodaLink" data-element-name="agoda-logo" data-selenium="agoda-logo" href="/?cid=-1">
+                        <img alt="Agoda" class="LogoAndLinksMenu__AgodaLogo" src="https://cdn6.agoda.net/images/MVC/default/agoda-logo-v2.png" title="Agoda">
+                    </a>
+                </div>
+            </nav>
+        </section>
+
+    </header>
+
+
+
+
+    <script type="text/javascript">
+        var _ga = _ga || {};
+        _ga.source = "Google";
+        _ga.medium = "SEO - Google";
+    </script> 
+    
+
+
+<div id="pointsmax-panel-react-root" data-hotel-id="" data-signin-landing="" >
+</div>
+<script type="text/javascript">
+    window.pointsMaxParams = {
+        cms: {
+            IntroducingPointsMAX:    
+                "تعرّف على PointsMAX",
+            SuggestedPrograms: "البرامج المقترحة",
+            PointsMaxOffDesktop: "PointsMAX معطل",
+            SelectYourFavoriteLoyal: "اختر برنامج الولاء المفضل لديك كي تبدأ في كسب الأميال",
+            MaximizeYourBooking: "اكسب أميالاً أو نقاطًا في حجزك التالي",
+            title: "حدد برنامج المكافآت الخاص بك",
+            subTitle: "اربط برنامج المكافآت الخاص بك لتربح أميال/نقاط عند الحجز على أجودا.",
+            searchPlaceHolder: "ابحث عن برنامج مكافآت",
+            linkYourAccount: "اربط حسابك",
+            rewardProgram: "برنامج المكافآت",
+            change: "تغيير",
+            membershipNumber: "رقم العضوية",
+            formatSample: "مثال {0}",
+            cancel: "أدخله لاحقًا",
+            save : "حفظ",
+            edit : "تعديل",
+            turnOff : "تعطيل",
+        },
+        isShowPointsmaxNotificationIcon: true,
+        IsShowPointsmaxTurnOffButton: false,
+        lastSelectedProgram: null,
+        suggestedProgram: {"ProgramId":38,"ProgramName":"Etihad Guest","TranslatedProgramName":"خطوط طيران الاتحاد - Etihad Guest","PartnerUrl":null,"ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/Etihad/Eithad-Guest-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/Etihad/Eithad-Guest-smalllogo-desktop_v1@2x.png","BigImageUrl":null,"BigImageUrl2X":null,"MemberIdPattern":null,"Regex":null},
+        swiperType: "",
+        selectedPrograms: null,
+        allActivePrograms: [{"ProgramId":63,"ProgramName":"Aer Lingus - AerClub","TranslatedProgramName":"AerClub","PartnerUrl":"/aerclub","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/AerClub/AerClub-AviosPoints-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/AerClub/AerClub-AviosPoints-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/AerClub/AerClub-AviosPoints-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/AerClub/AerClub-AviosPoints-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":7,"ProgramName":"Air China","TranslatedProgramName":"Air China","PartnerUrl":"/airchina","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/AirChina/AirChina-PhoenixMiles-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/AirChina/AirChina-PhoenixMiles-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/AirChina/AirChina-PhoenixMiles-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/AirChina/AirChina-PhoenixMiles-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":12,"ProgramName":"AirAsia BIG ","TranslatedProgramName":"AirAsia BIG","PartnerUrl":"/airasiabig","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/AirAsia/AirAsia-Big-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/AirAsia/AirAsia-Big-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/AirAsia/AirAsia-Big-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/AirAsia/AirAsia-Big-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":11,"ProgramName":"American Airlines AAdvantage","TranslatedProgramName":"American Airlines Advantage","PartnerUrl":"/aadvantage","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/AmericanAirlines/AmericanAirlines-AAdvantage-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/AmericanAirlines/AmericanAirlines-AAdvantage-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/AmericanAirlines/AmericanAirlines-AAdvantage-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/AmericanAirlines/AmericanAirlines-AAdvantage-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":13,"ProgramName":"Asia Miles","TranslatedProgramName":"Asia Miles","PartnerUrl":"/asiamiles","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/AsiaMiles/Asia-Miles-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/AsiaMiles/Asia-Miles-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/AsiaMiles_New/Asia-Miles-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/AsiaMiles_New/Asia-Miles-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":44,"ProgramName":"Avios","TranslatedProgramName":"Avios Travel Reward برنامج","PartnerUrl":"/avios","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/Avios/Avios-Rewards-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/Avios/Avios-Rewards-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/Avios/Avios-Rewards-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/Avios/Avios-Rewards-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":65,"ProgramName":"BonusLink","TranslatedProgramName":"BonusLink","PartnerUrl":"/bonuslink","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/BonusLink/BonusLink-Points-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/BonusLink/BonusLink-Points-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/BonusLink/BonusLink-Points-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/BonusLink/BonusLink-Points-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":41,"ProgramName":"British Airways Executive Club","TranslatedProgramName":"British Airways Executive Club","PartnerUrl":"/britishairways","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/BritishAirways/BritishAirways-ExecutiveClub-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/BritishAirways/BritishAirways-ExecutiveClub-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/BritishAirways/BritishAirways-ExecutiveClub-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/BritishAirways/BritishAirways-ExecutiveClub-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":36,"ProgramName":"Eastern Miles","TranslatedProgramName":"Eastern Miles","PartnerUrl":"/ceair","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/EasternAirlines/ChinaEastern-EasternMiles-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/EasternAirlines/ChinaEastern-EasternMiles-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/EasternAirlines/ChinaEastern-EasternMiles-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/EasternAirlines/ChinaEastern-EasternMiles-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":61,"ProgramName":"Infinity MileageLands","TranslatedProgramName":"EVA Air Infinity MileageLands","PartnerUrl":"/evaair","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/InfinityMileageLands/EvaAir-InfinityMileageLands-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/InfinityMileageLands/EvaAir-InfinityMileageLands-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/InfinityMileageLands/EvaAir-InfinityMileageLands-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/InfinityMileageLands/EvaAir-InfinityMileageLands-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":80,"ProgramName":"Fly Buys NZ","TranslatedProgramName":"Fly Buys NZ","PartnerUrl":"/Flybuysnz","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/FlyerBonus/default/FlyBuys-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/FlyerBonus/default/FlyBuys-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/FlyerBonus/default/FlyBuys-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/FlyerBonus/default/FlyBuys-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":77,"ProgramName":"FlyerBonus","TranslatedProgramName":"FlyerBonus","PartnerUrl":"/flyerbonus","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/FlyerBonus/default/FlyerBonus-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/FlyerBonus/default/FlyerBonus-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/FlyerBonus/default/FlyerBonus-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/FlyerBonus/default/FlyerBonus-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":62,"ProgramName":"FlyingBlue","TranslatedProgramName":"Flying Blue","PartnerUrl":"/flyingblue","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/FlyingBlue/Flying-Blue-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/FlyingBlue/Flying-Blue-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/FlyingBlue/Flying-Blue-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/FlyingBlue/Flying-Blue-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":71,"ProgramName":"FlySmiLes","TranslatedProgramName":"FlySmiLes","PartnerUrl":"/flysmiles","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/FlySmile/FlySmiLes-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/FlySmile/FlySmiLes-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/FlySmile/FlySmiLes-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/FlySmile/FlySmiLes-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":22,"ProgramName":"Fortune Wings Club","TranslatedProgramName":"Fortune Wings Club","PartnerUrl":"/FWC","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/HainanAirlines/HainanAirlines-FortuneWings-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/HainanAirlines/HainanAirlines-FortuneWings-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/HainanAirlines/HainanAirlines-FortuneWings-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/HainanAirlines/HainanAirlines-FortuneWings-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":34,"ProgramName":"GarudaMiles","TranslatedProgramName":"GarudaMiles","PartnerUrl":"/garudamiles","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/Garuda/Garuda-Miles-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/Garuda/Garuda-Miles-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/Garuda/Garuda-Miles-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/Garuda/Garuda-Miles-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":35,"ProgramName":"HawaiianMiles","TranslatedProgramName":"HawaiianMiles","PartnerUrl":"/hawaiianmiles","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/HawaiianAirline/hawaiianmiles-small-desk1_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/HawaiianAirline/hawaiianmiles-small-desk1_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/HawaiianAirline/hawaiianmiles-big-desk1_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/HawaiianAirline/hawaiianmiles-big-desk1_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":42,"ProgramName":"Iberia Plus","TranslatedProgramName":"Iberia Plus","PartnerUrl":"/iberiaplus","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/IberiaPlus/Iberia-Plus-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/IberiaPlus/Iberia-Plus-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/IberiaPlus/Iberia-Plus-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/IberiaPlus/Iberia-Plus-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":18,"ProgramName":"InterMiles","TranslatedProgramName":"InterMiles","PartnerUrl":"/intermiles","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/JetPrivilege/intermiles_smalllogo_desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/JetPrivilege/intermiles_smalllogo_desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/JetPrivilege/intermiles_biglogo_desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/JetPrivilege/intermiles_biglogo_desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":76,"ProgramName":"L.POINT","TranslatedProgramName":"L.POINT","PartnerUrl":"/lpoint","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/L-Point/Lpoint-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/L-Point/Lpoint-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/L-Point/Lpoint-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/L-Point/Lpoint-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":52,"ProgramName":"Lotusmiles","TranslatedProgramName":"Lotusmiles","PartnerUrl":"/lotusmiles","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/LotusMiles/VietnamAirlines-LotusMiles-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/LotusMiles/VietnamAirlines-LotusMiles-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/LotusMiles/VietnamAirlines-LotusMiles-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/LotusMiles/VietnamAirlines-LotusMiles-biglogo-desktop_v1@2x","MemberIdPattern":null,"Regex":null},{"ProgramId":14,"ProgramName":"Malaysia Airlines Enrich","TranslatedProgramName":"Malaysia Airlines Enrich","PartnerUrl":"/malaysiaairlines","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/MalaysiaEnrich/MalaysiaAirlines-EnrichMiles-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/MalaysiaEnrich/MalaysiaAirlines-EnrichMiles-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/MalaysiaEnrich/MalaysiaAirlines-EnrichMiles-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/MalaysiaEnrich/MalaysiaAirlines-EnrichMiles-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":72,"ProgramName":"Miles&Smiles","TranslatedProgramName":"Miles&Smiles","PartnerUrl":"/MilesandSmiles","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/Miles&Smiles/Miles&Smiles-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/Miles&Smiles/Miles&Smiles-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/Miles&Smiles/Miles&Smiles-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/Miles&Smiles/Miles&Smiles-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":16,"ProgramName":"Qatar Airways Privilege Club","TranslatedProgramName":"Qatar Airways Privilege Club","PartnerUrl":"/qmiles","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/QatarAirways/QatarAirways-PrivilegeClub-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/QatarAirways/QatarAirways-PrivilegeClub-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/QatarAirways/QatarAirways-PrivilegeClub-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/QatarAirways/QatarAirways-PrivilegeClub-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":70,"ProgramName":"Royal Skies","TranslatedProgramName":"Royal Skies","PartnerUrl":"/royalskies","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/RoyalSkies/royalskies-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/RoyalSkies/royalskies-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/RoyalSkies/royalskies-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/RoyalSkies/royalskies-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":51,"ProgramName":"The 1 Card","TranslatedProgramName":"The 1 Card Thailand","PartnerUrl":"/the1","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/The1Card/The1Card-Points-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/The1Card/The1Card-Points-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/The1Card/The1Card-Points-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/The1Card/The1Card-Points-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":15,"ProgramName":"United MileagePlus","TranslatedProgramName":"United MileagePlus","PartnerUrl":"/mileageplus","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/Mileageplus/UnitedAirlines-MileagePlus-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/Mileageplus/UnitedAirlines-MileagePlus-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/Mileageplus/UnitedAirlines-MileagePlus-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/Mileageplus/UnitedAirlines-MileagePlus-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":79,"ProgramName":"Avios-Vueling Club","TranslatedProgramName":"Vueling Club","PartnerUrl":"/vuelingclub","ImageUrl":"https://cdn6.agoda.net/images/MVC/PointsMAX/Steakhouse/vuelingclub-smalllogo-desktop.png","ImageUrl2X":"https://cdn6.agoda.net/images/MVC/PointsMAX/Steakhouse/vuelingclub-smalllogo-desktop@2x.png","BigImageUrl":"images/MVC/PointsMAX/Steakhouse/vuelingclub-biglogo-desktop.png","BigImageUrl2X":"images/MVC/PointsMAX/Steakhouse/vuelingclub-biglogo-desktop@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":74,"ProgramName":"WAON POINT","TranslatedProgramName":"WAON POINT","PartnerUrl":"/aeonpmx","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/WaonPoint/WaonPoint-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/WaonPoint/WaonPoint-smalllogo-desktop_v1@2x.png","BigImageUrl":"images/mvc/PointsMAX/WaonPoint/WaonPoint-biglogo-desktop_v1.png","BigImageUrl2X":"images/mvc/PointsMAX/WaonPoint/WaonPoint-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":32,"ProgramName":"Thai Airways Royal Orchid Plus","TranslatedProgramName":"الخطوط التايلاندية Royal Orchid Plus","PartnerUrl":"/royalorchidplus","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/ROP/ThaiAirways-RoyalOrchidPlus-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/ROP/ThaiAirways-RoyalOrchidPlus-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/ROP/ThaiAirways-RoyalOrchidPlus-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/ROP/ThaiAirways-RoyalOrchidPlus-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":31,"ProgramName":"KrisFlyer","TranslatedProgramName":"الخطوط الجوية السنغافورية KrisFlyer","PartnerUrl":"/krisflyer","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/SingaporeAirline/SingaporeAirline-KrisFlyer-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/SingaporeAirline/SingaporeAirline-KrisFlyer-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/SingaporeAirline/SingaporeAirline-KrisFlyer-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/SingaporeAirline/SingaporeAirline-KrisFlyer-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":33,"ProgramName":"Philippine Airlines Mabuhay Miles","TranslatedProgramName":"الخطوط الجوية الفليبينية Mabuhay Miles","PartnerUrl":"/mabuhaymiles","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/PhilippineAirlines/PhilippineAirlines-MabuhayMiles-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/PhilippineAirlines/PhilippineAirlines-MabuhayMiles-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/PhilippineAirlines/PhilippineAirlines-MabuhayMiles-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/PhilippineAirlines/PhilippineAirlines-MabuhayMiles-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":69,"ProgramName":"JAL","TranslatedProgramName":"الخطوط الجوية اليابانية","PartnerUrl":"/japanairlinespmx","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/JapanAirlines/JapanAirlines-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/JapanAirlines/JapanAirlines-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/JapanAirlines/JapanAirlines-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/JapanAirlines/JapanAirlines-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":47,"ProgramName":"Oman Air – Sindbad","TranslatedProgramName":"الطيران العماني - سندباد","PartnerUrl":"/sindbad","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/OmanAir/OmanAir-Sindbad-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/OmanAir/OmanAir-Sindbad-smalllogo-desktop_v1@2x.png","BigImageUrl":"/mages/mvc/PointsMAX/NewBigLogo/OmanAir/OmanAir-Sindbad-biglogo-desktop_v1.png","BigImageUrl2X":"/mages/mvc/PointsMAX/NewBigLogo/OmanAir/OmanAir-Sindbad-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":75,"ProgramName":"Asiana Airlines Mileage","TranslatedProgramName":"أميال Asiana Airlines","PartnerUrl":"/asiana","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/Asiana/asiana-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/Asiana/asiana-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/Asiana/asiana-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/Asiana/asiana-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":39,"ProgramName":"Velocity Frequent Flyer","TranslatedProgramName":"برنامج Velocity Frequent Flyer","PartnerUrl":"/velocity","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/Velocity/VirginAustralia-VelocityFrequentFlyer-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/Velocity/VirginAustralia-VelocityFrequentFlyer-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/Velocity_New/VirginAustralia-VelocityFrequentFlyer-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/Velocity_New/VirginAustralia-VelocityFrequentFlyer-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":38,"ProgramName":"Etihad Guest","TranslatedProgramName":"خطوط طيران الاتحاد - Etihad Guest","PartnerUrl":"/etihadguest","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/Etihad/Eithad-Guest-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/Etihad/Eithad-Guest-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/Etihad/Eithad-Guest-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/Etihad/Eithad-Guest-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":20,"ProgramName":"China Airlines Dynasty Member","TranslatedProgramName":"عضو China Airlines Dynasty","PartnerUrl":"/chinaairlines","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/ChinaAirlines/ChinaAirlines-DynastyFlyer-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/ChinaAirlines/ChinaAirlines-DynastyFlyer-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/ChinaAirlines/ChinaAirlines-DynastyFlyer-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/ChinaAirlines/ChinaAirlines-DynastyFlyer-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":53,"ProgramName":"GetGo","TranslatedProgramName":"مكافآت GetGo من سيبو باسيفيك","PartnerUrl":"/getgo","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/CebuPacificGetGo/CebuPacific-GetGo-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/CebuPacificGetGo/CebuPacific-GetGo-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/CebuPacificGetGo/CebuPacific-GetGo-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/CebuPacificGetGo/CebuPacific-GetGo-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null},{"ProgramId":37,"ProgramName":"SM Advantage / BDO Rewards","TranslatedProgramName":"ميزات SM/مكافآت BDO","PartnerUrl":"/smadvantage","ImageUrl":"https://cdn6.agoda.net/images/mvc/PointsMAX/SMAC/SMadvantage-BDOrewards-smalllogo-desktop_v1.png","ImageUrl2X":"https://cdn6.agoda.net/images/mvc/PointsMAX/SMAC/SMadvantage-BDOrewards-smalllogo-desktop_v1@2x.png","BigImageUrl":"/images/mvc/PointsMAX/NewBigLogo/SMAC/SMadvantage-BDOrewards-biglogo-desktop_v1.png","BigImageUrl2X":"/images/mvc/PointsMAX/NewBigLogo/SMAC/SMadvantage-BDOrewards-biglogo-desktop_v1@2x.png","MemberIdPattern":null,"Regex":null}],
+        isChrome: false,
+        isRenderPointsMaxPopupReact: true,
+        isNewDesign: false,
+    };
+</script>
+
+
+
+<div id="signin-popup" class="LOGIN-CSS" role="dialog" data-selenium="signin-popup" >
+    <div class="modal modal-link-account-ask-password facebook-login" id="link-account-ask-password-panel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-alignment-center">
+            <div id="link-account-ask-password-content" class="popup-login modal-content modal-content" data-selenium="link-account-ask-password-panel">
+                <div class="modal-header" data-selenium="link-account-ask-password-panel-header">
+                    <i class="ficon ficon-16 ficon-x-icon close" data-dismiss="modal" aria-label="Close" data-selenium="link-account-ask-password-close-icon"></i>
+                    <dl>
+                        <dd id="respond-technical-issue" class="respond-warning" data-selenium="link-account-ask-password-respond-technical-issue">نواجه حالياً بعض المشاكل التقنية</dd>
+                        <dd id="respond-password-issue" class="respond-warning" data-selenium="link-account-ask-password-respond-password-issue">
+                            كلمة المرور التي ادخلتها غير صحيحة.
+                            <a href="/account/signin.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc" data-selenium="forget-password">انقر هنا للحصول على كلمة مرور جديدة</a>
+                        </dd>
+                        <dd>
+                            يوجد حساب على أجودا لهذا البريد الإلكتروني <b id='link-account-email' data-selenium='link-account-email'></b>
+                        </dd>
+                        <br class="seperate-space" />
+                        <dd>
+                            يرجى إدخال كلمة مرور حساب أجودا لنقوم بربطه مع حسابك على فيسبوك، ستحتاج إلى فعل ذلك مرة واحدة فقط.
+                        </dd>
+                    </dl>
+                </div>
+                <div class="modal-body" data-selenium="link-account-ask-password-panel-body">
+                    <dl class="form-group">
+                        <dt><label for="link-account-ask-password-input" id="link-account-ask-password-submit-label" data-selenium="link-account-ask-password-submit-label">كلمة المرور</label></dt>
+                        <dd>
+                            <input type="password" class="form-control" id="link-account-ask-password-input" tabindex="115" data-selenium="link-account-ask-password-input" maxlength="64" />
+                            <p id="link-account-ask-password-submit-blank" class="feedback-warning" data-selenium="link-account-ask-password-submit-blank">
+                                كلمة المرور مطلوبة
+                            </p>
+                            <p id="link-account-ask-password-submit-break-rule" class="feedback-warning" data-selenium="link-account-ask-password-submit-too-short">
+                                كلمة المرور حساسة للأحرف الكبيرة ويجب أن تتكون من 8 خانات على الأقل.
+                            </p>
+                            <p class="forgot-password-container-left"><a id="link-account-forget-password-link" class="forgot-password" href="#" data-selenium="link-account-forget-password-link">نسيت كلمة المرور؟</a></p>
+                        </dd>
+                    </dl>
+                    <ul class="form-group" data-selenium="link-account-ask-password-action-panel">
+                        <li>
+                            <i id="link-account-ask-password-loading-icon" class="link-account-ask-password-loading-icon" data-selenium="link-account-ask-password-loading-icon"></i>
+                            <input type="submit" value="المتابعة" class="btn btn-primary btn-continue" id="link-account-ask-password-submit-button" data-selenium="link-account-ask-password-submit-button" tabindex="116" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer ask-password-footer" data-selenium="link-account-ask-password-panel-footer">                 
+                    <dl>
+                        <dd>
+                            هل تستخدم بريد إلكتروني آخر لحساب أجودا؟ <a id='switch-account-action' class='toggle-link' data-selenium='link-account-switch-account-action'>انقر هنا للتبديل بين الحسابات.</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-link-account-ask-password facebook-login" id="link-account-ask-email-panel">
+    <div class="vertical-alignment-helper">
+        <div class="link-account modal-dialog vertical-alignment-center">
+            <div id="link-account-ask-email-content" class="popup-login modal-content modal-content" data-selenium="link-account-ask-email-content">
+                <i class="ficon ficon-16 ficon-x-icon close" data-dismiss="modal" aria-label="Close" data-selenium="link-account-ask-email-close-icon"></i>
+                <div class="modal-header" data-selenium="link-account-ask-email-panel-header">
+                   <div class="red-box" data-selenium="link-account-ask-email-message">
+                       لم نتمكن من العثور على بريد إلكتروني متصل بحساب الفيس بوك الخاص بك. يُشترط وجود واحد حتى نتمكن من إنشاء حسابك على أجودا.
+                   </div>
+                    <div id="link-account-ask-email-technical-difficulties-issue" class="respond-warning" data-selenium="ask-signin-respond-technical-difficulties-issue">
+                        نواجه حالياً بعض المشاكل التقنية
+                    </div>
+                </div>
+                <div id="link-account-ask-email-panel-body" class="modal-body" data-selenium="link-account-ask-email-panel-body">
+                    <dl class="form-group">
+                        <dt><label for="link-account-ask-password-input" id="link-account-ask-email-submit-label" data-selenium="link-account-ask-email-submit-label">البريد الإلكتروني</label></dt>
+                        <dd>
+                            <input type="text" class="form-control" id="link-account-ask-email-input" tabindex="110" data-selenium="link-account-ask-email-input" maxlength="64" />
+                            <div id="link-account-ask-email-submit-blank" class="feedback-warning" data-selenium="link-account-ask-email-blank">
+                                مطلوب ادخال عنوان البريد الإلكتروني 
+                            </div>
+                            <div id="link-account-ask-email-submit-format" class="feedback-warning" data-selenium="link-account-ask-email-invalid">
+                                صيغة البريد الالكتروني غير صالحة.
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="modal-footer ask-email-footer" data-selenium="link-account-ask-email-panel-footer">
+                    <ul class="form-group text-center" data-selenium="link-account-ask-email-action-panel">
+                        <li class="topmargin56">
+                            <i id="link-account-ask-email-loading-icon" class="link-account-ask-email-loading-icon" data-selenium="link-account-ask-email-loading-icon"></i>
+                            <input type="submit" value="المتابعة" class="btn btn-primary" id="link-account-ask-email-submit-button" data-selenium="link-account-ask-email-submit-button" tabindex="111" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-signin facebook-login" id="link-account-ask-name-panel">
+    <div class="vertical-alignment-helper">
+        <div class="link-account modal-dialog vertical-alignment-center">
+            <div id="link-account-ask-name-content" class="popup-login modal-content modal-content" data-selenium="link-account-ask-name-content">
+                <i class="ficon ficon-16 ficon-x-icon close" data-dismiss="modal" aria-label="Close" data-selenium="link-account-ask-name-close-icon"></i>
+                <div class="modal-header" data-selenium="link-account-ask-name-panel-header">
+                    <div id="link-account-ask-name-techincal-difficulties" class="respond-warning" data-selenium="link-account-ask-name-respond-technical-issue">نواجه حالياً بعض المشاكل التقنية</div>
+                    <p data-selenium="link-account-ask-name-message">
+                        سننشئ حساب لك على أجودا ثم سنقوم بوصله بحسابك على الفيس بوك. ستتمكن -بعد اكتمال الإنشاء- من الولوج بحساب الفيس بوك أو ببيانات حسابك الجديد على أجودا.
+                    </p>
+                    
+                    <p data-selenium="link-account-ask-name-email">
+                        البريد الإلكتروني: <b id="link-account-ask-name-email" data-selenium="link-account-ask-name-email"></b>
+                    </p>
+                </div>
+                <div class="modal-body" data-selenium="link-account-ask-name-panel-body">
+                    <dl class="form-group">
+                        <dt><label for="link-account-ask-frstname-input" id="link-account-ask-name-firstname-submit-label" data-selenium="link-account-ask-name-firstname-submit-label">الاسم الأول (كما هو موضح في جواز السفر)</label></dt>
+                        <dd>
+                            <input type="text" class="form-control" id="link-account-ask-name-firstname-input" tabindex="120" data-selenium="link-account-ask-name-firstname-input" maxlength="64" />
+                            <div id="link-account-ask-name-firstname-blank" class="feedback-warning" data-selenium="link-account-ask-name-firstname-blank">
+                                الاسم الأول مطلوب.
+                            </div>
+                            <div id="link-account-ask-name-firstname-in-english" class="feedback-warning" data-selenium="link-account-ask-name-firstname-in-english">
+                                يرجى إدخال النص بالإنجليزية فقط.
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="form-group">
+                        <dt>
+                            <label for="link-account-ask-lastname-input" id="link-account-ask-name-lastname-submit-label" data-selenium="link-account-ask-name-lastname-submit-label">اسم العائلة (كما هو موضح في جواز السفر)</label>
+                        </dt>
+                        <dd>
+                            <input type="text" class="form-control" id="link-account-ask-name-lastname-input" tabindex="121" data-selenium="link-account-ask-name-lastname-input" maxlength="64" />
+                            <div id="link-account-ask-name-lastname-blank" class="feedback-warning" data-selenium="link-account-ask-name-lastname-blank">
+                                الاسم الأخير مطلوب.
+                            </div>
+                            <div id="link-account-ask-name-lastname-in-english" class="feedback-warning" data-selenium="link-account-ask-name-lastname-in-english">
+                                يرجى إدخال النص بالإنجليزية فقط.
+                            </div>
+                        </dd>
+                    </dl>
+                    <ul class="form-group text-center" data-selenium="link-account-ask-name-action-panel">
+                        <li>
+                            <i id="link-account-ask-name-loading-icon" class="link-account-ask-name-loading-icon" data-selenium="link-account-ask-password-loading-icon"></i>
+                            <input type="submit" value="المتابعة" class="btn btn-primary" id="link-account-ask-name-submit-button" data-selenium="link-account-ask-name-submit-button" tabindex="122" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer ask-name-footer" data-selenium="link-account-ask-name-panel-footer">
+                    <span>
+                        إذا كان لديك حساب <a id="link-account-ask-name-signin" data-selenium="link-account-ask-name-signin" href="#"><b>انقر هنا لتسجيل الدخول ووصل الحساب بالفيس بوك.</b></a> 
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-signin facebook-login" id="ask-signin-panel">
+    <div class="vertical-alignment-helper">
+        <div class="link-account modal-dialog vertical-alignment-center">
+            <div id="ask-signin-content" class="popup-login modal-content" data-selenium="ask-signin-panel">
+                <div class="modal-header" data-selenium="ask-signin-panel-header">
+                    <i class="ficon ficon-16 ficon-x-icon close" data-selenium="ask-signin-close-icon" data-dismiss="modal" aria-label="Close"></i>
+                    <h5 class="modal-title" data-selenium="ask-signin-header-text">سجّل دخولك لربط حسابك على أجودا بحساب الفيس بوك الخاص بك.</h5>
+                </div>
+                <div id="ask-signin-panel-body" class="modal-body" data-selenium="ask-signin-panel-body">
+                    <div id="ask-signin-respond-technical-difficulties-issue" class="respond-warning" data-selenium="ask-signin-respond-technical-difficulties-issue">
+                        نواجه حالياً بعض المشاكل التقنية
+                    </div>
+                    <div id="ask-signin-respond-warning-email-password-incorrect" class="respond-warning" data-selenium="ask-signin-email-password-incorect">
+                        عنوان البريد الإلكتروني أو كلمة المرور غير صحيحة.
+                        <a href="/account/signin.html?option=reset-password" data-selenium="forget-password-link">انقر هنا للحصول على كلمة مرور جديدة</a>
+                    </div>
+                    <div id="ask-sign-in-alert-info-before-contact-host" class="alert alert-info" data-selenium="ask-sign-in-alert-info-before-contact-host" style="display:none;">
+                        من فضلك سجّل دخولك حتى نرسل لك الرد على حسابك
+                    </div>
+                    <dl class="form-group">
+                        <dt><label for="ask-signin-email-input" id="ask-signin-email-label" data-selenium="ask-signin-email-label">البريد الإلكتروني</label></dt>
+                        <dd>
+                            <input type="text" class="form-control" id="ask-signin-email-input" tabindex="101" data-selenium="ask-signin-email-input" maxlength="64" />
+                            <div id="ask-signin-email-blank" class="feedback-warning" data-selenium="ask-signin-email-blank">
+                                مطلوب ادخال عنوان البريد الإلكتروني 
+                            </div>
+                            <div id="ask-signin-email-wrong-format" class="feedback-warning" data-selenium="ask-signin-email-wrong-format">
+                                صيغة البريد الالكتروني غير صالحة.
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="form-group">
+                        <dt><label for="ask-signin-password-input" id="ask-signin-password-label" data-selenium="ask-signin-password-label">كلمة المرور</label></dt>
+                        <dd>
+                            <input type="password" class="form-control" id="ask-signin-password-input" tabindex="102" data-selenium="ask-signin-password-input" maxlength="64" />
+                            <div id="ask-signin-password-blank" class="feedback-warning" data-selenium="ask-signin-password-blank">
+                                كلمة المرور مطلوبة
+                            </div>
+                        </dd>
+                    </dl>
+                    <ul class="form-group text-center" data-selenium="ask-signin-action-panel">
+                        <li>
+                            <i id="ask-signin-loading-icon" class="ask-signin-loading-icon" data-selenium="ask-signin-loading-icon"></i>
+                            <input type="submit" value="تسجيل الدخول وربط حساباتي" class="btn btn-primary" id="ask-signin-submit-button" data-selenium="ask-signin-submit-button" tabindex="103" />
+                        </li>
+                        <li>
+                            <div class="forgot-password-container"><a id="ask-signin-forget-password-link" class="forgot-password" href="#" data-selenium="ask-signin-forget-password-link">نسيت كلمة المرور؟</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-link-account-ask-password facebook-login" id="link-account-cannot-link-panel">
+    <div class="vertical-alignment-helper">
+        <div class="link-account modal-dialog vertical-alignment-center">
+            <div id="link-account-cannot-link-content" class="popup-login modal-content modal-content" data-selenium="link-account-cannot-link-content">
+                <i class="ficon ficon-16 ficon-x-icon close" data-dismiss="modal" aria-label="Close" data-selenium="link-account-ask-name-close-icon"></i>
+                <div class="modal-header" data-selenium="link-account-cannot-link-panel-header">
+                    <div class="respond-warning" data-selenium="link-account-cannot-link-message">
+                        تفاصيل حساب أجودا الذي أدخلته متصل بحساب فيس بوك آخر.
+                    </div>
+                </div>
+                <div class="modal-body" data-selenium="link-account-cannot-link-panel-body">
+                    <span>
+                        يمكنك الانتقال إلى <a href="/ar-ae/account/profile.html?cid=1844104&migration=2&option=reset-password&asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc" data-selenium="link-account-cannot-link-profile">ملفك التعريفي</a> في أي وقت لتغيير حساب الفيس بوك المتصل بحساب أجودا.
+                    </span>
+                </div>
+                <div class="modal-footer ask-email-footer" data-selenium="link-account-cannot-link-panel-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal modal-link-account-ask-password facebook-login" id="link-account-require-email-panel">
+    <div class="vertical-alignment-helper">
+        <div class="link-account modal-dialog vertical-alignment-center">
+            <div id="link-account-require-email-content" class="popup-login modal-content modal-content" data-selenium="link-account-require-email-content">
+                <i class="ficon ficon-16 ficon-x-icon close" data-dismiss="modal" aria-label="Close" data-selenium="link-account-ask-name-close-icon"></i>
+                <div class="modal-header" data-selenium="link-account-require-email-panel-header">
+                </div>
+                <div class="modal-body" data-selenium="link-account-require-email-panel-body">
+                    <div class="respond-warning" data-selenium="link-account-require-email-message">
+                        يجب أن يكون لدى مستخدم أجودا الراغب بالتسجيل عبر الفيسبوك بريد إلكتروني في حساب الفيسبوك الخاص به، وإذا لم يكن هناك بريد إلكتروني في الحساب، يمكنك إضافته أو التسجيل عبر أجودا مباشرةً ببريدك الإلكتروني.
+                    </div>
+                </div>
+                <div class="modal-footer ask-email-footer" data-selenium="link-account-require-email-panel-footer">
+                    <input type="submit" class="btn btn-primary" name="link-account-require-email-continue-button" id="link-account-require-email-continue-button" value='عودة' data-selenium="link-account-require-email-back-button">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-link-account-ask-password facebook-login" id="link-account-email-sent-panel">
+    <div class="vertical-alignment-helper">
+        <div class="link-account modal-dialog vertical-alignment-center">
+            <div id="link-account-email-sent-content" class="popup-login modal-content modal-content" data-selenium="link-account-email-sent-content">
+                <i class="ficon ficon-16 ficon-x-icon close" data-dismiss="modal" aria-label="Close" data-selenium="link-account-email-sent-close-icon"></i>
+                <div class="modal-header" data-selenium="link-account-email-sent-panel-header">
+                </div>
+                <div id="link-account-email-sent-body" class="modal-body" data-selenium="link-account-email-sent-body" data-cms="لقد أرسلنا رسالة إلى البريد الإلكتروني {0}، يرجى التحقق من بريدك الإلكتروني والنقر على رابط التحقق لتسجيل الدخول، ومن ثم ربط حسابك على أجودا بحساب الفيس بوك الخاص بك.">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div id="resetpassword-popup" class="LOGIN-CSS" role="dialog" data-selenium="reset-password-popup" >
+
+<div class="modal" id="reset-password-get-new-panel">
+    <div class="vertical-alignment-helper reset-password-facebook">
+        <div class="link-account modal-dialog vertical-alignment-center">
+            <div id="reset-password-get-new-content-facebook" class="popup-login modal-content modal-content" data-selenium="reset-password-get-new-content">
+                <i id="reset-password-get-new-close-icon" class="ficon ficon-16 ficon-x-icon close" data-dismiss="modal" aria-label="Close" data-selenium="reset-password-get-new-close-icon"></i>
+                    <div class="facebook-top">
+                        <p class="margin24">
+                            لما لا تسجل دخولك عبر الفيس بوك بدلاً من تذكر كلمة مرورك لحساب أجودا في كل مرة.
+                        </p>
+                    </div>
+                <div id="fb-signin-panel-resetpassword" class="fb-signin-panel facebook-top-2" data-selenium="fb-signin-panel-resetpassword">
+                    <div id="fb-login-button-container-resetpassword"
+                         class="fb-login-button-container"
+                         style=""
+                         data-selenium="fb-login-button-container">
+
+                        <div id="fb-login-button-resetpassword"
+                             class="fb-login-button"
+                             data-max-rows="1"
+                             data-width="321"
+                             data-size="large"
+                             data-button-type="continue_with"
+                             data-show-faces="false"
+                             data-auto-logout-link="false"
+                             data-use-continue-as="true"
+                             data-scope="email"
+                             onlogin="agoda.login.checkLoginStateWithMetric('resetpassword-facebook', 'clicked')"
+                             auth_type="rerequest"
+                             data-selenium="fb-signin-button"
+                             data-element-name="fb-signin-button"></div>
+                    </div>
+                    <div class="fb-separator-container facebook-top-2">
+                        <div class="fb-separator-container-row">
+                                <div class="fb-or-sides before-ortext">
+                                    <hr />
+                                </div>
+                                <span id="fb-signin-or" class="fb-or" data-selenium="fb-signin-or">أو</span>
+                                <div class="fb-or-sides after-ortext">
+                                    <hr />
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="facebook-bottom" data-selenium="reset-password-get-new-header">
+                    <h5 class="modal-title" data-selenium="reset-password-get-new-header-text">إعادة تعيين كلمة المرور</h5>
+                </div>
+                <div id="reset-password-get-new-body" class="modal-body" data-selenium="reset-password-get-new-body">
+
+                    <div id="reset-password-get-new-technical-difficulties-issue" class="respond-warning" data-selenium="reset-password-get-new-technical-difficulties-issue">
+                        نواجه حالياً بعض المشاكل التقنية
+                    </div>
+                    <p class="margin24">من فضلك أدخل البريد الإلكتروني وسنرسل إليك رابط لإعادة تعيين كلمة المرور</p>
+
+                    <dl class="form-group">
+                        <dt>
+                            <label for="reset-password-get-new-emailfield-input" id="reset-password-get-new-emailfield-label" data-selenium="reset-password-get-new-emailfield-label">البريد الإلكتروني</label>
+                        </dt>
+                        <dd>
+                            <input type="text" class="form-control" id="reset-password-get-new-emailfield-input" tabindex=&quot;1&quot; data-selenium="reset-password-get-new-emailfield-input" maxlength="64" />
+                                        
+                                            <div id="reset-password-get-new-emailfield-email-warning" class="feedback-warning" data-selenium="reset-password-get-new-emailfield-email-warning" data-type="reset-password-get-new-emailfield-error">
+                                                مطلوب ادخال عنوان البريد الإلكتروني 
+                                            </div>
+                                        
+                                        
+                                            <div id="reset-password-get-new-emailfield-emailformat-warning" class="feedback-warning" data-selenium="reset-password-get-new-emailfield-emailformat-warning" data-type="reset-password-get-new-emailfield-error">
+                                                صيغة البريد الالكتروني غير صالحة.
+                                            </div>
+                                        
+
+                        </dd>
+                    </dl>
+
+                    <div class="form-group topmargin26 login-captcha-panel">
+
+
+<div class="CAPTCHA-CSS">
+    <div id="reset-password-get-new-captcha-panel" class="captcha-container" data-selenium="reset-password-get-new-captcha-panel">
+
+    </div>
+    <div id="reset-password-get-new-captcha-panel-loading" class="captcha-loading" data-selenium="reset-password-get-new-captcha-panel-loading">
+        <input type="button" value="" class="btn-loading" disabled />
+    </div>
+    <div id="reset-password-get-new-captcha-panel-error" class="captcha-error" data-selenium="reset-password-get-new-captcha-panel-error">
+        <p>
+            لم نتمكن من تحميل اختبار Captcha اللازم لاستكمال هذا النموذج.
+        </p>
+        <a>
+            انقر هنا لمحاولة تحميل Captcha مرةً أخرى.
+        </a>
+    </div>
+    <div id="reset-password-get-new-captcha-validator-error" class="captcha-feedback-warning" data-selenium="reset-password-get-new-captcha-validator-error">
+        من فضلك استكمل captcha (الموجودة أعلاه).
+    </div>
+</div>
+                    </div>
+                    <div id="reset-password-get-new-container" class="form-group">
+                        <i id="reset-password-get-new-loading-icon" class="reset-password-get-new-loading-icon" data-selenium="reset-password-get-new-loading-icon"></i>
+                        <input tabindex=&quot;2&quot;
+                               type="submit"
+                               name="reset-password-get-new-submit-button"
+                               value="إرسال"
+                               id="reset-password-get-new-submit-button"
+                               class="btn btn-primary"
+                               data-selenium="reset-password-get-new-submit-button"
+                               data-element-name="forgot-password-submit-button" />
+                    </div>
+                </div>
+                <div class="modal-footer" data-selenium="reset-password-get-new-panel-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+	<div class="modal" id="reset-password-email-sent">
+		<div class="vertical-alignment-helper">
+			<div class=" modal-dialog vertical-alignment-center">
+				<div id="reset-password-email-sent-content" class="popup-login modal-content modal-content" data-selenium="reset-password-email-sent-content">
+					<div class="modal-header" data-selenium="reset-password-email-sent-header">
+						<i id="reset-password-email-sent-close-icon" class="ficon ficon-16 ficon-x-icon close" data-dismiss="modal" aria-label="Close" data-selenium="reset-password-email-sent-close-icon"></i>
+						<h3 class="modal-title" data-selenium="reset-password-email-sent-header-text">تم ارسال البريد الإلكتروني.</h3>
+					</div>
+					<div id="reset-password-email-sent-body" class="modal-body" data-selenium="reset-password-email-sent-body">
+						<div id="reset-password-email-sent-message" class="modal-message margin24">
+							لقد تم ارسال رابط إعادة تعيين كلمة المرور. يرجى مراجعة بريدك الإلكتروني.
+						</div>
+
+						<div id="reset-password-email-sent-container" class="form-group">
+							<i id="reset-password-email-sent-loading-icon" class="reset-password-email-sent-loading-icon" data-selenium="reset-password-email-sent-loading-icon"></i>
+							<input tabindex=&quot;1&quot; type="submit" name="reset-password-email-sent-submit-button" value="عودة" id="reset-password-email-sent-submit-button" class="btn btn-primary" id="reset-password-email-sent-submit-button" data-selenium="reset-password-email-sent-submit-button">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="reset-password-retreive-password">
+		<div class="vertical-alignment-helper">
+			<div class=" modal-dialog vertical-alignment-center">
+				<div id="reset-password-retreive-password-content" class="popup-login modal-content modal-content" data-selenium="reset-password-retreive-password-content">
+					<div class="modal-header" data-selenium="reset-password-retreive-password-header">
+						<i id="reset-password-retreive-password-close-icon" class="ficon ficon-16 ficon-x-icon close" data-dismiss="modal" aria-label="Close" data-selenium="reset-password-retreive-password-close-icon"></i>
+						<h3 class="modal-title" data-selenium="reset-password-retreive-password-header-text">إعادة تعيين كلمة المرور</h3>
+					</div>
+					<div id="reset-password-retreive-password-body" class="modal-body" data-selenium="reset-password-retreive-password-body">
+						<div id="reset-password-retreive-password-message" class="modal-message">
+							تم تغيير كلمة المرور بنجاح.
+						</div>
+
+						<div id="reset-password-retreive-password-container" class="form-group">
+							<i id="reset-password-retreive-password-loading-icon" class="reset-password-retreive-password-loading-icon" data-selenium="reset-password-retreive-password-loading-icon"></i>
+							<input tabindex=&quot;1&quot; type="submit" name="reset-password-retreive-password-submit-button" value="عودة" id="reset-password-retreive-password-submit-button" class="btn btn-primary" id="reset-password-retreive-password-submit-button" data-selenium="reset-password-retreive-password-submit-button">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="reset-password-token-expired">
+		<div class="vertical-alignment-helper">
+			<div class=" modal-dialog vertical-alignment-center">
+				<div id="reset-password-token-expired-content" class="popup-login modal-content modal-content" data-selenium="reset-password-token-expired-content">
+					<div class="modal-header" data-selenium="reset-password-token-expired-header">
+						<i id="reset-password-token-expired-close-icon" class="ficon ficon-16 ficon-x-icon close" data-dismiss="modal" aria-label="Close" data-selenium="reset-password-token-expired-close-icon"></i>
+						<h3 class="modal-title" data-selenium="reset-password-token-expired-header-text"></h3>
+					</div>
+					<div id="reset-password-token-expired-body" class="modal-body" data-selenium="reset-password-token-expired-body">
+						<div id="reset-password-token-expired-message" class="modal-message">
+							انتهت صلاحية الرابط.
+						</div>
+
+						<div id="reset-password-token-expired-container" class="form-group">
+							<i id="reset-password-token-expired-loading-icon" class="reset-password-token-expired-loading-icon" data-selenium="reset-password-token-expired-loading-icon"></i>
+							<input tabindex=&quot;1&quot; type="submit" name="reset-password-token-expired-submit-button" value="عودة" id="reset-password-token-expired-submit-button" class="btn btn-primary" id="reset-password-token-expired-submit-button" data-selenium="reset-password-token-expired-submit-button">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="resetpassword-cms" data-cannot-reuse="من أجل الحفاظ على سرية معلوماتك، لا يمكنك إعادة استخدام كلمة المرور السابقة." hidden="hidden" ></div>
+
+<div id="login-cms-resetpassword-for" hidden="hidden" >إدخال كلمة مرور جديدة لهذا البريد الإلكتروني:</div>
+<div id="login-cms-token-expired" hidden="hidden" >انتهت صلاحية الرابط.</div>
+<div id="login-cms-email-notexist" hidden="hidden" >لا يوجد حساب على أجودا متصل بهذا البريد الالكتروني.</div>
+<div id="login-cms-password-cannot-reuse" hidden="hidden" >من أجل الحفاظ على سرية معلوماتك، لا يمكنك إعادة استخدام كلمة المرور السابقة.</div>
+        <div id="login-react-popup"></div>
+        <div id="login-react-root"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script id="bay-ld-json" data-selenium="bay-hotel-schema-json-ld" type="application/ld+json">
+    </script>
+
+<div id="property-critical-root">
+
+
+<div class="Property-placeholder Placeholder" id="PropertyPlaceholder">
+    <div class="SearchBoxContainer SearchBoxContainer--Hotels SearchBoxContainer--compact SearchBoxContainer--noanimation">
+    <div class="Searchbox Searchbox--horizontal">
+        <div class="Searchbox__wrapper">
+            <div class="IconBox IconBox--autocomplete">
+                <div class="IconBox__wrapper">
+                    <i class="ficon IconBox__icon ficon-20 ficon-search-box"></i>
+                </div>
+            </div><div class="IconBox IconBox--checkIn">
+                <div class="IconBox__wrapper">
+                    <i class="ficon IconBox__icon ficon-20 ficon-check-in"></i>
+                </div>
+            </div><div tabindex="0" class="IconBox IconBox--checkOut">
+                <div class="IconBox__wrapper">
+                    <i class="ficon IconBox__icon ficon-20 ficon-check-out"></i>
+                </div>
+            </div><div class="IconBox IconBox--occupancy">
+                <div class="IconBox__wrapper">
+                    <i class="ficon IconBox__icon ficon-20 ficon-travelers"></i>
+                </div>
+            </div><button class="btn Searchbox__searchButton Searchbox__searchButton--active"></button>
+        </div>
+    </div>
+</div>
+
+        <div class="Breadcrumb-PlaceHolder">
+        <div class="container-agoda"></div>
+    </div>
+
+        <div class="container-agoda">
+        <div class="MosaicReloaded__PlaceHolder">
+            <div class="MosaicReloaded">
+                <div class="MosaicReloaded__SqOne"></div>
+                <div class="MosaicReloaded__SqTwo"></div>
+                <div class="MosaicReloaded__SqThree"></div>
+                <div class="MosaicReloaded__SqFour"></div>
+            </div>
+            <div class="Miscellaneous__Container">
+                <div class="NorthstarSideContent">
+                    <div class="NorthstarCard ReviewPlate"></div>
+                </div>
+                <div class="NorthstarMainContent">
+                    <div class="NorthstarCard HeaderPlate"></div>
+                    <div class="NorthstarCard ReviewsCombo"></div>
+                    <div class="NorthstarCard ReviewsSnippet"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="urgency-msg-box"></div>
+
+    <script>
+
+    </script>
+    <div id="promotionSliderContainer" data-selenium="promotionSliderContainer">
+    </div>
+
+
+
+
+<script type="text/javascript">
+        
+            propertyPageParams.hotelModel = {
+                completeLoading: {
+                    reviewScores: false,
+                    reviewComments: false,
+                    scrollToReviewSection: false,
+                    heroImage: false
+                },
+                roomInfo: {
+                    url: "/api/ar-ae/Main/GetRoomPopup"
+                }
+            }
+        
+</script>
+
+
+
+
+
+
+
+
+    
+        <script>
+        var footerProps = {
+        seoWhiteLabelLinksGroups:  [],
+        linksGroups: [
+        {
+            title: "كيف نساعدك؟",
+            dataSelenium: 'footer-help-column',
+            className: '',
+                list: [
+                        
+                            {
+                                text: " مركز المساعدة",
+                                link: '/ar-ae/info/contact.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+                                id: 'footer-contact-us',
+                                rel: 'nofollow',
+                                data: {
+                                    selenium: 'footer-contact-us',
+                                    elementName: 'contact-us-footer',
+                                }
+                            },
+                                
+                                {
+                                    text: "أسئلة متكررة",
+                                    link: '/ar-ae/info/agoda-faq.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+                                    id: 'footer-faqs',
+                                    rel: 'nofollow',
+                                    data: {
+                                        selenium: 'footer-faqs'
+                                    }
+                                }
+                                
+,
+                            {
+                                text: "سياسة الخصوصية",
+                                link: '/ar-ae/info/privacy.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+                                id: 'footer-privacy-policy',
+                                rel: 'nofollow',
+                                target: '_blank',
+                                data: {
+                                    selenium: 'footer-privacy-policy'
+                                }
+                            },
+,
+                            {
+                                text: "سياسة ملفات الارتباط",
+                                link: '/ar-ae/info/privacy.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc#cookies',
+                                id: 'footer-cookie-policy',
+                                rel: 'nofollow',
+                                target: '_blank',
+                                data: {
+                                      selenium: 'footer-cookie-policy'
+                                }
+                            },
+                            {
+                                text: "شروط الاستخدام",
+                                link: '/ar-ae/info/termsofuse.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+                                id: 'footer-terms-of-service',
+                                rel: 'nofollow',
+                                data: {
+                                    selenium: 'footer-terms-of-service'
+                                },
+                                target: '_blank'
+                            },
+                        
+                ]
+        },
+            
+                {
+                    title: "نبذة عنا",
+                    dataSelenium: 'footer-about-us-column',
+                    list: [
+                            
+                                    
+                                    {
+                                        text: "PointsMAX",
+                                            link: '//www.agoda.com/ar-ae/pointsmax.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+                                            id: 'footer-points-max',
+                                            rel: 'nofollow',
+                                            data: {
+                                            selenium: 'footer-pointsmax'
+                                            }
+                                    },
+                                    
+                                {
+                                    text: "وظائف",
+                                    link: '//careersatagoda.com',
+                                    id: 'footer-careers',
+                                    rel: 'nofollow',
+                                    target: '_blank',
+                                    data: {
+                                        selenium: 'footer-careers'
+                                    }
+                                },
+
+                                    
+                                        {
+                                            text: "أجودا في الصحف",
+                                            link: '/press',
+                                            id: 'footer-media',
+                                            rel: 'follow',
+                                            target: '_blank',
+                                            data: {
+                                                selenium: 'footer-media'
+                                            }
+                                        },
+                                    
+                                                                        
+                                        {
+                                            text: "مدونة السفر",
+                                            link: '/ar-ae/blog',
+                                            id: 'footer-blog',
+                                            rel: 'follow',
+                                            target: '_blank',
+                                            data: {
+                                                selenium: 'footer-blog'
+                                            }
+                                        },
+                                    
+                                                            
+                    ]
+                },
+            
+
+            
+                {
+                    title: "وجهات",
+                    dataSelenium: 'footer-destinations-column',
+                    list: [
+                        {
+                            text: "دول",
+                            link: '//www.agoda.com/ar-ae/world.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+                            data: {
+                                selenium: 'footer-destination-countries'
+                            }
+                        }, {
+                            text: "مدن",
+                            link: '//www.agoda.com/ar-ae/cities.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+                            data: {
+                                selenium: 'footer-destination-cities'
+                            }
+                        }
+                    ]
+                },
+            
+
+            
+                {
+                    title: "انضم لشبكتنا",
+                    dataSelenium: 'footer-partner-with-us-column',
+                    list: [
+                        {
+                            text: "سجّل عقارك",
+                            link: '//ycs.agoda.com/ar-ae/?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc)',
+                            target: '_blank',
+                            rel: 'nofollow',
+                            data: {
+                                selenium: 'footer-partner-hotels'
+                            }
+                        }, {
+                            text: "كن شريكًا",
+                            link: '//partners.agoda.com/ar-ae/index.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+                            rel: 'nofollow',
+                            data: {
+                                selenium: 'footer-partner-affiliates'
+                            }
+                        }
+                    ]
+                },
+            
+                    
+                {
+                title: "حمّل التطبيق مجانًا",
+                dataSelenium: 'footer-mobile-app-column',
+                list: [
+                    {
+                        text: "أبل",
+                        link: '//app.appsflyer.com/id440676901?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;pid=direct&amp;c=hotel_page_footer&amp;af_siteid=1716632&amp;site_id=1716632&amp;af_sub1=desktop&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+                        rel: 'nofollow',
+                        data: {
+                            selenium: 'footer-mobile-app-ios'
+                        }
+                    }, {
+                        text: "أندرويد",
+                        link: '//app.appsflyer.com/com.agoda.mobile.consumer?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;pid=direct&amp;c=hotel_page_footer&amp;af_siteid=1716632&amp;site_id=1716632&amp;af_sub1=desktop&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc',
+                        rel: 'nofollow',
+                        data: {
+                            selenium: 'footer-mobile-app-andriod'
+                        }
+                    }
+                ]
+            }
+            
+    ],
+
+    copyrights: {
+        material: "جميع المواد الواردة هنا © 2005 - 2020 لشركة Agoda Company Pte. Ltd.، جميع الحقوق محفوظة.",
+        priceline: "أجودا تتبع شركة بوكينج هولدينج (Booking Holdings Inc) الرائدة في مجال الحجوزات الإلكترونية والسفر والأنشطة المتعلقة.",
+            
+            travel: " ",
+            
+        machineName: "AM-AGWEB-4H02",
+        showMachineNameBelow: false,
+        // icon classNames
+        brands:  JSON.parse('["agoda","priceline","kayak","rental-cars","booking-com","open-table"]')
+    }
+        };
+        </script>
+        <div id="react-footer"></div>
+    
+
+
+
+
+<script>
+
+    window.linkAccountService =
+    {
+        facebookConnectUrl: '/NewSite/ar-ae/LinkAccount/FacebookConnect',
+        wechatAuthUrl: '/NewSite/ar-ae/LinkAccount/WeChatAuth',
+        appleAuthUrl: '/api/ar-ae/Apple/RedirectToAppleAuth',
+        linkAccountUrl: '/newsite/ar-ae/host/LinkAccount',
+        associateAccountUrl: '/api/ar-ae/Login/FacebookAssociate',
+        sendEmailToSignUp: '/api/ar-ae/Login/SendEmailToSignUpDesktop',
+        registerAndFacebookAssociate: '/api/ar-ae/Login/RegisterAndFacebookAssociate',
+        validateEmailToLinkWeChat: '/NewSite/ar-ae/LinkAccount/ValidateEmailToLinkWeChat',
+        linkWeChatOnLogin: '/NewSite/ar-ae/LinkAccount/LinkWeChatOnLogin',
+        linkWeChatOnSignUp: '/NewSite/ar-ae/LinkAccount/LinkWeChatOnSignUp',
+    };
+</script>
+
+
+
+<div id="page-backdrop" class="hide"  ></div>
+
+    
+    <script type="text/javascript">
+
+        window.countryId = 0;
+    </script>
+
+
+    <script type="text/javascript">
+    var rtag_hotelid = 0;
+    var rtag_allhotelids = [];
+    var rtag_hotelid1 = 0;
+    var rtag_countryid = 0;
+    var rtag_cityid = 0;
+    var rtag_cityname = "";
+    var rtag_country_origin = "EG";
+
+  
+    var rtag_city_origin = "Giza";
+    var rtag_state_origin = "GZ";
+  
+
+    var rtag_checkin = "";
+    var rtag_checkout = "";
+    var rtag_cid = 1844104;
+    var rtag_pagetypeid = 7;
+    var rtag_langid = 40;
+    var rtag_adult = 0;
+    var rtag_child = 0;
+    var rtag_star_rating = 0;
+    var rtag_devicetype = "d";
+    var rtag_ue_sh = "";
+
+
+    var rtag_user_vip_level = "-1";
+
+
+    var rtag_cid_traffic_group = 1 ;
+    var rtag_cid_sub_traffic_group = 84 ;
+    var rtag_exp_rmkt_1 = "Z";
+    var rtag_exp_rmkt_2 = "Z";
+    var rtag_exp_rmkt_3 = "Z";
+    var rtag_exp_rmkt_4 = "Z";
+    var rtag_hotelid_wl = "";
+
+            
+            var rtag_displaycurrency = "USD";
+            
+            
+            var rtag_attributedv2_last_cid = "1844104";
+            
+        
+            var rtag_exp_rmkt_5 = "Z";
+        
+            
+                var rtag_site_origin = "Comoros";
+            
+         
+            (window.propertyPageParamsPromise || Promise.resolve()).then(function () {
+                var rtagObject = (window.propertyPageParams && window.propertyPageParams.tealium) || (window.criticalSectionParams && window.criticalSectionParams.tealium);
+                if (rtagObject) {
+                    rtag_hotelid = rtagObject.hotelId;
+                    rtag_allhotelids = rtagObject.allHotelIds;
+                    rtag_hotelid1 = rtagObject.hotelId1;
+                    rtag_countryid = rtagObject.countryId;
+                    rtag_cityid = rtagObject.cityId;
+                    rtag_cityname = rtagObject.cityName;
+                    rtag_checkin = rtagObject.checkInDateStr;
+                    rtag_checkout = rtagObject.checkOutDateStr;
+                    rtag_adult = rtagObject.adult;
+                    rtag_child = rtagObject.children;
+                    rtag_star_rating = rtagObject.hotelStar;
+
+                        
+                            rtag_no_of_room = rtagObject.noOfRoom;
+                            rtag_is_nha = rtagObject.isNha;
+                        
+
+                    if(rtagObject.supplierHotelId != null){
+                        rtag_hotelid_wl = rtagObject.supplierHotelId;
+                    }
+
+                }
+            });
+        
+            
+            var rtag_displaycurrency = "USD";
+            
+            
+            var rtag_cid_userdata = 1844104;
+            var rtag_tag_userdata = "";
+            
+
+    </script>
+
+<script type="text/javascript" id="tealium">
+    var isCCPAEnable = false;
+    var appSettingsPreferences = JSON.parse(localStorage.getItem("AppSettings.preferences"));
+    if(!isCCPAEnable || appSettingsPreferences == null || appSettingsPreferences.ccpa_status === "opt-in"){
+
+
+            
+                isMockMode = document.getElementById("mockDataEnabled")
+                    ? document.getElementById("mockDataEnabled").value === "True"
+                    : false;
+
+                    if (!isMockMode) {
+                    var tealiumUrl = "";
+
+                        tealiumUrl = "//tags.tiqcdn.com/utag/agoda/main2018/prod/utag.js";
+
+                    var utag_data = {
+                    };
+
+
+                        
+                            window.utag_cfg_ovrd = window.utag_cfg_ovrd || {};
+                            window.utag_cfg_ovrd.waittimer = 3000;
+                                
+                                    var pageParamsPromise = window.propertyPageParamsPromise ||
+                                        window.ssr_initialResultsPromise ||
+                                        Promise.resolve();
+                                    pageParamsPromise.then(function () { (function(a, b, c, d) {
+                            a = tealiumUrl;
+                            b = document;
+                            c = 'script';
+                            d = b.createElement(c);
+                            d.src = a;
+                            d.type = 'text/java' + c;
+                            d.async = true;
+                            a = b.getElementsByTagName(c)[0];
+                            a.parentNode.insertBefore(d, a);
+                        })(); });
+                                
+                        
+
+                        
+                        var sessionStatus = "parsingcookiefailed";
+                        var sessionId = 0;
+                        var isNewSession = 0;
+
+                        try {
+                            var tealiumCookie = document.cookie.match('(^|;) ?utag_main=([^;]*)(;|$)')[2].split("$");
+                            sessionId = tealiumCookie.filter(function (x) { return x.startsWith("ses_id"); })
+                                .map(function (x) { return x.split(":"); })
+                                .map(function (x) { return parseInt(x[1].split("%3B")[0]); })
+                                .map(function (x) { return x == NaN ? 0 : x; })[0];
+                            sessionStatus = sessionId == 0 ? "invalid" : "valid";
+
+                            isNewSession = tealiumCookie.filter(function (x) { return x.startsWith("_ss"); })
+                                .map(function (x) { return x.split(":"); })
+                                .map(function (x) { return parseInt(x[1]); })
+                                .map(function (x) { return x == NaN ? 0 : x; })[0];
+                        } catch (err) {}
+
+                        if (typeof MessagingClient !== 'undefined') {
+                            var messagingClient = MessagingClient.instantiate();
+                            var message = messagingClient.create('measurement', {
+                                name: 'TealiumUtagFiring',
+                                measurement: sessionId,
+                                count: 1,
+                                tags: {
+                                    pageTypeId: 7,
+                                    origin: "EG",
+                                    device: "DESKTOP",
+                                    sessionStatus: sessionStatus,
+                                    browser: "Firefox",
+                                    IsInternalIp: "False",
+                                    IsPreRender: "False",
+                                    IsCrawler: "False",
+                                    MobileDeviceType: "NOTMOBILE",
+                                },
+                            });
+                            messagingClient.send(message);
+
+                            if (isNewSession == 1) {
+                                var newSessionMessage = messagingClient.create('measurement', {
+                                    name: 'TealiumNewSession',
+                                    measurement: isNewSession,
+                                    count: 1,
+                                    tags: {
+                                        pageTypeId: 7,
+                                        origin: "EG",
+                                        device: "DESKTOP",
+                                        sessionStatus: sessionStatus,
+                                        browser: "Firefox",
+                                        IsInternalIp: "False",
+                                        IsPreRender: "False",
+                                        IsCrawler: "False",
+                                        MobileDeviceType: "NOTMOBILE",
+                                    },
+                                });
+
+                                messagingClient.send(newSessionMessage);
+                            }
+                        }
+                        
+
+            }
+        
+    }
+</script>
+
+
+
+<script type="text/javascript">
+    
+
+
+    window.currencyUrl =
+    {
+        get: '/api/ar-ae/Main/GetCurrencyList?HotelId=0&amp;countryId=0',
+        set: '/api/ar-ae/Main/SetSelectedCurency'
+    };
+    if (window.currencyUrl.get.indexOf("&amp;") > -1)
+        window.currencyUrl.get = window.currencyUrl.get.replace("&amp;", "&");
+
+    if (true) {
+        window.currencyUrl.get = window.currencyUrl.get.replace("countryId=0", "countryId=" + (window.countryId || null));
+    }
+
+    window.languageUrl =
+    {
+        get: '/api/ar-ae/Culture/GetLanguages',
+        set: '/api/ar-ae/Main/SetSelectedLanguage'
+    };
+
+    window.loginParamsUrl = '/api/ar-ae/Login/Params';
+
+    
+    agoda.phoneCodes = [{"countryCode":"ET","title":"إثيوبيا 251+","callingCode":"251"},{"countryCode":"AZ","title":"أذربيجان 994+","callingCode":"994"},{"countryCode":"AM","title":"أرمينيا 374+","callingCode":"374"},{"countryCode":"AW","title":"أروبا 297+","callingCode":"297"},{"countryCode":"ER","title":"إريتريا 291+","callingCode":"291"},{"countryCode":"ES","title":"إسبانيا 34+","callingCode":"34"},{"countryCode":"AU","title":"أستراليا 61+","callingCode":"61"},{"countryCode":"EE","title":"إستونيا 372+","callingCode":"372"},{"countryCode":"IL","title":"إسرائيل 972+","callingCode":"972"},{"countryCode":"AF","title":"أفغانستان 93+","callingCode":"93"},{"countryCode":"IO","title":"إقليم المحيط الهندي البريطاني 246+","callingCode":"246"},{"countryCode":"AR","title":"الأرجنتين 54+","callingCode":"54"},{"countryCode":"JO","title":"الأردن 962+","callingCode":"962"},{"countryCode":"EC","title":"الإكوادور 593+","callingCode":"593"},{"countryCode":"AE","title":"الإمارات العربية المتحدة 971+","callingCode":"971"},{"countryCode":"UY","title":"الأوروجواي 598+","callingCode":"598"},{"countryCode":"AL","title":"ألبانيا 355+","callingCode":"355"},{"countryCode":"BH","title":"البحرين 973+","callingCode":"973"},{"countryCode":"BR","title":"البرازيل 55+","callingCode":"55"},{"countryCode":"PT","title":"البرتغال 351+","callingCode":"351"},{"countryCode":"BA","title":"البوسنة والهرسك 387+","callingCode":"387"},{"countryCode":"GA","title":"الجابون 241+","callingCode":"241"},{"countryCode":"DZ","title":"الجزائر 213+","callingCode":"213"},{"countryCode":"DK","title":"الدنمارك 45+","callingCode":"45"},{"countryCode":"CV","title":"الرأس الأخضر 238+","callingCode":"238"},{"countryCode":"SV","title":"السلفادور 503+","callingCode":"503"},{"countryCode":"SN","title":"السنغال 221+","callingCode":"221"},{"countryCode":"SD","title":"السودان 249+","callingCode":"249"},{"countryCode":"SE","title":"السويد 46+","callingCode":"46"},{"countryCode":"EH","title":"الصحراء الغربية 212+","callingCode":"212"},{"countryCode":"SO","title":"الصومال 252+","callingCode":"252"},{"countryCode":"CN","title":"الصين 86+","callingCode":"86"},{"countryCode":"IQ","title":"العراق 964+","callingCode":"964"},{"countryCode":"PH","title":"الفلبين 63+","callingCode":"63"},{"countryCode":"CM","title":"الكاميرون 237+","callingCode":"237"},{"countryCode":"VA","title":"الكرسي الرسولي 379+","callingCode":"379"},{"countryCode":"KW","title":"الكويت 965+","callingCode":"965"},{"countryCode":"MV","title":"المالديفز 960+","callingCode":"960"},{"countryCode":"DE","title":"ألمانيا 49+","callingCode":"49"},{"countryCode":"HU","title":"المجر 36+","callingCode":"36"},{"countryCode":"MA","title":"المغرب 212+","callingCode":"212"},{"countryCode":"MX","title":"المكسيك 52+","callingCode":"52"},{"countryCode":"SA","title":"المملكة العربية السعودية 966+","callingCode":"966"},{"countryCode":"GB","title":"المملكة المتحدة 44+","callingCode":"44"},{"countryCode":"NO","title":"النرويج 47+","callingCode":"47"},{"countryCode":"AT","title":"النمسا 43+","callingCode":"43"},{"countryCode":"NE","title":"النيجر 227+","callingCode":"227"},{"countryCode":"IN","title":"الهند 91+","callingCode":"91"},{"countryCode":"US","title":"الولايات المتحدة الأمريكية 1+","callingCode":"1"},{"countryCode":"JP","title":"اليابان 81+","callingCode":"81"},{"countryCode":"YE","title":"اليمن 967+","callingCode":"967"},{"countryCode":"GR","title":"اليونان 30+","callingCode":"30"},{"countryCode":"AG","title":"أنتيغوا وبربودا 1268+","callingCode":"1268"},{"countryCode":"AD","title":"أندورا 376+","callingCode":"376"},{"countryCode":"ID","title":"إندونيسيا 62+","callingCode":"62"},{"countryCode":"AO","title":"أنغولا 244+","callingCode":"244"},{"countryCode":"AI","title":"أنغيلا 1264+","callingCode":"1264"},{"countryCode":"UZ","title":"أوزبكستان 998+","callingCode":"998"},{"countryCode":"UG","title":"أوغندا +256","callingCode":"256"},{"countryCode":"UA","title":"أوكرانيا 380+","callingCode":"380"},{"countryCode":"IR","title":"إيران 98+","callingCode":"98"},{"countryCode":"IE","title":"أيرلندا 353+","callingCode":"353"},{"countryCode":"IS","title":"آيسلندا 354+","callingCode":"354"},{"countryCode":"IT","title":"إيطاليا 39+","callingCode":"39"},{"countryCode":"PG","title":"بابوا غينيا الجديدة 675+","callingCode":"675"},{"countryCode":"PY","title":"باراجواي 595+","callingCode":"595"},{"countryCode":"PK","title":"باكستان 92+","callingCode":"92"},{"countryCode":"PW","title":"بالاو 680+","callingCode":"680"},{"countryCode":"BB","title":"بربادوس 1246+","callingCode":"1246"},{"countryCode":"BM","title":"برمودا 1441+","callingCode":"1441"},{"countryCode":"BN","title":"بروناي 673+","callingCode":"673"},{"countryCode":"BE","title":"بلجيكا 32+","callingCode":"32"},{"countryCode":"BG","title":"بلغاريا 359+","callingCode":"359"},{"countryCode":"BZ","title":"بليز 501+","callingCode":"501"},{"countryCode":"BD","title":"بنغلاديش 880+","callingCode":"880"},{"countryCode":"PA","title":"بنما 507+","callingCode":"507"},{"countryCode":"BJ","title":"بنين 229+","callingCode":"229"},{"countryCode":"BT","title":"بوتان 975+","callingCode":"975"},{"countryCode":"BW","title":"بوتسوانا 267+","callingCode":"267"},{"countryCode":"PR","title":"بورتوريكو 1787+","callingCode":"1787"},{"countryCode":"BF","title":"بوركينا فاسو 226+","callingCode":"226"},{"countryCode":"BI","title":"بوروندي 257+","callingCode":"257"},{"countryCode":"PL","title":"بولندا 48+","callingCode":"48"},{"countryCode":"BO","title":"بوليفيا 591+","callingCode":"591"},{"countryCode":"PF","title":"بولينيزيا الفرنسية 689+","callingCode":"689"},{"countryCode":"BQ","title":"بونير 5997+","callingCode":"5997"},{"countryCode":"PE","title":"بيرو +51","callingCode":"51"},{"countryCode":"TH","title":"تايلند 66+","callingCode":"66"},{"countryCode":"TW","title":"تايوان 886+","callingCode":"886"},{"countryCode":"TM","title":"تركمانستان 993+","callingCode":"993"},{"countryCode":"TR","title":"تركيا 90+","callingCode":"90"},{"countryCode":"TT","title":"ترينيداد وتوباغو 1868+","callingCode":"1868"},{"countryCode":"TD","title":"تشاد 235+","callingCode":"235"},{"countryCode":"CL","title":"تشيلي 56+","callingCode":"56"},{"countryCode":"TZ","title":"تنزانيا 255+","callingCode":"255"},{"countryCode":"TG","title":"توغو 228+","callingCode":"228"},{"countryCode":"TV","title":"توفالو 688+","callingCode":"688"},{"countryCode":"TK","title":"توكيلاو 690+","callingCode":"690"},{"countryCode":"TN","title":"تونس 216+","callingCode":"216"},{"countryCode":"TO","title":"تونغا 676+","callingCode":"676"},{"countryCode":"TL","title":"تيمور الشرقية 670+","callingCode":"670"},{"countryCode":"JM","title":"جامايكا 1876+","callingCode":"1876"},{"countryCode":"GI","title":"جبل طارق 350+","callingCode":"350"},{"countryCode":"GL","title":"جرينلاند 299+","callingCode":"299"},{"countryCode":"AX","title":"جزر آلاند 358+","callingCode":"358"},{"countryCode":"BS","title":"جزر البهاما 1242+","callingCode":"1242"},{"countryCode":"VI","title":"جزر العذراء الولايات المتحدة 1340+","callingCode":"1340"},{"countryCode":"KM","title":"جزر القمر 269+","callingCode":"269"},{"countryCode":"PN","title":"جزر بيتكيرن 64+","callingCode":"64"},{"countryCode":"TC","title":"جزر تركس وكايكوس 1649+","callingCode":"1649"},{"countryCode":"SB","title":"جزر سليمان 677+","callingCode":"677"},{"countryCode":"FO","title":"جزر فارو 298+","callingCode":"298"},{"countryCode":"FK","title":"جزر فوكلاند 500+","callingCode":"500"},{"countryCode":"VG","title":"جزر فيرجن البريطانية 1284+","callingCode":"1284"},{"countryCode":"KY","title":"جزر كايمان 1345+","callingCode":"1345"},{"countryCode":"CK","title":"جزر كوك 682+","callingCode":"682"},{"countryCode":"CC","title":"جزر كوكس 61+","callingCode":"61"},{"countryCode":"MH","title":"جزر مارشال 692+","callingCode":"692"},{"countryCode":"MP","title":"جزر ماريانا الشمالية 1670+","callingCode":"1670"},{"countryCode":"CX","title":"جزيرة كريسماس 61+","callingCode":"61"},{"countryCode":"IM","title":"جزيرة مان 441624+","callingCode":"44"},{"countryCode":"NF","title":"جزيرة نورفولك 672+","callingCode":"672"},{"countryCode":"CF","title":"جمهورية أفريقيا الوسطى 236+","callingCode":"236"},{"countryCode":"CZ","title":"جمهورية التشيك 420+","callingCode":"420"},{"countryCode":"DO","title":"جمهورية الدومينيكان 1809+","callingCode":"1809"},{"countryCode":"CG","title":"جمهورية الكونغو 242+","callingCode":"242"},{"countryCode":"CD","title":"جمهورية الكونغو الديمقراطية 243+","callingCode":"243"},{"countryCode":"XK","title":"جمهورية كوسوفو 383+","callingCode":"383"},{"countryCode":"ZA","title":"جنوب أفريقيا 27+","callingCode":"27"},{"countryCode":"SS","title":"جنوب السودان 211+","callingCode":"211"},{"countryCode":"GP","title":"جوادلوب 590+","callingCode":"590"},{"countryCode":"GE","title":"جورجيا 995+","callingCode":"995"},{"countryCode":"GS","title":"جورجيا الجنوبية 500+","callingCode":"500"},{"countryCode":"GF","title":"جويانا الفرنسية 594+","callingCode":"594"},{"countryCode":"DJ","title":"جيبوتي 253+","callingCode":"253"},{"countryCode":"JE","title":"جيرسي 441534+","callingCode":"44"},{"countryCode":"GG","title":"جيرنزي 441481+","callingCode":"44"},{"countryCode":"DM","title":"دومينيكا 1767+","callingCode":"1767"},{"countryCode":"RW","title":"رواندا 250+","callingCode":"250"},{"countryCode":"RU","title":"روسيا 7+","callingCode":"7"},{"countryCode":"BY","title":"روسيا البيضاء 375+","callingCode":"375"},{"countryCode":"RO","title":"رومانيا 40+","callingCode":"40"},{"countryCode":"RE","title":"ريونيون 262+","callingCode":"262"},{"countryCode":"ZM","title":"زامبيا 260+","callingCode":"260"},{"countryCode":"ZW","title":"زيمبابوي 263+","callingCode":"263"},{"countryCode":"CI","title":"ساحل العاج 225+","callingCode":"225"},{"countryCode":"WS","title":"ساموا 685+","callingCode":"685"},{"countryCode":"AS","title":"ساموا الأمريكية 1684+","callingCode":"1684"},{"countryCode":"PM","title":"سان بيار وميكلون 508+","callingCode":"508"},{"countryCode":"SM","title":"سان مارينو 378+","callingCode":"378"},{"countryCode":"BL","title":"سانت بارتيليمي 590+","callingCode":"590"},{"countryCode":"VC","title":"سانت فنسنت وجزر غرينادين 1784+","callingCode":"1784"},{"countryCode":"KN","title":"سانت كيتس ونيفيس 1869+","callingCode":"1869"},{"countryCode":"LC","title":"سانت لوسيا 1758+","callingCode":"1758"},{"countryCode":"SX","title":"سانت مارتن 1721+","callingCode":"1721"},{"countryCode":"MF","title":"سانت مارتن 590+","callingCode":"590"},{"countryCode":"SH","title":"سانت هيلينا 290+","callingCode":"290"},{"countryCode":"ST","title":"ساو تومي وبرينسيبي 239+","callingCode":"239"},{"countryCode":"LK","title":"سريلانكا 94+","callingCode":"94"},{"countryCode":"SJ","title":"سفالبارد وجان ماين 4779+","callingCode":"4779"},{"countryCode":"SK","title":"سلوفاكيا 421+","callingCode":"421"},{"countryCode":"SI","title":"سلوفينيا 386+","callingCode":"386"},{"countryCode":"SG","title":"سنغافورة 65+","callingCode":"65"},{"countryCode":"SZ","title":"سوازيلاند 268+","callingCode":"268"},{"countryCode":"SY","title":"سوريا 963+","callingCode":"963"},{"countryCode":"SR","title":"سورينام 597+","callingCode":"597"},{"countryCode":"CH","title":"سويسرا 41+","callingCode":"41"},{"countryCode":"SL","title":"سيراليون 232+","callingCode":"232"},{"countryCode":"SC","title":"سيشل 248+","callingCode":"248"},{"countryCode":"RS","title":"صربيا 381+","callingCode":"381"},{"countryCode":"TJ","title":"طاجيكستان 992+","callingCode":"992"},{"countryCode":"OM","title":"عمان 968+","callingCode":"968"},{"countryCode":"GM","title":"غامبيا 220+","callingCode":"220"},{"countryCode":"GH","title":"غانا 233+","callingCode":"233"},{"countryCode":"GD","title":"غرينادا 1473+","callingCode":"1473"},{"countryCode":"GT","title":"غواتيمالا 502+","callingCode":"502"},{"countryCode":"GU","title":"غوام 1671+","callingCode":"1671"},{"countryCode":"GY","title":"غيانا 592+","callingCode":"592"},{"countryCode":"GN","title":"غينيا 224+","callingCode":"224"},{"countryCode":"GQ","title":"غينيا الاستوائية 240+","callingCode":"240"},{"countryCode":"GW","title":"غينيا بيساو 245+","callingCode":"245"},{"countryCode":"VU","title":"فانواتو 678+","callingCode":"678"},{"countryCode":"FR","title":"فرنسا 33+","callingCode":"33"},{"countryCode":"PS","title":"فلسطين 970+","callingCode":"970"},{"countryCode":"VE","title":"فنزويلا 58+","callingCode":"58"},{"countryCode":"FI","title":"فنلندا 358+","callingCode":"358"},{"countryCode":"VN","title":"فيتنام 84+","callingCode":"84"},{"countryCode":"FJ","title":"فيجي 679+","callingCode":"679"},{"countryCode":"CY","title":"قبرص 357+","callingCode":"357"},{"countryCode":"QA","title":"قطر 974+","callingCode":"974"},{"countryCode":"KG","title":"قيرغيزستان 996+","callingCode":"996"},{"countryCode":"KZ","title":"كازاخستان 7+","callingCode":"76"},{"countryCode":"NC","title":"كاليدونيا الجديدة 687+","callingCode":"687"},{"countryCode":"HR","title":"كرواتيا 385+","callingCode":"385"},{"countryCode":"KH","title":"كمبوديا 855+","callingCode":"855"},{"countryCode":"CA","title":"كندا 1+","callingCode":"1"},{"countryCode":"CU","title":"كوبا 53+","callingCode":"53"},{"countryCode":"CW","title":"كوراساو 599+","callingCode":"599"},{"countryCode":"KR","title":"كوريا الجنوبية 82+","callingCode":"82"},{"countryCode":"KP","title":"كوريا الشمالية 850+","callingCode":"850"},{"countryCode":"CR","title":"كوستاريكا 506+","callingCode":"506"},{"countryCode":"CO","title":"كولومبيا 57+","callingCode":"57"},{"countryCode":"KI","title":"كيريباتي 686+","callingCode":"686"},{"countryCode":"KE","title":"كينيا 254+","callingCode":"254"},{"countryCode":"LV","title":"لاتفيا 371+","callingCode":"371"},{"countryCode":"LA","title":"لاوس 856+","callingCode":"856"},{"countryCode":"LB","title":"لبنان 961+","callingCode":"961"},{"countryCode":"LU","title":"لوكسمبورغ 352+","callingCode":"352"},{"countryCode":"LY","title":"ليبيا 218+","callingCode":"218"},{"countryCode":"LR","title":"ليبيريا 231+","callingCode":"231"},{"countryCode":"LT","title":"ليتوانيا 370+","callingCode":"370"},{"countryCode":"LI","title":"ليختنشتاين 423+","callingCode":"423"},{"countryCode":"LS","title":"ليسوتو 266+","callingCode":"266"},{"countryCode":"MQ","title":"مارتينيك 596+","callingCode":"596"},{"countryCode":"MO","title":"ماكاو 853+","callingCode":"853"},{"countryCode":"MT","title":"مالطا 356+","callingCode":"356"},{"countryCode":"ML","title":"مالي 223+","callingCode":"223"},{"countryCode":"MY","title":"ماليزيا 60+","callingCode":"60"},{"countryCode":"YT","title":"مايوت 262+","callingCode":"262"},{"countryCode":"MG","title":"مدغشقر 261+","callingCode":"261"},{"countryCode":"EG","title":"مصر 20+","callingCode":"20"},{"countryCode":"MK","title":"مقدونيا 389+","callingCode":"389"},{"countryCode":"MW","title":"ملاوي 265+","callingCode":"265"},{"countryCode":"MN","title":"منغوليا 976+","callingCode":"976"},{"countryCode":"MR","title":"موريتانيا 222+","callingCode":"222"},{"countryCode":"MU","title":"موريشيوس 230+","callingCode":"230"},{"countryCode":"MZ","title":"موزمبيق 258+","callingCode":"258"},{"countryCode":"MD","title":"مولدوفا 373+","callingCode":"373"},{"countryCode":"MC","title":"موناكو 377+","callingCode":"377"},{"countryCode":"MS","title":"مونتسيرات 1664+","callingCode":"1664"},{"countryCode":"ME","title":"مونتينجرو 382+","callingCode":"382"},{"countryCode":"MM","title":"ميانمار 95+","callingCode":"95"},{"countryCode":"NA","title":"ناميبيا +264","callingCode":"264"},{"countryCode":"NR","title":"ناورو 674+","callingCode":"674"},{"countryCode":"NP","title":"نيبال 977+","callingCode":"977"},{"countryCode":"NG","title":"نيجيريا 234+","callingCode":"234"},{"countryCode":"NI","title":"نيكاراجوا 505+","callingCode":"505"},{"countryCode":"NZ","title":"نيوزيلندا 64+","callingCode":"64"},{"countryCode":"NU","title":"نيوي 683+","callingCode":"683"},{"countryCode":"HT","title":"هايتي 509+","callingCode":"509"},{"countryCode":"HN","title":"هندوراس 504+","callingCode":"504"},{"countryCode":"NL","title":"هولندا 31+","callingCode":"31"},{"countryCode":"HK","title":"هونج كونج 852+","callingCode":"852"},{"countryCode":"WF","title":"واليس وفوتونا 681+","callingCode":"681"},{"countryCode":"FM","title":"ولايات ميكرونيزيا الموحدة 691+","callingCode":"691"}];
+
+    
+    window.eventLogURL = '/api/ar-ae/Main/LogEventMessage';
+    var agoda = agoda || {};
+    agoda.RewardsMember = {
+        IsLogin: false,
+        IsL1LoggedIn: false,
+        IsProfilePicture: false,
+        userIconIndex: 5
+    };
+    agoda.IsCaptcha = ("True" == "True");
+    agoda.IsWhiteList = ("False" == "True");
+    agoda.isNeededSignInCaptcha =
+        false;
+    agoda.isAlwaysShowCaptcha =
+        false;
+    agoda.IsBLTPageFix = "False" == "True";
+    agoda.PageType = 'Hotel';
+    agoda.ForgotPasswordLink = "/account/signin.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;pid=direct&amp;c=hotel_page_footer&amp;af_siteid=1716632&amp;site_id=1716632&amp;af_sub1=desktop&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc";
+    agoda.IsDisplayMobileSignInCaptcha = "False" == "True";
+    agoda.IsMobile = "False" == "True";
+    agoda.IsTablet = "False" == "True";
+    agoda.IsTONumberEnabled = "False" == "True";
+    agoda.IsMigrateNotificationBadge = "True" == "True"
+    agoda.insiderDealBannerPropertyReact = "True" == "True";
+    agoda.isWeChatLogin = "False" == "True";
+    agoda.isFacebookLogin = "True" == "True";
+    agoda.isDelayDownloadingSdk = false;
+
+    agoda.isReferralSignup = "False" == "True";
+
+    agoda.termOfUserLink = "/ar-ae/info/termsofuse.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;pid=direct&amp;c=hotel_page_footer&amp;af_siteid=1716632&amp;site_id=1716632&amp;af_sub1=desktop&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc",
+    agoda.privacyLink = "/ar-ae/info/privacy.html?cid=1844104&amp;migration=2&amp;option=reset-password&amp;asq=hLmFVCz%252FPM%252F3idVcN4Ju9Vh54BEjL19Bw0VorcXIQXPiJGPe3U0UME1I0ApyWhS9vmQcQMAAMXiVjo24U26TZOUoQQi8QbIwxutHzESKKeI%253D&amp;pid=direct&amp;c=hotel_page_footer&amp;af_siteid=1716632&amp;site_id=1716632&amp;af_sub1=desktop&amp;ckuid=91eb9a15-4d76-4516-b9f0-1dd2a3c282fc",
+
+    agoda.UseFacebookSDKGlobalMob = "False" == "True";
+    window.fbAppId = '542369425788563';
+
+    agoda.login = agoda.login || {}
+    agoda.login.FBSignInCallbacks = [];
+    agoda.login.loginResponseCallback = undefined;
+    agoda.login.isReact = true;
+    agoda.login.isMock = false;
+    agoda.login.phoneNumberSignInNeedCaptcha = false;
+    agoda.login.requireCaptchaSolved = false;
+
+    
+
+    agoda.expSwat = ("True" == "True");
+
+    var onDocumentReady = function() {
+        if (agoda) {
+            if (agoda.event && typeof (agoda.event.setup) === "function")
+                agoda.event.setup(eventLogURL);
+
+            if (agoda.page && typeof (agoda.page.initApplyGiftcard) === "function")
+                $(agoda.page.initApplyGiftcard());
+
+            if (agoda.password && typeof(agoda.password.init) === "function")
+                agoda.password.init("#sign-up-password");
+
+            if (agoda.desktop) {
+                if (agoda.desktop.footer && typeof(agoda.desktop.footer.init) === "function")
+                    agoda.desktop.footer.init($('#footer'));
+
+                if (agoda.desktop.copyright && typeof(agoda.desktop.copyright.init) === "function")
+                    agoda.desktop.copyright.init($('#footer'));
+
+                if (agoda.desktop.pata && typeof(agoda.desktop.pata.init) === "function")
+                    agoda.desktop.pata.init("#copyright-pata", "pata-template");
+
+                if (agoda.desktop.subscribe && typeof(agoda.desktop.subscribe.init) === "function")
+                    agoda.desktop.subscribe.init("#save_money_signup", "save-money-now-template", "ar-ae");
+            }
+        }
+    }
+
+
+
+</script>
+
+
+
+
+
+    
+    <script defer src="https://cdn6.agoda.net/js/assets/DYNA/commons-flightsdetails-flightsresults-home-property-search-umrah.home-7db7025dd2cc.js"></script><script defer src="https://cdn6.agoda.net/js/assets/DYNA/default-flightsdetails-flightsresults-home-property-search-umrah.home-43d134cfd334.js"></script><script defer src="https://cdn6.agoda.net/js/assets/DYNA/vendors-flightsdetails-flightsresults-home-property-search-umrah.home-e2e1953caae4.js"></script><script defer src="https://cdn6.agoda.net/js/assets/DYNA/vendors-flightsresults-home-property-search-1f586c8f8a2e.js"></script><script defer src="https://cdn6.agoda.net/js/assets/DYNA/default-home-property-search-9e78f97ce42a.js"></script><script defer src="https://cdn6.agoda.net/js/assets/DYNA/default-property-search-f517adcb132c.js"></script><script defer src="https://cdn6.agoda.net/js/assets/DYNA/vendors-property-search-8ee494b33376.js"></script><script defer src="https://cdn6.agoda.net/js/assets/DYNA/vendors-property-99cecb90081e.js"></script><script defer src="https://cdn6.agoda.net/js/assets/DYNA/property-1fb3add3d9c6.js"></script>
+
+
+
+
+
+    
+
+
+</body>
+</html>
