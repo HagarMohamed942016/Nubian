@@ -18,7 +18,7 @@
     <table class="table  border-light">
         <thead class="thead-dark">
         <tr>
-            <th>No Of Table</th>
+           
             <th>Drinks</th>
             <th>Price of drink</th>
             <th>Foods</th>
@@ -26,7 +26,7 @@
         </tr>
         </thead>
         <tbody>
-        <td>{{$restaurant->No_of_table}}</td>
+        
         <td>{{$restaurant->Drinks}}</td>
         <td>{{$restaurant->Price_of_drinks}}</td>
         <td>{{$restaurant->Foods}}</td>

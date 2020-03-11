@@ -50,7 +50,7 @@ class usersController extends Controller
         return view('Admin.createRoom');
     }
 
-    public function storeRoom()
+    public function storeRoom(Request $request)
     {
         $room=new room();
         $room->No_of_room=Request('no_of_room');
@@ -104,10 +104,10 @@ class usersController extends Controller
         return view('Admin.createRestaurant');
     }
 
-    public function storeRestaurant()
+    public function storeRestaurant(Request $request)
     {
         $restaurant=new restaurant();
-        $restaurant->No_of_table=Request('No_of_table');
+       
         $restaurant->Drinks=Request('Drinks');
         $restaurant->Price_of_drinks=Request('Price_of_drinks');
         $restaurant->Foods=Request('Foods');
@@ -132,7 +132,6 @@ class usersController extends Controller
     public function  updateRestaurant(Request $request, $id)
     {
         $restaurant=restaurant::all()->find($id);
-        $restaurant->No_of_table=Request('No_of_table');
         $restaurant->Drinks=Request('Drinks');
         $restaurant->Price_of_drinks=Request('Price_of_drinks');
         $restaurant->Foods=Request('Foods');

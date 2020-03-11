@@ -76,7 +76,7 @@ Route::middleware(['auth','admin'])->group (function()
     Route::post('/restaurantTable','usersController@storeRestaurant');
     Route::get('/restaurantTable/{id}','usersController@showRestaurant');
     Route::get('/editRestaurant/{id}','usersController@editRestaurant');
-    Route::post('/editRestaurant/{id}/updateRestaurant','usersController@editRestaurant');
+    Route::post('/editRestaurant/{id}/updateRestaurant','usersController@updateRestaurant');
     Route::get('/deleteRestaurant/{id}','usersController@deleteRestaurant');
 
 //upload image
@@ -101,3 +101,7 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@home')->name('index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

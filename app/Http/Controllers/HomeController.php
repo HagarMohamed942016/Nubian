@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\customer_rooms;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -26,14 +24,5 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
-    }
-
-    public function home()
-    {
-        $rooms = DB::table('rooms')
-            ->groupBy('type')
-            ->get();
-
-        return view('index',compact('rooms'));
     }
 }

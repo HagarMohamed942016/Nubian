@@ -18,10 +18,7 @@
 
     <form  action="/restaurantTable"  method="post">
         @csrf
-        <div class="form-group">
-            <label>NO Of Table</label>
-            <input type="text" class="form-control" name="No_of_table"  value="" id="No_of_table">
-        </div>
+        
         <div class="form-group">
             <label>Drinks</label>
             <input type="text" class="form-control" name="Drinks"  value="" id="Drinks">
