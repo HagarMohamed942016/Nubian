@@ -78,13 +78,13 @@
                     }
                 });
 
-                $('#type').change(function()
-                {
-                    $('#No_of_room').val('');
-                    $('#Price').val('');
-                    console.log("No.");
-
-                });
+                // $('#type').change(function()
+                // {
+                //     $('#No_of_room').val('');
+                //     $('#Price').val('');
+                //     console.log("No.");
+                //
+                // });
 
             });
 
