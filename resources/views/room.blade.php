@@ -51,14 +51,14 @@
                         console.log(dependent);
 
                         $.ajax({
-                            method:"GET",
                             url:"{{ route('fetch') }}",
+                            method:"GET",
                             data:{select:select, value:value, dependent:dependent},
                             success:function(result)
                             {
-                                $('#'+ dependent).html(result);
-
-                                console.log($('#'+ dependent).html(result))
+                                var No_of_rooms = result
+                                console.log(No_of_rooms);
+                                $('#'+dependent).html(result);
                             }
 
                         }),
@@ -74,7 +74,7 @@
                                     console.log(price);
 
                                     console.log(data.Price);
-                                    $('#Price').html(data.Price + ' $');
+                                    $('#Price').html(data.Price+' $');
                                 },
                             });
                     }

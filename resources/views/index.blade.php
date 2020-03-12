@@ -84,8 +84,6 @@
                             success:function(result)
                             {
                                 $('#'+dependent).html(result);
-
-                                console.log($('#'+ dependent).html(result))
                             }
 
                         }),
@@ -101,7 +99,7 @@
                                     console.log(price);
 
                                     console.log(data.Price);
-                                    $('#Price').html(data.Price+'$');
+                                    $('#Price').html(data.Price+' $');
                                 },
                             });
                     }

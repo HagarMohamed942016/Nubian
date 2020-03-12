@@ -162,12 +162,12 @@ class roomController extends Controller
             ->groupBy($dependent)
             ->get();
 //        $output = '<option value="">Select '.ucfirst($dependent).'</option>';
-        foreach($data as $row)
-        {
-            $output = '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
-        }
+//        foreach($data as $row)
+//        {
+//            $output .= '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
+//        }
 //        echo $output;
-        return response()->json($output);
+        return view('room',compact('data'));
 
 
     }
