@@ -51,12 +51,12 @@
                         console.log(dependent);
 
                         $.ajax({
-                            url:"{{ route('fetch') }}",
                             method:"GET",
+                            url:"{{ route('fetch') }}",
                             data:{select:select, value:value, dependent:dependent},
                             success:function(result)
                             {
-                                $('#'+dependent).html(result);
+                                $('#'+ dependent).html(result);
 
                                 console.log($('#'+ dependent).html(result))
                             }
