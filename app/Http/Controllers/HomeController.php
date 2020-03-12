@@ -30,9 +30,10 @@ class HomeController extends Controller
 
     public function home()
     {
-        $rooms = DB::table('rooms')
-            ->groupBy('type','id')
-            ->get();
-        return view('index');
+        // $rooms = DB::table('rooms')
+        //     ->groupBy('type','id')
+        //     ->get();
+        $rooms = room::select('id')->groupBy('type')->get();
+        return view('index',compact('rooms'));
     }
 }
