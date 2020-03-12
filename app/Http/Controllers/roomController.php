@@ -18,9 +18,10 @@ class roomController extends Controller
 
     public function room()
     {
-        $rooms = DB::table('rooms')
-            ->groupBy('type')
-            ->get();
+         $rooms = room::select('type')->distinct('type')->get();
+//         $rooms = DB::table('rooms')
+//             ->groupBy('type')
+//             ->get();
         return view ('room',compact('rooms'));
     }
 
