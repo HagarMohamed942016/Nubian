@@ -8,7 +8,7 @@ use App\room;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Carbon;
+
 
 class indexController extends Controller
 {
@@ -20,7 +20,7 @@ class indexController extends Controller
     public function index()
     {
         $rooms = DB::table('rooms')
-            ->groupBy('type')
+            ->groupBy('type','id')
             ->get();
         $reservations=DB::table('customer_rooms')->groupBy()->get();
         $reservation=customer_rooms::all();

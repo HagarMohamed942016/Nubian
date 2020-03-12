@@ -102,6 +102,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@home')->name('index');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
