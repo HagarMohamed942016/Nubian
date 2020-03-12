@@ -19,9 +19,10 @@ class indexController extends Controller
 
     public function index()
     {
-        $rooms = DB::table('rooms')
-            ->groupBy('type','id')
-            ->get();
+//        $rooms = DB::table('rooms')
+//            ->groupBy('type')
+//            ->get();
+        $rooms = room::select('type')->distinct('type')->get();
         $reservations=DB::table('customer_rooms')->groupBy()->get();
         $reservation=customer_rooms::all();
         return view ('index',compact('rooms','reservations','reservation'));
@@ -30,9 +31,10 @@ class indexController extends Controller
 
     public function home()
     {
-        $rooms = DB::table('rooms')
-            ->groupBy('type')
-            ->get();
+//        $rooms = DB::table('rooms')
+//            ->groupBy('type')
+//            ->get();
+        $rooms = room::select('type')->distinct('type')->get();
         return view ('index',compact('rooms'));
     }
 

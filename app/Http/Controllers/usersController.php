@@ -52,12 +52,13 @@ class usersController extends Controller
 
     public function storeRoom(Request $request)
     {
+        $rooms=room::all();
+
         $room=new room();
         $room->No_of_room=Request('no_of_room');
         $room->type=Request('type');
         $room->Price=Request('Price');
         $room->save();
-        $rooms=room::all();
 
         return view('Admin.roomTable',compact('rooms'));
     }
@@ -76,20 +77,22 @@ class usersController extends Controller
 
     public function  updateRoom(Request $request, $id)
     {
+        $rooms=room::all();
+
         $room=room::all()->find($id);
         $room->No_of_room=Request('no_of_room');
         $room->type=Request('type');
         $room->Price=Request('Price');
         $room->save();
-        $rooms=room::all();
         return view('Admin.roomTable',compact('rooms'));
     }
 
     public function deleteRoom($id)
     {
+        $rooms=room::all();
+        
         $room=room::all()->find($id);
         $room->delete();
-        $rooms=room::all();
         return view('Admin.roomTable',compact('rooms'));
     }
 
