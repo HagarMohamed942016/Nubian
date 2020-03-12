@@ -161,13 +161,13 @@ class roomController extends Controller
             ->where($select, $value)
             ->groupBy($dependent)
             ->get();
-//        $output = '<option value="">Select '.ucfirst($dependent).'</option>';
-//        foreach($data as $row)
-//        {
-//            $output .= '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
-//        }
-//        echo $output;
-        return view('room',compact('data'));
+        $output = '<option value="">Select '.ucfirst($dependent).'</option>';
+        foreach($data as $row)
+        {
+            $output .= '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
+        }
+        echo $output;
+//        return view('room',compact('data'));
 
 
     }
