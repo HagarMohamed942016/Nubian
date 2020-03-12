@@ -83,7 +83,9 @@
                             data:{select:select, value:value, dependent:dependent},
                             success:function(result)
                             {
-                                $('#'+dependent).html(result);
+                                // $('#'+dependent).html(result);
+                                $('#'+dependent).val(result);
+
                             }
 
                         }),
