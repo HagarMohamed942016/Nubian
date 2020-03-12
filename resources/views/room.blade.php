@@ -57,8 +57,8 @@
                             success:function(result)
                             {
                                 // $('#'+dependent).html(result);
-                                $('#'+dependent).val(result);
-
+                                $('#'+ dependent).val(result);
+                                console.log($('#'+ dependent).val(result))
                             }
 
                         }),
