@@ -53,8 +53,6 @@
                         $.ajax({
                             url:"{{ route('fetch') }}",
                             method:"GET",
-                            {{--type:'get',--}}
-                            {{--url: "{{route('fetch')}}",--}}
                             data:{select:select, value:value, dependent:dependent},
                             success:function(result)
                             {

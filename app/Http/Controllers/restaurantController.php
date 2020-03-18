@@ -120,6 +120,16 @@ class restaurantController extends Controller
 //            }
 //        }
 
+        $userId = user::where('email', $restaurant->email)->get();
+
+        foreach ($userId as $item => $idU)
+        {
+            $customer->user_id=$idU->id;
+            $customer->name=$idU->name;
+            $customer->country='Egypt';
+        }
+
+
         $customer->save();
         $customerRequest = customer::where('email', $restaurant->email)->get();
         foreach ($customerRequest as $key => $value)

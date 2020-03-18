@@ -167,7 +167,6 @@ class roomController extends Controller
             $output .= '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
         }
         echo $output;
-//        return view('room',compact('data'));
 
 
     }
