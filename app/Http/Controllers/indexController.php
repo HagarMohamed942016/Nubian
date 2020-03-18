@@ -98,7 +98,8 @@ class indexController extends Controller
 
 
 
-        if ($item['email'] == $request->email ) {
+//        if ($item['email'] == $request->email ) {
+        if ($item->email == $request->email ) {
 //            dd($userEmail,$request->email,$reservation->email,$reservation->No_of_room,$customer->name,$customer->email,$reservation->check_in,$users);
 
             foreach ($cats as $cat)
@@ -129,7 +130,7 @@ class indexController extends Controller
                     return view('checkRoom', compact('reservation', 'userId', 'userEmail', 'from', 'to', 'cats', 'users', 'customer'));
 
                 }
-            if ($request->email == $value['email'] )
+            if ($request->email == $value->email )
             {
 
                 $reservation->customer_id = $value->id;
