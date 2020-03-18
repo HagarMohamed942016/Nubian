@@ -23,7 +23,7 @@ Route::get('/deleteReservation/{id}','indexController@deleteReservation');
 /*For room page*/
 Route::get('/room','roomController@room');
 Route::post('/roomR','roomController@storeRoom');
-Route::post('/fetch', 'indexController@fetch')->name('fetch');
+Route::get('/fetch', 'indexController@fetch')->name('fetch');
 Route::get('/findPrice','indexController@findPrice')->name('findPrice');
 //To cancel reservation of room
 Route::get('/deleteReservation/{id}','indexController@deleteReservation');
