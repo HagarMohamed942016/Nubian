@@ -79,7 +79,7 @@
 
                         $.ajax({
                             url:"{{ route('fetch') }}",
-                            method:"GET",
+                            method:"post",
                             data:{select:select, value:value, dependent:dependent},
                             success:function(result)
                             {
