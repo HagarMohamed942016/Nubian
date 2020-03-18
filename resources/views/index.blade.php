@@ -78,14 +78,13 @@
                         console.log(dependent);
 
                         $.ajax({
-                            type:'get',
                             url:"{{ route('fetch') }}",
-                            // method:"get",
+                            method:"GET",
                             data:{select:select, value:value, dependent:dependent},
-                            dataType:'json',//return data will be json
+                            // dataType:'json',//return data will be json
                             success:function(result)
                             {
-                                $('#' + dependent).html(result);
+                                $('#No_of_room').html(result);
                             }
 
                         }),
