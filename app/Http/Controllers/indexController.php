@@ -172,10 +172,14 @@ class indexController extends Controller
         $select = $request->get('select');
         $value = $request->get('value');
         $dependent = $request->get('dependent');
-        $data = DB::table('rooms')
-            ->where($select, $value)
-            ->groupBy($dependent)
-            ->get();
+//        $data = DB::table('rooms')
+//            ->where($select, $value)
+//            ->groupBy($dependent)
+//            ->get();
+
+
+        $data = room::select($dependent)->where($select,$value)->get();
+
         $output = '<option value="">Select '.ucfirst($dependent).'</option>';
         foreach($data as $row)
         {

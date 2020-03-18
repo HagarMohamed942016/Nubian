@@ -78,7 +78,6 @@
                         console.log(dependent);
 
                         $.ajax({
-                            // type:'get',
                             url:"{{ route('fetch') }}",
                             method:"GET",
                             data:{select:select, value:value, dependent:dependent},
