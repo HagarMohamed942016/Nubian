@@ -181,7 +181,9 @@ class indexController extends Controller
         {
             $output .= '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
         }
-        echo $output;
+//        echo $output;
+        return response()->json($output);
+
 
 
     }
