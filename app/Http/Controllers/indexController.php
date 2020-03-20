@@ -144,7 +144,7 @@ class indexController extends Controller
                          $reservation->customer_id = $it->id;
                          $reservation->save();
 
-                         return view('checkRoom', compact('reservation',  'userEmail',  'cats',  'customer'));
+                         return view('checkRoom', compact('reservation',    'cats',  'customer'));
                      }
 
 //                     dd($usersEmail, $title->id, $cats,  $title->email, $arrayUser ,$arrayUser[$i]);
@@ -172,7 +172,7 @@ class indexController extends Controller
                              $reservation->customer_id = $it->id;
                              $reservation->save();
 
-                             return view('checkRoom', compact('reservation',  'userEmail',  'cats',  'customer'));
+                             return view('checkRoom', compact('reservation',    'cats',  'customer'));
                          }
 
                      }
@@ -220,7 +220,7 @@ class indexController extends Controller
                             $reservation->customer_id = $it->id;
                             $reservation->save();
 
-                            return view('checkRoom', compact('reservation', 'userEmail', 'cats', 'customer'));
+                            return view('checkRoom', compact('reservation',  'cats', 'customer'));
                         }
 
                     }

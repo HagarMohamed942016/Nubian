@@ -117,7 +117,7 @@ class roomController extends Controller
                         $reservation->customer_id = $it->id;
                         $reservation->save();
 
-                        return view('checkRoom', compact('reservation',  'userEmail',  'cats',  'customer'));
+                        return view('checkRoom', compact('reservation',      'customer'));
                     }
                 }
 
@@ -143,7 +143,7 @@ class roomController extends Controller
                             $reservation->customer_id = $it->id;
                             $reservation->save();
 
-                            return view('checkRoom', compact('reservation',  'userEmail',  'cats',  'customer'));
+                            return view('checkRoom', compact('reservation',   'customer'));
                         }
 
                     }
