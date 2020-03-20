@@ -13,12 +13,12 @@
 
 <div class="container">
     <br>
-    <h2  style="color:blue">Edit Restaurant Table</h2>
+    <h2  style="color:blue">Edit Drinks and Foods For Menu</h2>
     <br>
 
     <form  action="/editRestaurant/{{$restaurant->id}}/updateRestaurant"  method="post">
         @csrf
-       
+
         <div class="form-group">
             <label>Drinks</label>
             <input type="text" class="form-control" name="Drinks"  value="{{$restaurant->Drinks}}" id="Drinks">
@@ -41,7 +41,7 @@
     </form>
 
     <br><br>
-    <a class="btn btn-primary" href="/restaurantTable" class="btn btn-primary">Return To Restaurant Table</a>
+    <a class="btn btn-primary" href="/restaurantTable" class="btn btn-primary">Return To Menu Table</a>
 
     <a class="btn btn-primary" href="/admin" class="btn btn-primary">Return To Admin Page</a>
 

@@ -13,12 +13,12 @@
 
 <div class="container">
     <br>
-    <h2  style="color:blue">Details of Table</h2>
+    <h2  style="color:blue">Details of Menu</h2>
     <br>
     <table class="table  border-light">
         <thead class="thead-dark">
         <tr>
-           
+
             <th>Drinks</th>
             <th>Price of drink</th>
             <th>Foods</th>
@@ -26,7 +26,7 @@
         </tr>
         </thead>
         <tbody>
-        
+
         <td>{{$restaurant->Drinks}}</td>
         <td>{{$restaurant->Price_of_drinks}}</td>
         <td>{{$restaurant->Foods}}</td>
@@ -35,7 +35,7 @@
     </table>
 
 <br>
-    <a class="btn btn-primary" href="/restaurantTable" class="btn btn-primary">Return To Restaurant Table</a>
+    <a class="btn btn-primary" href="/restaurantTable" class="btn btn-primary">Return To Menu Table</a>
 
     <a class="btn btn-primary" href="/admin" class="btn btn-primary">Return To Admin Page</a>
 

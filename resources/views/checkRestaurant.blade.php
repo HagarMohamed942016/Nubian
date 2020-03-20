@@ -74,7 +74,7 @@
 {{--                        <input type="" name="" placeholder="{{$restaurant->No_of_person}}">--}}
                     </div>
                     <div class="col-sm-6">
-                        <p>Total Price</p>
+                        <p>Total Price For One Person</p>
                         <label>{{$restaurant->total_price}}</label>
 {{--                        <input type="" name="" placeholder="{{$restaurant->total_price}}">--}}
                     </div>

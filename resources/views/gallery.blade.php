@@ -10,7 +10,6 @@
         <title>Nubian House</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css3/bootstrap.css">
-        <link rel="stylesheet" href="vendors/linericon/style.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
         <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
@@ -19,10 +18,14 @@
         <!-- main css -->
         <link rel="stylesheet" href="css3/style.css">
         <link rel="stylesheet" href="css3/responsive.css">
+
+        <script src="jsHotel/jquery-3.3.1.min.js"></script>
+        <script src="jsHotel/bootstrap.min.js"></script>
+
     </head>
 
 
-    <body>
+
 
 
     <!--================Home Banner Area =================-->
@@ -32,7 +35,7 @@
         </div>
     </section>
     <!--================End Home Banner Area =================-->
-    </br>
+    <br>
     <section class="gallery_area section_gap">
         <div class="container">
             <div class="section_title text-center">
@@ -61,7 +64,7 @@
                     <div class="h_gallery_item">
                         <img src="images/zzzz.jpg" alt="">
                         <div class="hover">
-                            <a href="#"><h4>Temple Philla</h4></a>
+                          com  <a href="#"><h4>Temple Philla</h4></a>
                             <a class="light" href="images/zzz.jpg"><i class="fa fa-expand"></i></a>
                         </div>
                     </div>

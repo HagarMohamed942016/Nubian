@@ -15,12 +15,11 @@
     <br>
     <h2  style="color:blue">Restaurant Table</h2>
     <br>
-    <a class="btn btn-outline-info"   href="/createRestaurant">Create Table For Restaurant</a>
+    <a class="btn btn-outline-info"   href="/createRestaurant">Add Drinks and Foods For Menu</a>
 <br><br>
     <table class="table  border-light">
         <thead class="thead-dark">
         <tr>
-{{--            <th>No Of Table</th>--}}
             <th>Drinks</th>
             <th>Price of Drinks</th>
             <th>Foods</th>
@@ -30,11 +29,9 @@
             <th>Delete</th>
         </tr>
         </thead>
-        {{--     ///////no   <tbody>--}}
         @foreach($restaurants as $restaurant)
             <tbody>
             <tr>
-{{--                <td>{{$restaurant->No_of_table}}</td>--}}
                 <td>{{$restaurant->Drinks}}</td>
                 <td>{{$restaurant->Price_of_drinks}}</td>
                 <td>{{$restaurant->Foods}}</td>
@@ -43,15 +40,13 @@
                 <td><a class="btn btn-success" href="/editRestaurant/{{$restaurant->id}}">Edit</a></td>
                 <td><a class="btn btn-danger" href="/deleteRestaurant/{{$restaurant->id}}">Delete</a></td>
 
-                {{--       style="margin-left:20px;color: #6f42c1;"         <td>{{$restaurant->Drinks}}</td>--}}
-                {{--                <td>{{$restaurant->Foods}}</td>--}}
+
 
             </tr>
             </tbody>
 
         @endforeach
 
-        {{--   //////no     </tbody>--}}
     </table>
 
 

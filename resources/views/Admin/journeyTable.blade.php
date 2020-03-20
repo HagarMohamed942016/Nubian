@@ -20,15 +20,14 @@
     <table class="table  border-light">
         <thead class="thead-dark">
         <tr>
-            {{--            <th>No Of Table</th>--}}
+
             <th>Name Of Trip</th>
-            <th>Price</th>Restaurant
+            <th>Price</th>
             <th>Show</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
-        {{--     ///////no   <tbody>--}}
         @foreach($trips as $trip)
             <tbody>
             <tr>
@@ -45,7 +44,6 @@
 
         @endforeach
 
-        {{--   //////no     </tbody>--}}
     </table>
 
 

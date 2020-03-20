@@ -42,13 +42,14 @@
         <link rel="stylesheet" href="cssHotel/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="cssHotel/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="cssHotel/flaticon.css" type="text/css">
-        <link rel="stylesheet" href="cssHotel/linearicons.css" type="text/css">
         <link rel="stylesheet" href="cssHotel/owl.carousel.min.css" type="text/css">
         <link rel="stylesheet" href="cssHotel/jquery-ui.min.css" type="text/css">
         <link rel="stylesheet" href="cssHotel/nice-select.css" type="text/css">
         <link rel="stylesheet" href="cssHotel/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="cssHotel/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="cssHotel/style.css" type="text/css">
+
+        <link rel="stylesheet" href="cssHotel/linearicons.css" type="text/css">
 
 
         <!-- Js Plugins -->

@@ -24,7 +24,9 @@
 <!--All-->
 <div class="main">
     <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="A">
         <a class="navbar-brand" href="#" style="font-family: Curlz MT;">Nubian</a>
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -128,7 +130,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="footer-logo">
-                    <a href="#">Nubian</a>
+                    <a href="#"  style="font-family: Curlz MT;">Nubian</a>
                 </div><br>
             </div>
         </div>
@@ -137,7 +139,7 @@
                 <div class="single-footer-widget">
                     <h5>Location</h5>
                     <div class="widget-text">
-                        <i class="lnr lnr-map-marker"></i>
+{{--                        <i class="lnr lnr-map-marker"></i>--}}
                         <p>1525 Boring Lane, <br />Los Angeles, CA</p>
                     </div>
                 </div>
@@ -146,7 +148,7 @@
                 <div class="single-footer-widget">
                     <h5>Reception</h5>
                     <div class="widget-text">
-                        <i class="lnr lnr-phone-handset"></i>
+{{--                        <i class="lnr lnr-phone-handset"></i>--}}
                         <p>+1 (603)535-4592</p>
                     </div>
                 </div>
@@ -155,7 +157,7 @@
                 <div class="single-footer-widget">
                     <h5>Shuttle Service</h5>
                     <div class="widget-text">
-                        <i class="lnr lnr-phone-handset"></i>
+{{--                        <i class="lnr lnr-phone-handset"></i>--}}
                         <p>+1 (603)535-4592</p>
                     </div>
                 </div>
@@ -164,7 +166,7 @@
                 <div class="single-footer-widget">
                     <h5>Restaurant</h5>
                     <div class="widget-text">
-                        <i class="lnr lnr-phone-handset"></i>
+{{--                        <i class="lnr lnr-phone-handset"></i>--}}
                         <p>+1 (603)535-4592</p>
                     </div>
                 </div>

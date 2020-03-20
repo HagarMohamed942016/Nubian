@@ -27,6 +27,9 @@
         <link rel="stylesheet" href="cssHotel/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="cssHotel/style.css" type="text/css">
 
+        <link rel="stylesheet" href="cssHotel/linearicons.css" type="text/css">
+
+
 
         <!-- Js Plugins -->
         <script src="jsHotel/jquery-3.3.1.min.js"></script>

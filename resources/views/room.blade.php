@@ -23,6 +23,9 @@
         <link rel="stylesheet" href="cssHotel/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="cssHotel/style.css" type="text/css">
 
+        <link rel="stylesheet" href="cssHotel/linearicons.css" type="text/css">
+
+
 
         <!-- Js Plugins -->
         <script src="jsHotel/jquery-3.3.1.min.js"></script>
@@ -222,7 +225,7 @@
                     <div class="col-lg-6">
                         <div class="room-pic-slider owl-carousel">
                             <div class="single-room-pic">
-                                <img src="imgHotel/room/rooms-4.jpeg" alt="">
+                                <img src="imgHotel/room/rooms-6.jpg" alt="">
                             </div>
                             <div class="single-room-pic">
                                 <img src="imgHotel/room/rooms-2.jpg" alt="">

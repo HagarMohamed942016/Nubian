@@ -21,8 +21,10 @@ h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
   line-height: 1.45;
   color: #000;
-  font-family: "Playfair Display", serif;
-  font-weight: bold; }
+    font-family: "Taviraj", serif;
+  /*font-family: "Playfair Display", serif;*/
+  /*font-weight: bold; */
+}
 
 .text-primary {
   color: #F96D00 !important; }

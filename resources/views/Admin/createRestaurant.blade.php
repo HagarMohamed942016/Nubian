@@ -13,7 +13,7 @@
 
 <div class="container">
     <br>
-    <h2  style="color:blue">Create Table For Restaurant</h2>
+    <h2  style="color:blue">Add Drinks and Foods For Menu</h2>
     <br>
 
     <form  action="/restaurantTable"  method="post">
@@ -36,12 +36,12 @@
             <input type="text" class="form-control" name="Price_of_foods"  value="" id="Price_of_foods">
         </div>
 
-        <button type="submit" class="btn btn-primary">Create Table For Restaurant</button>
+        <button type="submit" class="btn btn-primary">Add Drinks and Foods For Menu</button>
 
     </form>
 
     <br><br>
-    <a class="btn btn-primary" href="/restaurantTable" class="btn btn-primary">Return To Restaurant Table</a>
+    <a class="btn btn-primary" href="/restaurantTable" class="btn btn-primary">Return To Menu Table</a>
     <br><br>
     <a class="btn btn-primary" href="/admin" class="btn btn-primary">Return To Admin Page</a>
 

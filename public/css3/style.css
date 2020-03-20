@@ -26,14 +26,14 @@ Table of Content:
 06/ breadcrumb
 07/ about
 08/ team
-09/ project 
-10/ price 
-11/ team 
-12/ blog 
-13/ video  
-14/ features  
-15/ career  
-16/ contact 
+09/ project
+10/ price
+11/ team
+12/ blog
+13/ video
+14/ features
+15/ career
+16/ contact
 17/ footer
 
 =====================================================================*/
@@ -74,15 +74,15 @@ a:hover, a:focus {
   margin-bottom: -30px;
 }
 
-body {
-  line-height: 24px;
-  font-size: 14px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  color: #777777;
-}
+/*body {*/
+/*  line-height: 24px;*/
+/*  font-size: 14px;*/
+/*  font-family: "Poppins", sans-serif;*/
+/*  font-weight: 300;*/
+/*  color: #777777;*/
+/*}*/
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }

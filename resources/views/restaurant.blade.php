@@ -9,7 +9,6 @@
 
         <title>Nubian House</title>
 
-        <link rel="stylesheet" href="cssHotel/linearicons.css" type="text/css">
 
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700|Raleway" rel="stylesheet">
@@ -92,17 +91,9 @@
                 <div class="col-md-12">
                     <h3 class="ftco-heading ftco-animate mb-3">Welcome To Our Restaurant</h3>
 
-                    {{--                    <p><a href="https://free-template.co/" target="_blank" class="btn btn-outline-white btn-lg ftco-animate" data-toggle="modal" data-target="#reservationModal">Reservation</a></p>--}}
-                    {{--form for book table--}}
-                    {{--                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Reservation</button>--}}
-                    {{--                    <p><button type="button"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><a class="btn btn-outline-white btn-lg ftco-animate">Reservation</a></button></p>--}}
-                    {{--                    <a href="/bookTable" class="btn btn-outline-white btn-lg ftco-animate H" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Reservation</a>--}}
+
                   <br>
                     <p><a href="https://free-template.co/" class="btn btn-outline-white btn-lg ftco-animate H" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Reservation</a></p>
-
-{{--                    --}}
-
-{{--                    <p><a href="/" class="btn btn-outline-white btn-lg ftco-animate H" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" >Reservation</a></p>--}}
 
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -173,11 +164,9 @@
                                         </div>
 
 
-
-
                                         <div class="form-group" style="text-align: left;color: #000000;">
                                             <label  class="control-label">Number of Person</label>
-                                            <select name="No_of_person" class="form-control">
+                                            <select name="No_of_person" class="form-control"  required>
                                                 <option>Select No. of Person</option>
                                                 <option>1</option>
                                                 <option>2</option>
@@ -197,137 +186,11 @@
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-{{--                                    <button type="submit" class="btn btn-primary">Book Now</button>--}}
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
-
-                    {{--                    --}}
-
-
-                    {{--                    <p><a class="btn btn-outline-white btn-lg ftco-animate" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Reservation</a></p>--}}
-{{--                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">--}}
-{{--                        <div class="modal-dialog" role="document">--}}
-{{--                            <div class="modal-content">--}}
-{{--                                <div class="modal-header">--}}
-{{--                                    --}}{{--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--}}
-{{--                                    <h4 class="modal-title" id="exampleModalLabel">Book a Table</h4>--}}
-{{--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--}}
-
-{{--                                </div>--}}
-{{--                                <div class="modal-body">--}}
-{{--                                    <form action="/rest"  method="Post">--}}
-{{--                                        @csrf--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-sm-6">--}}
-
-{{--                                                <div class="form-group" style="text-align: left;color: #000000;">--}}
-{{--                                                    <label for="recipient-name" class="control-label">Name  </label>--}}
-{{--                                                    <input type="text" class="form-group" id="recipient-name">--}}
-{{--                                                </div>--}}
-
-{{--                                            </div>--}}
-{{--                                            <div class="col-sm-6">--}}
-
-{{--                                                <div class="form-group" style="text-align: left;color: #000000;">--}}
-{{--                                                    <label for="message-text" class="control-label">Email </label>--}}
-{{--                                                    <input type="text" class="form-group" id="recipient-name">--}}
-{{--                                                </div>--}}
-
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-sm-6">--}}
-{{--                                                <div class="form-group" style="text-align: left;color: #000000;">--}}
-{{--                                                    <label for="recipient-name" class="control-label">City  </label>--}}
-{{--                                                    <input type="text" class="form-group" id="recipient-name">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="col-sm-6">--}}
-{{--                                                <div class="form-group" style="text-align: left;color: #000000;">--}}
-{{--                                                    <label for="recipient-name" class="control-label">Phone  </label>--}}
-{{--                                                    <input type="text" class="form-group" id="recipient-name">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-sm-6">--}}
-{{--                                                <div class="form-group" style="text-align: left;color: #000000;">--}}
-{{--                                                    <label for="recipient-name" class="control-label">Date  </label><br>--}}
-{{--                                                    <input type="date" class="form-group" id="recipient-name">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="col-sm-6">--}}
-{{--                                                <div class="form-group" style="text-align: left;color: #000000;">--}}
-{{--                                                    <label for="recipient-name" class="control-label">Time  </label><br>--}}
-{{--                                                    <input type="time" class="form-group" id="recipient-name">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-
-
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-sm-6">--}}
-{{--                                                <div class="form-group" style="text-align: left;color: #000000;">--}}
-{{--                                                    <label for="recipient-name" class="control-label">Drinks  </label><br>--}}
-{{--                                                    <select  name="drinks" id="drinks" value="{{old('drinks')}}">--}}
-{{--                                                        <option>Select Drink</option>--}}
-{{--                                                        --}}{{--                                                        @foreach($restaurants as $restaurant)--}}
-{{--                                                        --}}{{--                                                            <option value="{{ $restaurant->Drinks}}">{{ $restaurant->Drinks }}</option>--}}
-{{--                                                        --}}{{--                                                        @endforeach--}}
-{{--                                                    </select>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="col-sm-6">--}}
-{{--                                                <div class="form-group" style="text-align: left;color: #000000;">--}}
-{{--                                                    <label for="recipient-name" class="control-label">Foods  </label><br>--}}
-{{--                                                    <select name="foods" id="foods" value="{{old('foods')}}">--}}
-{{--                                                        <option>Select Food</option>--}}
-{{--                                                        --}}{{--                                                        @foreach($restaurants as $restaurant)--}}
-{{--                                                        --}}{{--                                                            <option value="{{ $restaurant->Foods}}">{{ $restaurant->Foods }}</option>--}}
-{{--                                                        --}}{{--                                                        @endforeach--}}
-{{--                                                    </select>--}}
-{{--                                                </div>--}}
-
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-
-{{--                                        <br>--}}
-
-{{--                                        <div class="form-group" style="text-align: left;color: #000000;">--}}
-{{--                                            <label for="recipient-name" class="control-label">Number Of Person  </label><br>--}}
-{{--                                            <select name="No_of_person" id="No_of_person">--}}
-{{--                                                <option>Select No of Person</option>--}}
-{{--                                                <option>1</option>--}}
-{{--                                            </select>--}}
-{{--                                        </div>--}}
-
-
-
-
-
-
-
-{{--                                    </form>--}}
-{{--                                </div>--}}
-{{--                                <div class="modal-footer">--}}
-{{--                                    --}}{{--                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
-{{--                                    <button type="submit" id="submit"  name="submit"  class="btn btn-primary"><a class="btn" href="/rest">Reserve Now</a></button>--}}
-{{--                                    --}}{{--                                    <input type="submit" value="Reserve Now">--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-
-                    {{--end form --}}
-
-                    {{--                    <p><a href="css/bookTable.html" target="_blank" class="btn btn-outline-white btn-lg ftco-animate" data-toggle="modal" data-target="#reservationModal">Reservation</a></p>--}}
                 </div>
             </div>
         </div>

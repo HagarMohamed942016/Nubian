@@ -7,7 +7,6 @@
 
         <title>Nubian House</title>
 
-        <link rel="stylesheet" href="cssHotel/linearicons.css" type="text/css">
 
 
         <!--
@@ -275,7 +274,7 @@
     <div class="tm-container-outer" id="tm-section-3">
         <ul class="nav nav-pills tm-tabs-links">
             <li class="tm-tab-link-li">
-                <a href="#1a" data-toggle="tab" class="tm-tab-link">
+                <a href="#1a" data-toggle="tab" class="tm-tab-link  active">
 
                     Aswan
                 </a>
@@ -293,7 +292,7 @@
                 </a>
             </li>
             <li class="tm-tab-link-li">
-                <a href="#4a" data-toggle="tab" class="tm-tab-link active"><!-- Current Active Tab -->
+                <a href="#4a" data-toggle="tab" class="tm-tab-link"><!-- Current Active Tab -->
 
                     Adfo
                 </a>
@@ -303,7 +302,7 @@
         <div class="tab-content clearfix">
 
             <!-- Tab 1 -->
-            <div class="tab-pane fade" id="1a">
+            <div class="tab-pane fade show active" id="1a">
                 <div class="tm-recommended-place-wrap">
                     <div class="tm-recommended-place">
                         <img src="images/zhz.jpg" alt="Image" class="img-fluid tm-recommended-img">
@@ -428,7 +427,7 @@
             </div> <!-- tab-pane -->
 
             <!-- Tab 4 -->
-            <div class="tab-pane fade show active" id="4a">
+            <div class="tab-pane fade" id="4a">
                 <!-- Current Active Tab WITH "show active" classes in DIV tag -->
                 <div class="tm-recommended-place-wrap">
                     <div class="tm-recommended-place">
