@@ -145,12 +145,12 @@
                         <div class="form-row tm-search-form-row">
                             <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
                                 <label for="inputCity"> Email</label>
-                                <input name="email" type="text" class="form-control" id="inputCity" placeholder="Enter your email...">
+                                <input name="email" type="text" class="form-control" id="inputCity" placeholder="Enter your email..."  value="{{old('email')}}">
                             </div>
                             <div class="form-group tm-form-group tm-form-group-1">
                                 <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2">
                                     <label for="inputRoom">How many person?</label>
-                                    <select name="No_of_person" class="form-control tm-select" id="inputRoom">
+                                    <select name="No_of_person" class="form-control tm-select" id="inputRoom"  value="{{old('No_of_person')}}">
                                         <option value="0" selected>Select No. of Person </option>
                                         <option value="1">1 </option>
                                         <option value="2">2 </option>
@@ -185,7 +185,7 @@
                             <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
                                 <label for="inputCheckOut">Select Your Destination</label>
                                 <div name="check-out" type="text" class="form-control" id="inputCheckOut" placeholder="">
-                                    <select name="Name_of_trip" class="form-control tm-select" id="inputChildren">
+                                    <select name="Name_of_trip" class="form-control tm-select" id="inputChildren"  value="{{old('Name_of_trip')}}">
                                         <option value="" selected>Select Your Trip</option>
                                         @foreach($journeys as $journey)
                                             <option value="{{$journey->Name_of_trip}}">{{$journey->Name_of_trip}}</option>

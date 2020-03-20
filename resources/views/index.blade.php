@@ -237,22 +237,22 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <label>Name</label>
-                                        <input type="text" name="name" class="select"  value="" required>
+                                        <input type="text" name="name" class="select"  value="{{old('name')}}" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <label>Email</label>
-                                        <input type="text" name="email" class="select"  value="" required>
+                                        <input type="text" name="email" class="select"  value="{{old('email')}}" required>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <label>Country</label>
-                                        <input type="text" name="country" class="select"  value="" required>
+                                        <input type="text" name="country" class="select"  value="{{old('country')}}" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <label>Phone</label>
-                                        <input type="text" name="phone" class="select"  value="" required>
+                                        <input type="text" name="phone" class="select"  value="{{old('phone')}}" required>
                                     </div>
                                 </div>
                                 <br>
@@ -260,12 +260,12 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <label>From</label>
-                                        <input type="date" class="select" name="check_in" value="dd / mm / yyyy" required>
+                                        <input type="date" class="select" name="check_in" value="{{old('check_in')}}" required>
                                         <img src="img/calendar.png" alt="">
                                     </div>
                                     <div class="col-sm-6">
                                         <label>To</label><br>
-                                        <input type="date" class="select" name="check_out" value="dd / mm / yyyy" required>
+                                        <input type="date" class="select" name="check_out" value="{{old('check_out')}}" required>
                                         <img src="img/calendar.png" alt="">
                                     </div>
                                 </div>

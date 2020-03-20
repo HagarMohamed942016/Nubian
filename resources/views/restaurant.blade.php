@@ -112,13 +112,13 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group" style="text-align: left;color: #000000;">
                                                     <label  class="control-label">Email</label>
-                                                    <input type="text" name="email" class="form-control" id="recipient-name">
+                                                    <input type="text" name="email" class="form-control" id="recipient-name"  value="{{old('email')}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group" style="text-align: left;color: #000000;">
                                                     <label  class="control-label">Phone</label>
-                                                    <input type="text" name="phone" class="form-control" id="recipient-name">
+                                                    <input type="text" name="phone" class="form-control" id="recipient-name"  value="{{old('phone')}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -127,13 +127,13 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group" style="text-align: left;color: #000000;">
                                                     <label  class="control-label">Date</label>
-                                                    <input type="date" name="date" class="form-control" id="recipient-name">
+                                                    <input type="date" name="date" class="form-control" id="recipient-name"  value="{{old('date')}}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group" style="text-align: left;color: #000000;">
                                                     <label  class="control-label">Time</label>
-                                                    <input type="time" name="time" class="form-control" id="recipient-name">
+                                                    <input type="time" name="time" class="form-control" id="recipient-name"  value="{{old('time')}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -142,8 +142,8 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group" style="text-align: left;color: #000000;">
                                                     <label  class="control-label">Select Your Drink</label>
-                                                    <select name="Drinks" class="form-control">
-                                                        <option></option>
+                                                    <select name="Drinks" class="form-control"  value="{{old('Drinks')}}">
+                                                        <option>Select your drink</option>
                                                         @foreach($restaurant as $meal)
                                                             <option value="{{$meal->Drinks}}">{{$meal->Drinks}}</option>
                                                             @endforeach
@@ -153,8 +153,8 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group" style="text-align: left;color: #000000;">
                                                     <label  class="control-label">Select Your Food</label>
-                                                    <select name="Foods" class="form-control">
-                                                        <option></option>
+                                                    <select name="Foods" class="form-control"  value="{{old('Foods')}}">
+                                                        <option>Select your food</option>
                                                         @foreach($restaurant as $meal)
                                                             <option value="{{$meal->Foods}}">{{$meal->Foods}}</option>
                                                         @endforeach
@@ -166,7 +166,7 @@
 
                                         <div class="form-group" style="text-align: left;color: #000000;">
                                             <label  class="control-label">Number of Person</label>
-                                            <select name="No_of_person" class="form-control"  required>
+                                            <select name="No_of_person" class="form-control"  value="{{old('No_of_person')}}"  required>
                                                 <option>Select No. of Person</option>
                                                 <option>1</option>
                                                 <option>2</option>
