@@ -18,7 +18,7 @@
 
     <form  action="/restaurantTable"  method="post">
         @csrf
-        
+
         <div class="form-group">
             <label>Drinks</label>
             <input type="text" class="form-control" name="Drinks"  value="" id="Drinks">
@@ -42,10 +42,11 @@
 
     <br><br>
     <a class="btn btn-primary" href="/restaurantTable" class="btn btn-primary">Return To Restaurant Table</a>
+    <br><br>
+    <a class="btn btn-primary" href="/admin" class="btn btn-primary">Return To Admin Page</a>
 
 </div>
 
-        <a class="btn btn-primary" href="/admin" class="btn btn-primary">Return To Admin Page</a>
 
 
 

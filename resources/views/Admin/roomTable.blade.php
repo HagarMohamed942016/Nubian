@@ -61,6 +61,9 @@
         {{--        </tbody>--}}
     </table>
 
+    <br><br>
+    <a class="btn btn-primary" href="/admin" class="btn btn-primary">Return To Admin Page</a>
+    <br><br>
 
 </div>
 

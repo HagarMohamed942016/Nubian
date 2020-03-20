@@ -62,6 +62,9 @@ Route::middleware(['auth','admin'])->group (function()
     Route::get('/admin','usersController@index')->name('Admin.admin');
     Route::get('/roomReservation','usersController@roomReservation');
     Route::get('/restaurantReservation','usersController@restaurantReservation');
+    Route::get('/journeyReservation','usersController@journeyReservation');
+    Route::get('/contactMessage','usersController@contactMessage');
+
 
     Route::get('/roomTable','usersController@roomTable');
     Route::get('/createRoom','usersController@createRoom');
@@ -71,6 +74,7 @@ Route::middleware(['auth','admin'])->group (function()
     Route::post('/editRoom/{id}/updateRoom','usersController@updateRoom');
     Route::get('/deleteRoom/{id}','usersController@deleteRoom');
 
+
     Route::get('/restaurantTable','usersController@restaurantTable');
     Route::get('/createRestaurant','usersController@createRestaurant');
     Route::post('/restaurantTable','usersController@storeRestaurant');
@@ -78,6 +82,18 @@ Route::middleware(['auth','admin'])->group (function()
     Route::get('/editRestaurant/{id}','usersController@editRestaurant');
     Route::post('/editRestaurant/{id}/updateRestaurant','usersController@updateRestaurant');
     Route::get('/deleteRestaurant/{id}','usersController@deleteRestaurant');
+
+
+    Route::get('/journeyTable','usersController@journeyTable');
+    Route::get('/createJourney','usersController@createJourney');
+    Route::post('/journeyTable','usersController@storeJourney');
+    Route::get('/journeyTable/{id}','usersController@showJourney');
+    Route::get('/editJourney/{id}','usersController@editJourney');
+    Route::post('/editJourney/{id}/updateJourney','usersController@updateJourney');
+    Route::get('/deleteJourney/{id}','usersController@deleteJourney');
+
+
+
 
 //upload image
     Route::get('imageUpload', 'ImageUploadController@imageUpload')->name('image.upload');

@@ -37,8 +37,6 @@ class roomController extends Controller
         ]);
 
 
-        $users = User::all();
-
         $cats = customer_rooms::all();
 
         $customer = new customer();
@@ -56,98 +54,126 @@ class roomController extends Controller
 
 
         $price = room::where('type', $reservation->type)->get();
+
         foreach ($price as $item => $value)
         {
-
             $totalPrice = $value->Price;
             $reservation->total_price = $totalPrice * 1.1;
-
-//            dd($value->Price);
-
         }
-//        dd($value->Price);
 
+        $usersEmail=User::all();
+        $customersEmail=customer::all();
 
-//        dd($reservation->email,$reservation->No_of_room,$customer->name,$customer->email,$reservation->check_in,$users);
-
-//        dd($value->Price,$totalPrice,$totalPrice*1.1,$users);
-
-//        $reservation->total_price = $totalPrice * 1.1;
-
-
-//        $customerEmail=$reservation->email;
-        $userEmail = User::where('email', $request->email)->get();
-
-        foreach ($userEmail as $value=>$item)
+        foreach ($usersEmail as  $name => $title)
         {
-            $email=$item->email;
+            $arrayUser[]= $title->email;   // print all users email that register
         }
 
 
+        foreach ($cats as $key => $value)
+        {
+            $arrayNumberOfRoom[]= $value->No_of_room;
+            $arrayCheckIn[]=$value->check_in;
+            $arrayCheckOut[]=$value->check_out;
+        }
 
-        if ($item['email'] == $request->email ) {
-//            dd($userEmail,$request->email,$reservation->email,$reservation->No_of_room,$customer->name,$customer->email,$reservation->check_in,$users);
 
-            foreach ($cats as $cat)
+        foreach ($customersEmail as $emails => $cust)
+        {
+            $arrayCustomer[]= $cust->email;
+
+        }
+
+
+        //// If the user reserve more than a time
+        //// The user's info is saved in customer table
+
+        for ($i=0; $i < $title->id; $i++)
+        {
+            if ($request->email == $arrayUser[$i])
             {
-//                        dd($request->email);
+//                 dd($usersEmail, $title->id, $item->email, $title->email, $arrayUser ,$arrayUser[$i]);
+                for ($j=0; $j < $value->id; $j++)
+                {
+                    if ($request->No_of_room == $arrayNumberOfRoom[$j] && $request->check_in >= $arrayCheckIn[$j] && $request->check_out <= $arrayCheckOut[$j])
+                    {
+                        return back()->withInput($request->input())->withErrors(['* This room is not valid in this date', 'The Message']);
+                    }
+//                     dd($usersEmail, $title->id, $item->email, $title->email, $arrayUser ,$arrayUser[$i], $arrayNumberOfRoom, $arrayCheckIn, $arrayCheckOut, $arrayCustomer, $cust->id);
 
-                if ($reservation->No_of_room == $cat->No_of_room && $reservation->check_in >= $cat->check_in && $reservation->check_out <= $cat->check_out) {
-                    return back()->withInput($request->input())->withErrors(['* This room is not valid in this date', 'The Message']);
                 }
-            }
-//            dd($request->email);
 
-            $customerEmail = customer::where('email', $reservation->email)->get();
+                for ($k=0; $k < $cust->id; $k++)
+                {
+                    if ($request->email == $arrayCustomer[$k])
+                    {
+                        $customerEmail = customer::where('email', $reservation->email)->get();
 
+                        foreach ($customerEmail as $ky => $it)
+                        {
+                            $reservation->customer_id = $it->id;
+                            $reservation->save();
 
-//                dd($request->email);
+                            return view('checkRoom', compact('reservation',  'userEmail',  'cats',  'customer'));
+                        }
 
-
-            foreach ($customerEmail as $key => $value)
-            {
-//                        dd($customerEmail);
-//                    dd($request->email);
-
-                $reservation->customer_id = $value->id;
-                $reservation->save();
-                return view('checkRoom', compact('reservation', 'userId', 'userEmail', 'from', 'to', 'cats', 'users', 'customer'));
-
-            }
-            if ($request->email == $value['email'] )
-            {
-
-                $reservation->customer_id = $value->id;
-                $reservation->save();
-                return view('checkRoom', compact('reservation', 'userId', 'userEmail', 'from', 'to', 'cats', 'users', 'customer'));
-
+                    }
+//                     dd($usersEmail, $title->id,  $title->email, $arrayUser ,$arrayUser[$i], $arrayNumberOfRoom, $arrayCheckIn, $arrayCheckOut, $arrayCustomer, $cust->id);
+                }
 
             }
-            else
-            {
-
-                $customer->user_id = $item->id;
-
-                $customer->save();
-                $reservation->customer_id = $customer->id;
-                $reservation->save();
-                return view('checkRoom', compact('reservation', 'userId', 'userEmail', 'from', 'to', 'cats', 'users', 'customer'));
-
-            }
-
 
         }
-//        else
-        elseif($userEmail != '')
+
+        //// If the user first a time reserve
+        ////  To save the user info. in customer table
+
+        for ($i=0; $i < $title->id; $i++)
         {
-            return redirect('/register');
+            if ($request->email == $arrayUser[$i])
+            {
+//                 dd($usersEmail, $title->id, $item->email, $title->email, $arrayUser ,$arrayUser[$i]);
+                for ($j = 0; $j < $value->id; $j++)
+                {
+                    if ($request->No_of_room == $arrayNumberOfRoom[$j] && $request->check_in >= $arrayCheckIn[$j] && $request->check_out <= $arrayCheckOut[$j])
+                    {
+                        return back()->withInput($request->input())->withErrors(['* This room is not valid in this date', 'The Message']);
+                    }
+//                     dd($usersEmail, $title->id, $item->email, $title->email, $arrayUser ,$arrayUser[$i], $arrayNumberOfRoom, $arrayCheckIn, $arrayCheckOut, $arrayCustomer, $cust->id);
+
+                }
+
+                for ($k = 0; $k < $cust->id; $k++)
+                {
+                    if ($request->email != $arrayCustomer[$k])
+                    {
+                        $userEmail = User::where('email', $request->email)->get();
+
+                        foreach ($userEmail as $value => $item)
+                        {
+                            $customer->user_id = $item->id;
+                            $customer->save();
+                        }
+
+                        $customerEmail = customer::where('email', $request->email)->get();
+
+                        foreach ($customerEmail as $ky => $it)
+                        {
+                            $reservation->customer_id = $it->id;
+                            $reservation->save();
+
+                            return view('checkRoom', compact('reservation', 'userEmail', 'cats', 'customer'));
+                        }
+
+                    }
+
+                }
+
+            }
+//            dd($usersEmail, $title->id,  $title->email, $arrayUser, $arrayUser[$i], $arrayNumberOfRoom, $arrayCheckIn, $arrayCheckOut, $arrayCustomer, $cust->id);
         }
 
-//        $request->validate([
-//            'email' => 'string|email|max:255',
-//            'check_in'=>'date|after:today',
-//            'check_out'=>'date|after:check_in',
-//        ]);
+
 
 
     }
@@ -157,10 +183,13 @@ class roomController extends Controller
         $select = $request->get('select');
         $value = $request->get('value');
         $dependent = $request->get('dependent');
-        $data = DB::table('rooms')
-            ->where($select, $value)
-            ->groupBy($dependent)
-            ->get();
+//        $data = DB::table('rooms')
+//            ->where($select, $value)
+//            ->groupBy($dependent)
+//            ->get();
+
+        $data = room::select($dependent)->where($select,$value)->get();
+
         $output = '<option value="">Select '.ucfirst($dependent).'</option>';
         foreach($data as $row)
         {

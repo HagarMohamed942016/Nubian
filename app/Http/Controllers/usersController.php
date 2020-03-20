@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\contact;
 use App\customer;
+use App\customer_journey;
+use App\journey;
 use Illuminate\Http\Request;
 use App\User;
 use App\room;
@@ -35,8 +38,21 @@ class usersController extends Controller
     {
         $restaurants=customer_restaurant::all();
         $customers= customer::all();
-
         return view('Admin.restaurantReservation',compact('restaurants','customers'));
+    }
+
+    public function journeyReservation()
+    {
+        $trips=customer_journey::all();
+        $customers= customer::all();
+        return view('Admin.journeyReservation',compact('trips','customers'));
+    }
+
+    public function contactMessage()
+    {
+        $contacts=contact::all();
+        $customers= customer::all();
+        return view('Admin.contactMessage',compact('contacts','customers'));
     }
 
     public function  roomTable()
@@ -90,7 +106,7 @@ class usersController extends Controller
     public function deleteRoom($id)
     {
         $rooms=room::all();
-        
+
         $room=room::all()->find($id);
         $room->delete();
         return view('Admin.roomTable',compact('rooms'));
@@ -110,7 +126,7 @@ class usersController extends Controller
     public function storeRestaurant(Request $request)
     {
         $restaurant=new restaurant();
-       
+
         $restaurant->Drinks=Request('Drinks');
         $restaurant->Price_of_drinks=Request('Price_of_drinks');
         $restaurant->Foods=Request('Foods');
@@ -146,10 +162,61 @@ class usersController extends Controller
 
     public function deleteRestaurant($id)
     {
-        $restaurant=room::all()->find($id);
+        $restaurant=restaurant::all()->find($id);
         $restaurant->delete();
         $restaurants=restaurant::all();
         return view('Admin.restaurantTable',compact('restaurants'));
+    }
+
+    public function journeyTable()
+    {
+        $trips=journey::all();
+        return view('Admin.journeyTable',compact('trips'));
+    }
+
+    public function createJourney()
+    {
+        return view('Admin.createJourney');
+    }
+
+    public function storeJourney(Request $request)
+    {
+        $trip=new journey();
+        $trip->Name_of_trip=Request('Name_of_trip');
+        $trip->Price=Request('Price');
+        $trip->save();
+        $trips=journey::all();
+        return view('Admin.journeyTable',compact('trips'));
+    }
+
+    public function showJourney($id)
+    {
+        $trip=journey::all()->find($id);
+        return view('Admin.showJourney',compact('trip'));
+    }
+
+    public function editJourney($id)
+    {
+        $trip=journey::all()->find($id);
+        return view('Admin.editJourney',compact('trip'));
+    }
+
+    public function  updateJourney(Request $request, $id)
+    {
+        $trip=journey::all()->find($id);
+        $trip->Name_of_trip=Request('Name_of_trip');
+        $trip->Price=Request('Price');
+        $trip->save();
+        $trips=journey::all();
+        return view('Admin.journeyTable',compact('trips'));
+    }
+
+    public function deleteJourney($id)
+    {
+        $trip=journey::all()->find($id);
+        $trip->delete();
+        $trips=journey::all();
+        return view('Admin.journeyTable',compact('trips'));
     }
 
 

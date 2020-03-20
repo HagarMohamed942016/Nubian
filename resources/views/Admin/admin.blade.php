@@ -35,7 +35,7 @@
 
     @if(auth()->user()->isAdmin())
 {{--        <div class="loginbox">--}}
-        <br><br>
+        <br>
 
 {{--            &nbsp;&nbsp;   <a  class="btn btn-info" href="/user">Show Users Table</a>--}}
     <!-- <br><br> -->
@@ -49,9 +49,14 @@
     <br><br>
         &nbsp;&nbsp;  <a class="btn btn-info" href="/restaurantReservation">Show Restaurant Reservation Table</a>
     <br><br>
-            &nbsp;
-{{--        &nbsp;&nbsp;  <a class="btn btn-info" href="/restaurantReservation">Show Contact Table</a>--}}
-            <br><br>
+        &nbsp;&nbsp;  <a class="btn btn-info" href="/journeyTable">Show Journey Table</a>
+    <br><br>
+        &nbsp;&nbsp;  <a class="btn btn-info" href="/journeyReservation">Show Journey Reservation Table</a>
+    <br><br>
+        &nbsp;&nbsp;  <a class="btn btn-info" href="/contactMessage">Show Contact Table</a>
+    <br><br>
+
+
 {{--        </div>--}}
 @endif
 
