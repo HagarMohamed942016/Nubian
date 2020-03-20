@@ -18,21 +18,21 @@
 
                 <br>
                 <p>Email</p>
-                <label>{{$reservation->email}}</label>
-{{--                <input type="text" name="" placeholder="{{$reservation->email}}">--}}
+{{--                <label>{{$reservation->email}}</label>--}}
+                <input type="text" name="" placeholder="{{$reservation->email}}">
 
                 <div class="row">
 
                     <div class="col-sm-6">
                         <p>Check In</p>
-                        <label>{{$reservation->check_in}}</label>
-{{--                        <input type="" name="" placeholder="{{$reservation->check_in}}">--}}
+{{--                        <label>{{$reservation->check_in}}</label>--}}
+                        <input type="" name="" placeholder="{{$reservation->check_in}}">
                     </div>
 
                     <div class="col-sm-6">
                         <p>Check Out</p>
-                        <label>{{$reservation->check_out}}</label>
-{{--                        <input type="" name="" placeholder="{{$reservation->check_out}}">--}}
+{{--                        <label>{{$reservation->check_out}}</label>--}}
+                        <input type="" name="" placeholder="{{$reservation->check_out}}">
                     </div>
 
                 </div>
@@ -41,20 +41,20 @@
 
                     <div class="col-sm-6">
                         <p>Type Of Room</p>
-                        <label>{{$reservation->type}}</label>
-{{--                        <input type="" name="" placeholder="{{$reservation->type}}">--}}
+{{--                        <label>{{$reservation->type}}</label>--}}
+                        <input type="" name="" placeholder="{{$reservation->type}}">
                     </div>
                     <div class="col-sm-6">
                         <p>Number Of Room</p>
-                        <label>{{$reservation->No_of_room}}</label>
-{{--                        <input type="" name="" placeholder="{{$reservation->No_of_room}}">--}}
+{{--                        <label>{{$reservation->No_of_room}}</label>--}}
+                        <input type="" name="" placeholder="{{$reservation->No_of_room}}">
                     </div>
 
                 </div>
 
                 <p>Total Price</p>
-                <label>{{$reservation->total_price}}</label>
-{{--                <input type="" name="" placeholder="{{$reservation->total_price}}">--}}
+{{--                <label>{{$reservation->total_price}}</label>--}}
+                <input type="" name="" placeholder="{{$reservation->total_price}}">
 
 {{--<label></label>--}}
 

@@ -54,13 +54,13 @@
 
                     <div class="col-sm-6">
                         <p>Drinks</p>
-                        <label>{{$restaurant->Drinks}}</label>
-                        {{--                        <input type="" name="" placeholder="{{$restaurant->No_of_person}}">--}}
+{{--                        <label>{{$restaurant->Drinks}}</label>--}}
+                        <input type="" name="" placeholder="{{$restaurant->No_of_person}}">
                     </div>
                     <div class="col-sm-6">
                         <p>Foods</p>
-                        <label>{{$restaurant->Foods}}</label>
-                        {{--                        <input type="" name="" placeholder="{{$restaurant->total_price}}">--}}
+{{--                        <label>{{$restaurant->Foods}}</label>--}}
+                        <input type="" name="" placeholder="{{$restaurant->total_price}}">
                     </div>
 
                 </div>
@@ -70,13 +70,13 @@
 
                     <div class="col-sm-6">
                         <p>Number Of Person</p>
-                        <label>{{$restaurant->No_of_person}}</label>
-{{--                        <input type="" name="" placeholder="{{$restaurant->No_of_person}}">--}}
+{{--                        <label>{{$restaurant->No_of_person}}</label>--}}
+                        <input type="" name="" placeholder="{{$restaurant->No_of_person}}">
                     </div>
                     <div class="col-sm-6">
                         <p>Total Price For One Person</p>
-                        <label>{{$restaurant->total_price}}</label>
-{{--                        <input type="" name="" placeholder="{{$restaurant->total_price}}">--}}
+{{--                        <label>{{$restaurant->total_price}}</label>--}}
+                        <input type="" name="" placeholder="{{$restaurant->total_price}}">
                     </div>
 
                 </div>

@@ -93,6 +93,35 @@ class roomController extends Controller
             if ($request->email == $arrayUser[$i])
             {
 //                 dd($usersEmail, $title->id, $item->email, $title->email, $arrayUser ,$arrayUser[$i]);
+
+                if ($cats->isEmpty())
+                {
+
+                    $customerEmail = customer::where('email', $request->email)->get();
+
+                    if ($customerEmail->isEmpty())
+                    {
+                        $userEmail = User::where('email', $request->email)->get();
+
+                        foreach ($userEmail as $value => $item)
+                        {
+                            $customer->user_id = $item->id;
+                            $customer->save();
+                        }
+                    }
+
+                    $customerEmail = customer::where('email', $request->email)->get();
+
+                    foreach ($customerEmail as $ky => $it)
+                    {
+                        $reservation->customer_id = $it->id;
+                        $reservation->save();
+
+                        return view('checkRoom', compact('reservation',  'userEmail',  'cats',  'customer'));
+                    }
+                }
+
+
                 for ($j=0; $j < $value->id; $j++)
                 {
                     if ($request->No_of_room == $arrayNumberOfRoom[$j] && $request->check_in >= $arrayCheckIn[$j] && $request->check_out <= $arrayCheckOut[$j])
