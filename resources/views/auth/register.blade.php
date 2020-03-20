@@ -4,13 +4,21 @@
 
 @section('content')
 
-    <style>
-        .body{
-            background: url("imgHotel/outdoor_bedroom.jpg");
-            background-repeat: no-repeat;
-        }
+    <head>
 
-    </style>
+        <style>
+            .body{
+                background: url("imgHotel/outdoor_bedroom.jpg");
+                background-repeat: no-repeat;
+            }
+
+        </style>
+
+        <script src="jsHotel/jquery-3.3.1.min.js"></script>
+        <script src="jsHotel/bootstrap.min.js"></script>
+        
+    </head>
+
 
     <div class="body">
 

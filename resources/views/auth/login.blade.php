@@ -5,6 +5,7 @@
 
 @section('content')
 
+<head>
 
     <style>
         .body{
@@ -13,6 +14,12 @@
         }
 
     </style>
+
+    <script src="jsHotel/jquery-3.3.1.min.js"></script>
+    <script src="jsHotel/bootstrap.min.js"></script>
+
+</head>
+
 
     <div class="body">
 
